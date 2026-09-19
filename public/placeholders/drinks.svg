@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="grad_cat1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" rx="20" fill="url(#grad_cat1)"/>
+  
+  <!-- Dashed Border Box -->
+  <rect x="24" y="24" width="352" height="352" rx="16" fill="none" stroke="#BFDBFE" stroke-width="2" stroke-dasharray="6 6"/>
+  
+  <!-- Tag / Header -->
+  <g transform="translate(200, 68)">
+    <rect x="-65" y="-14" width="130" height="26" rx="13" fill="#0060DF" opacity="0.1"/>
+    <text text-anchor="middle" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#0060DF" letter-spacing="1">X MART CATALOG</text>
+  </g>
+  
+  <!-- Central Icon Background Circle -->
+  <circle cx="200" cy="180" r="62" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="2"/>
+  
+  <!-- Icon -->
+  <text x="200" y="198" text-anchor="middle" font-size="64" font-family="'Apple Color Emoji', 'Segoe UI Emoji', sans-serif">🥤</text>
+  
+  <!-- Category Label -->
+  <text x="200" y="280" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" fill="#1E293B">เครื่องดื่ม</text>
+  
+  <!-- Subtitle -->
+  <text x="200" y="306" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#64748B">รูปภาพสินค้าจำลอง (Placeholder)</text>
+  
+  <!-- Helper note -->
+  <text x="200" y="328" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="400" fill="#94A3B8">รองรับการเปลี่ยนรูปภาพจริงในภายหลัง</text>
+</svg>

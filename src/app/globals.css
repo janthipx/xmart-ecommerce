@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Prompt", "Inter", var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* X MART Premium Brand Colors */
+  --color-xmart-primary: #0F52BA;
+  /* Sapphire Blue */
+  --color-xmart-primary-light: #3074EB;
+  --color-xmart-primary-dark: #0A3A82;
+
+  --color-xmart-accent: #FF5A5F;
+  /* Vibrant Coral/Red */
+  --color-xmart-accent-hover: #FC4046;
+
+  --color-xmart-bg: #F8F9FA;
+  --color-xmart-card: #FFFFFF;
+  --color-xmart-text: #1A1C20;
+  --color-xmart-text-muted: #6B7280;
+
+  --color-xmart-border: #E5E7EB;
+
+  /* Radii for modern bubbly UI */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+    background-color: var(--color-xmart-bg);
+    color: var(--color-xmart-text);
+  }
+
+  body {
+    @apply antialiased min-h-screen selection:bg-xmart-primary selection:text-white;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  /* Consistent Touch Target Minimum for Accessible Mobile UX */
+  button, input, select, textarea {
+    font-family: inherit;
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* Hide scrollbar completely but keep functionality */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Glassmorphism Classes */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/40 shadow-[0_8px_32px_0_#1f268712];
+  }
+
+  .glass-dark {
+    @apply bg-neutral-900/80 backdrop-blur-xl border border-white/10 shadow-xl;
+  }
+
+  /* Micro Animations */
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md;
+  }
+
+  .active-scale {
+    @apply transition-transform duration-150 active:scale-95;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
