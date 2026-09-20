@@ -113,11 +113,6 @@ function QrContent() {
         }, 1200);
     };
 
-    // Flow: Customer chooses Pay Later (Requirement 1, 2, 14)
-    const handlePayLater = () => {
-        if (!order) return;
-        router.push(`/order-success?orderNumber=${order.orderNumber}`);
-    };
 
     // Demo Flow: Simulate Payment Failure
     const handleSimulatePayFailed = async () => {
@@ -352,19 +347,6 @@ function QrContent() {
                             : 'เปิดแอปธนาคารของท่านและสแกน QR Code เพื่อชำระเงิน'}
                     </p>
 
-                    {/* Demo Simulation Notice */}
-                    <div className="bg-amber-50 border border-amber-200/80 rounded-2xl p-3 mb-4 text-left">
-                        <div className="flex items-center gap-1.5 text-amber-900 font-bold text-xs sm:text-sm mb-1">
-                            <FlaskConicalIcon className="w-4 h-4 text-amber-700" />
-                            <span>{language === 'en' ? 'Demo Payment Simulation' : 'ระบบจำลองการชำระเงิน (Demo)'}</span>
-                        </div>
-                        <p className="text-xs text-amber-800 leading-snug">
-                            {language === 'en'
-                                ? 'Offline demo mode: No actual funds will be transferred. Use the buttons below to confirm payment or choose to pay later.'
-                                : 'โหมดทดสอบ: ไม่มีการตัดเงินจริง ท่านสามารถกดยืนยันการชำระเงินเพื่อทดสอบ หรือกดชำระภายหลังเพื่อกลับมาจ่ายในภายหลัง'}
-                        </p>
-                    </div>
-
                     {/* Action buttons (Requirement 1, 2, 5) */}
                     <div className="space-y-2.5">
                         <button
@@ -374,14 +356,6 @@ function QrContent() {
                         >
                             <CheckIcon className="w-4 h-4" />
                             <span>{language === 'en' ? 'Confirm Payment' : 'ยืนยันการชำระเงิน'}</span>
-                        </button>
-
-                        <button
-                            type="button"
-                            onClick={handlePayLater}
-                            className="w-full min-h-[44px] border border-zinc-300 hover:bg-zinc-50 text-zinc-700 font-bold py-2.5 px-4 rounded-xl transition-all active-scale text-xs sm:text-sm cursor-pointer flex items-center justify-center"
-                        >
-                            {language === 'en' ? 'Pay Later' : 'ชำระภายหลัง'}
                         </button>
 
                         <button

@@ -285,6 +285,8 @@ function PromotionsContent() {
                                     </span>
                                 </label>
                             ))}
+                        </div>
+                    </div>
                     <hr className="border-zinc-100" />
 
                     {/* Section 4: เรียงตาม */}
