@@ -356,13 +356,18 @@ export default function AdminOrderDetailPage({ params }: { params: Promise<{ id:
                                 )}
                             </p>
                         </div>
-                        <span className={`text-xs font-bold px-3 py-1 rounded-full ${order.paymentStatus === 'PAID' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-600'}`}>
-                            {order.paymentStatus === 'PAID' ? (
-                                <span className="inline-flex items-center gap-1"><CheckIcon className="w-3.5 h-3.5" /> ชำระแล้ว</span>
-                            ) : (
-                                <span className="inline-flex items-center gap-1"><ClockIcon className="w-3.5 h-3.5" /> รอชำระ</span>
-                            )}
-                        </span>
+                        {(() => {
+                            const isPaid = order.paymentStatus === 'PAID' || (order.paymentMethod === 'CASH' && currentStatus === 'DELIVERED');
+                            return (
+                                <span className={`text-xs font-bold px-3 py-1 rounded-full ${isPaid ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-600'}`}>
+                                    {isPaid ? (
+                                        <span className="inline-flex items-center gap-1"><CheckIcon className="w-3.5 h-3.5" /> ชำระแล้ว</span>
+                                    ) : (
+                                        <span className="inline-flex items-center gap-1"><ClockIcon className="w-3.5 h-3.5" /> รอชำระ</span>
+                                    )}
+                                </span>
+                            );
+                        })()}
                     </div>
 
                     {/* Unpaid PromptPay Notice (Requirement 7) */}

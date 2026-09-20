@@ -19,7 +19,7 @@ function CategoriesRedirectContent() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-zinc-50 text-zinc-400">
-            <p>กำลังนำทางไปยังหมวดหมู่สินค้า...</p>
+            <div className="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin"></div>
         </div>
     );
 }

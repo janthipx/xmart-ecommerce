@@ -67,7 +67,9 @@ export default function CartPage() {
                                                             {prodName}
                                                         </h3>
                                                     </Link>
-                                                    <div className="text-xs text-zinc-400 mt-0.5">฿{item.product.price.toLocaleString()} / ชิ้น</div>
+                                                    <div className="text-xs text-zinc-400 mt-0.5">
+                                                        ฿{item.product.price.toLocaleString()} {language === 'en' ? '/ unit' : '/ ชิ้น'}
+                                                    </div>
                                                     <p className="sm:hidden text-[#0060df] font-black text-base mt-1">
                                                         ฿{(item.product.price * item.quantity).toLocaleString()}
                                                     </p>

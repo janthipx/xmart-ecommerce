@@ -77,13 +77,24 @@ export const ordersStorage = {
                 }
                 return order;
             }
+            if (order.paymentMethod === 'PROMPTPAY' && order.paymentStatus === 'PAID' && !order.paidAt) {
+                order = { ...order, paidAt: order.statusUpdatedAt || order.createdAt };
+            }
+            // Cash payment rule: when CASH order is DELIVERED, paymentStatus must be PAID
+            if (order.paymentMethod === 'CASH' && order.orderStatus === 'DELIVERED' && order.paymentStatus !== 'PAID') {
+                hasChanges = true;
+                order = { ...order, paymentStatus: 'PAID' as const, updatedAt: new Date(now).toISOString() };
+            }
             if (order.orderStatus === 'DELIVERED') return order;
             const calc = calculateOrderStatus(order, now);
             if (calc.currentStatus !== order.orderStatus) {
                 hasChanges = true;
+                const isDelivered = calc.currentStatus === 'DELIVERED';
+                const nextPaymentStatus = (order.paymentMethod === 'CASH' && isDelivered) ? ('PAID' as const) : order.paymentStatus;
                 const patch: Order = {
                     ...order,
                     orderStatus: calc.currentStatus,
+                    paymentStatus: nextPaymentStatus,
                     statusUpdatedAt: new Date(now).toISOString(),
                     updatedAt: new Date(now).toISOString(),
                 };
@@ -134,15 +145,27 @@ export const ordersStorage = {
                     if (!safePatch.orderStatus && o.orderStatus === 'PENDING') {
                         safePatch.orderStatus = 'CONFIRMED';
                     }
+                    const nowIso = new Date().toISOString();
+                    if (!safePatch.paidAt && !o.paidAt) {
+                        safePatch.paidAt = safePatch.statusUpdatedAt || o.statusUpdatedAt || nowIso;
+                    }
                     if (!safePatch.statusUpdatedAt) {
-                        safePatch.statusUpdatedAt = new Date().toISOString();
+                        safePatch.statusUpdatedAt = nowIso;
                     }
                 }
+
+                const isDelivered = safePatch.orderStatus === 'DELIVERED' || o.orderStatus === 'DELIVERED';
+                const isCash = safePatch.paymentMethod === 'CASH' || o.paymentMethod === 'CASH';
+                const finalPaymentStatus = isCancelled
+                    ? ('FAILED' as const)
+                    : (isCash && isDelivered)
+                        ? ('PAID' as const)
+                        : (safePatch.paymentStatus || o.paymentStatus);
 
                 return {
                     ...o,
                     ...safePatch,
-                    paymentStatus: isCancelled ? ('FAILED' as const) : (safePatch.paymentStatus || o.paymentStatus),
+                    paymentStatus: finalPaymentStatus,
                     updatedAt: new Date().toISOString()
                 };
             }

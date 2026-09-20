@@ -16,7 +16,16 @@ function SuccessContent() {
     const [order, setOrder] = useState<Order | null>(null);
 
     useEffect(() => {
-        if (orderNumber) setOrder(ordersStorage.findByNumber(orderNumber) || null);
+        const load = () => {
+            if (orderNumber) setOrder(ordersStorage.findByNumber(orderNumber) || null);
+        };
+        load();
+        window.addEventListener('xmart_storage_sync', load);
+        window.addEventListener('storage', load);
+        return () => {
+            window.removeEventListener('xmart_storage_sync', load);
+            window.removeEventListener('storage', load);
+        };
     }, [orderNumber]);
 
     const status = order?.orderStatus || 'PENDING';
@@ -66,7 +75,7 @@ function SuccessContent() {
                 <div className="flex justify-between">
                     <span className="text-zinc-500">{language === 'en' ? 'Payment' : 'การชำระเงิน'}</span>
                     <span className="font-bold">
-                        {order?.paymentStatus === 'PAID' ? (
+                        {(order?.paymentStatus === 'PAID' || (order?.paymentMethod === 'CASH' && status === 'DELIVERED')) ? (
                             <span className="inline-flex items-center gap-1 text-emerald-600 font-bold"><CheckCircleIcon className="w-4 h-4" /> <span>{language === 'en' ? 'Paid' : 'ชำระเงินแล้ว'}</span></span>
                         ) : order?.paymentStatus === 'FAILED' ? (
                             <span className="inline-flex items-center gap-1 text-red-500 font-bold"><XCircleIcon className="w-4 h-4" /> <span>{language === 'en' ? 'Payment Failed' : 'การชำระเงินไม่สำเร็จ'}</span></span>

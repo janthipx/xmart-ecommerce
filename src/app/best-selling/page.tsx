@@ -9,6 +9,7 @@ import { productsStorage, categoriesStorage, ordersStorage } from "@/lib/storage
 import { mockProducts } from "@/data/products";
 import { mockCategories } from "@/data/categories";
 import { getBestSellingProducts, BestSellingItem } from "@/lib/order-analytics";
+import { useTranslation, getCategoryName } from "@/lib/i18n";
 import Link from "next/link";
 import { TrophyIcon, StarIcon, BarChartIcon, CategoryIcon, RefreshCwIcon } from "@/components/icons";
 
@@ -16,6 +17,7 @@ type SortOption = 'rank-asc' | 'sold-desc' | 'price-asc' | 'price-desc' | 'name-
 type RankFilter = 'all' | 'top10' | 'top20' | 'top50';
 
 function BestSellingContent() {
+    const { language, t } = useTranslation();
     const searchParams = useSearchParams();
     const router = useRouter();
 
@@ -145,11 +147,11 @@ function BestSellingContent() {
                         {/* Breadcrumbs */}
                         <nav className="flex items-center gap-2 text-xs sm:text-sm text-amber-100 font-medium">
                             <Link href="/" className="hover:text-white transition-colors">
-                                หน้าแรก
+                                {t('header.home')}
                             </Link>
                             <span>&gt;</span>
                             <span className="text-white font-bold">
-                                สินค้าขายดี
+                                {language === 'en' ? 'Best Sellers' : 'สินค้าขายดี'}
                             </span>
                         </nav>
 
@@ -163,25 +165,27 @@ function BestSellingContent() {
                                     Official Sales Leaderboard
                                 </span>
                                 <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white mt-1">
-                                    สินค้าขายดีประจำ X MART
+                                    {language === 'en' ? 'X MART Best Sellers' : 'สินค้าขายดีประจำ X MART'}
                                 </h1>
                             </div>
                         </div>
 
                         {/* Description */}
                         <p className="text-xs sm:text-sm text-amber-100 font-medium leading-relaxed">
-                            จัดอันดับตามจำนวนชิ้นที่ลูกค้าสั่งซื้อจริงในระบบ อัปเดตทุกคำสั่งซื้อ การันตีความนิยมและคุณภาพ
+                            {language === 'en'
+                                ? 'Ranked by real customer orders across all departments. Live updates and guaranteed satisfaction.'
+                                : 'จัดอันดับตามจำนวนชิ้นที่ลูกค้าสั่งซื้อจริงในระบบ อัปเดตทุกคำสั่งซื้อ การันตีความนิยมและคุณภาพ'}
                         </p>
 
                         {/* Total Count Pill Badge */}
                         <div className="pt-2 flex flex-wrap gap-2">
                             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-xs font-bold text-amber-800 shadow-sm">
                                 <StarIcon className="w-3.5 h-3.5 text-amber-500" />
-                                <span>มีสินค้าติดอันดับขายดี {allBestSellers.length} รายการ</span>
+                                <span>{language === 'en' ? `${allBestSellers.length} Top Ranking Items` : `มีสินค้าติดอันดับขายดี ${allBestSellers.length} รายการ`}</span>
                             </span>
                             <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-black/20 text-xs font-semibold text-white backdrop-blur-xs">
                                 <BarChartIcon className="w-3.5 h-3.5 text-white" />
-                                <span>อัปเดตจากคำสั่งซื้อจริง</span>
+                                <span>{language === 'en' ? 'Verified Customer Orders' : 'อัปเดตจากคำสั่งซื้อจริง'}</span>
                             </span>
                         </div>
                     </div>
@@ -208,14 +212,14 @@ function BestSellingContent() {
                     {/* Section 1: อันดับ (Ranking Filter) */}
                     <div>
                         <h3 className="text-sm font-bold text-zinc-900 mb-3">
-                            อันดับยอดขาย
+                            {language === 'en' ? 'Sales Ranking' : 'อันดับยอดขาย'}
                         </h3>
                         <div className="space-y-2 text-xs text-zinc-700">
                             {[
-                                { id: 'all', label: 'สินค้าขายดีทั้งหมด' },
-                                { id: 'top10', label: 'Top 10 ยอดนิยม' },
-                                { id: 'top20', label: 'Top 20 อันดับแรก' },
-                                { id: 'top50', label: 'Top 50 อันดับแรก' },
+                                { id: 'all', label: language === 'en' ? 'All Best Sellers' : 'สินค้าขายดีทั้งหมด' },
+                                { id: 'top10', label: language === 'en' ? 'Top 10 Most Popular' : 'Top 10 ยอดนิยม' },
+                                { id: 'top20', label: language === 'en' ? 'Top 20 Items' : 'Top 20 อันดับแรก' },
+                                { id: 'top50', label: language === 'en' ? 'Top 50 Items' : 'Top 50 อันดับแรก' },
                             ].map(item => (
                                 <label key={item.id} className="flex items-center gap-2.5 cursor-pointer select-none">
                                     <input
@@ -239,10 +243,10 @@ function BestSellingContent() {
                     <div>
                         <div className="flex items-center justify-between mb-3">
                             <h2 className="text-sm font-bold text-zinc-900">
-                                หมวดหมู่สินค้า
+                                {language === 'en' ? 'Product Categories' : 'หมวดหมู่สินค้า'}
                             </h2>
                             <span className="text-[11px] text-zinc-400 font-medium">
-                                {allBestSellers.length} รายการ
+                                {allBestSellers.length} {language === 'en' ? 'items' : 'รายการ'}
                             </span>
                         </div>
                         <div className="space-y-1 max-h-64 overflow-y-auto pr-1">
@@ -258,7 +262,7 @@ function BestSellingContent() {
                             >
                                 <span className="flex items-center gap-2">
                                     <StarIcon className="w-3.5 h-3.5 text-amber-500" />
-                                    <span>ทุกหมวดหมู่</span>
+                                    <span>{language === 'en' ? 'All Categories' : 'ทุกหมวดหมู่'}</span>
                                 </span>
                                 <span className="text-[10px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-bold">
                                     {allBestSellers.length}
@@ -283,7 +287,7 @@ function BestSellingContent() {
                                     >
                                         <span className="flex items-center gap-2 truncate">
                                             <span className="shrink-0"><CategoryIcon icon={cat.icon} slug={cat.slug} name={cat.name} className="w-3.5 h-3.5 text-zinc-500" /></span>
-                                            <span className="truncate">{cat.name}</span>
+                                            <span className="truncate">{getCategoryName(cat, language)}</span>
                                         </span>
                                         <span className="text-[10px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-bold shrink-0">
                                             {count}
@@ -297,9 +301,10 @@ function BestSellingContent() {
                     <hr className="border-zinc-100" />
 
                     {/* Section 4: เรียงตาม */}
+                    {/* Section 4: เรียงตาม */}
                     <div>
                         <label htmlFor="bestseller-sort" className="text-sm font-bold text-zinc-900 mb-2 block">
-                            เรียงตาม
+                            {t('common.sort')}
                         </label>
                         <select
                             id="bestseller-sort"
@@ -307,10 +312,10 @@ function BestSellingContent() {
                             onChange={e => setSortBy(e.target.value as SortOption)}
                             className="w-full bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs font-semibold text-zinc-700 shadow-2xs focus:outline-none focus:border-amber-500 cursor-pointer"
                         >
-                            <option value="rank-asc">อันดับยอดขาย (#1 ก่อน)</option>
-                            <option value="price-asc">ราคา: ต่ำ → สูง</option>
-                            <option value="price-desc">ราคา: สูง → ต่ำ</option>
-                            <option value="name-asc">ชื่อสินค้า (ก-ฮ)</option>
+                            <option value="rank-asc">{language === 'en' ? 'Rank: Top First (#1)' : 'อันดับยอดขาย (#1 ก่อน)'}</option>
+                            <option value="price-asc">{t('common.sortByPriceAsc')}</option>
+                            <option value="price-desc">{t('common.sortByPriceDesc')}</option>
+                            <option value="name-asc">{t('common.sortByName')}</option>
                         </select>
                     </div>
                 </aside>
@@ -323,19 +328,19 @@ function BestSellingContent() {
                     <div className="flex flex-wrap items-center justify-between gap-4 pb-1">
                         <div>
                             <h2 className="text-base sm:text-lg font-bold text-zinc-900 flex items-center gap-2">
-                                <span>รายการสินค้าขายดี</span>
+                                <span>{language === 'en' ? 'Best Selling Products' : 'รายการสินค้าขายดี'}</span>
                                 <span className="text-xs bg-amber-100 text-amber-800 font-bold px-2.5 py-0.5 rounded-full">
-                                    {filteredBestSellers.length} รายการ
+                                    {filteredBestSellers.length} {language === 'en' ? 'items' : 'รายการ'}
                                 </span>
                             </h2>
                             <p className="text-xs text-zinc-500 mt-0.5">
-                                สินค้าที่มีจำนวนการสั่งซื้อสะสมสูงสุดในระบบ X MART
+                                {language === 'en' ? 'Top ranking items with verified orders in X MART' : 'สินค้าที่มีจำนวนการสั่งซื้อสะสมสูงสุดในระบบ X MART'}
                             </p>
                         </div>
 
                         <div className="flex items-center gap-2">
                             <label htmlFor="bestseller-page-size" className="text-xs text-zinc-500 font-medium hidden sm:inline">
-                                แสดง:
+                                {language === 'en' ? 'Show:' : 'แสดง:'}
                             </label>
                             <select
                                 id="bestseller-page-size"
@@ -343,9 +348,9 @@ function BestSellingContent() {
                                 onChange={e => setPageSize(Number(e.target.value))}
                                 className="bg-white border border-zinc-200 rounded-xl px-2.5 py-1.5 text-xs font-semibold text-zinc-700 shadow-2xs focus:outline-none focus:border-amber-500 cursor-pointer"
                             >
-                                <option value={12}>แสดง: 12 รายการ</option>
-                                <option value={24}>แสดง: 24 รายการ</option>
-                                <option value={48}>แสดง: 48 รายการ</option>
+                                <option value={12}>{language === 'en' ? 'Show: 12 items' : 'แสดง: 12 รายการ'}</option>
+                                <option value={24}>{language === 'en' ? 'Show: 24 items' : 'แสดง: 24 รายการ'}</option>
+                                <option value={48}>{language === 'en' ? 'Show: 48 items' : 'แสดง: 48 รายการ'}</option>
                             </select>
                         </div>
                     </div>
@@ -356,8 +361,14 @@ function BestSellingContent() {
                             <div className="flex justify-center mb-3 text-zinc-300">
                                 <StarIcon className="w-12 h-12" />
                             </div>
-                            <h3 className="font-bold text-zinc-800 text-base mb-1">ไม่พบสินค้าขายดีที่ตรงกับเงื่อนไข</h3>
-                            <p className="text-xs text-zinc-400 mb-4">ลองปรับตัวกรองหมวดหมู่ ระดับอันดับ หรือค้นหาด้วยคำอื่น</p>
+                            <h3 className="font-bold text-zinc-800 text-base mb-1">
+                                {language === 'en' ? 'No matching best seller products found' : 'ไม่พบสินค้าขายดีที่ตรงกับเงื่อนไข'}
+                            </h3>
+                            <p className="text-xs text-zinc-400 mb-4">
+                                {language === 'en'
+                                    ? 'Try adjusting category filters, ranking tiers, or search keywords'
+                                    : 'ลองปรับตัวกรองหมวดหมู่ ระดับอันดับ หรือค้นหาด้วยคำอื่น'}
+                            </p>
                             <button
                                 onClick={() => {
                                     setSearch('');
@@ -368,7 +379,7 @@ function BestSellingContent() {
                                 className="inline-flex items-center gap-1.5 text-amber-700 font-bold text-xs bg-amber-50 px-4 py-2 rounded-xl hover:bg-amber-100 transition-colors cursor-pointer"
                             >
                                 <RefreshCwIcon className="w-3.5 h-3.5 shrink-0" />
-                                <span>ล้างตัวกรองทั้งหมด</span>
+                                <span>{language === 'en' ? 'Clear all filters' : 'ล้างตัวกรองทั้งหมด'}</span>
                             </button>
                         </div>
                     ) : (
@@ -396,7 +407,7 @@ function BestSellingContent() {
                                         ? 'text-zinc-300 border-zinc-100 cursor-not-allowed'
                                         : 'text-zinc-600 hover:bg-zinc-50'
                                 }`}
-                                aria-label="หน้าก่อนหน้า"
+                                aria-label="Previous Page"
                             >
                                 &lt;
                             </button>
@@ -428,7 +439,7 @@ function BestSellingContent() {
                                         ? 'text-zinc-300 border-zinc-100 cursor-not-allowed'
                                         : 'text-zinc-600 hover:bg-zinc-50'
                                 }`}
-                                aria-label="หน้าถัดไป"
+                                aria-label="Next Page"
                             >
                                 &gt;
                             </button>
@@ -445,7 +456,7 @@ export default function BestSellingPage() {
         <div className="min-h-screen bg-[#f8f9fa] flex flex-col">
             <Header />
             <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1">
-                <Suspense fallback={<div className="text-center py-20 text-zinc-400">กำลังโหลดสินค้าขายดี...</div>}>
+                <Suspense fallback={<div className="text-center py-20 text-zinc-400">Loading...</div>}>
                     <BestSellingContent />
                 </Suspense>
             </main>

@@ -236,16 +236,20 @@ function ProductsContent() {
                 <div className="flex justify-center mb-4 text-zinc-300">
                     <TagIcon className="w-16 h-16" />
                 </div>
-                <h2 className="text-xl font-bold text-zinc-800 mb-2">ไม่พบหมวดหมู่สินค้า</h2>
+                <h2 className="text-xl font-bold text-zinc-800 mb-2">
+                    {language === 'en' ? 'Category Not Found' : 'ไม่พบหมวดหมู่สินค้า'}
+                </h2>
                 <p className="text-sm text-zinc-400 mb-6">
-                    หมวดหมู่ &quot;{categoryParam}&quot; ไม่มีในระบบ หรืออาจถูกปรับเปลี่ยนไปแล้ว
+                    {language === 'en'
+                        ? `Category "${categoryParam}" was not found or has been modified.`
+                        : `หมวดหมู่ "${categoryParam}" ไม่มีในระบบ หรืออาจถูกปรับเปลี่ยนไปแล้ว`}
                 </p>
                 <button
-                    onClick={() => handleSelectCategory('เครื่องดื่ม')}
+                    onClick={() => handleSelectCategory(categories[0]?.name || 'เครื่องดื่ม')}
                     className="inline-flex items-center gap-2 bg-[#0060df] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#0051bc] transition-all shadow-md text-sm cursor-pointer"
                 >
                     <CategoryIcon icon="beverages" className="w-4 h-4 text-white" />
-                    <span>ดูหมวดหมู่เครื่องดื่ม</span>
+                    <span>{language === 'en' ? 'Browse All Categories' : 'ดูหมวดหมู่สินค้า'}</span>
                 </button>
             </div>
         );
@@ -554,7 +558,7 @@ export default function ProductsPage() {
         <div className="min-h-screen bg-[#f8f9fa] flex flex-col">
             <Header />
             <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1">
-                <Suspense fallback={<div className="text-center py-20 text-zinc-400">กำลังโหลดสินค้า...</div>}>
+                <Suspense fallback={<div className="text-center py-20 text-zinc-400">Loading...</div>}>
                     <ProductsContent />
                 </Suspense>
             </main>

@@ -7,25 +7,30 @@ import { Product, Category, OrderStatus, PaymentStatus } from "@/types";
 
 interface LanguageState {
   language: Language;
+  hydrated: boolean;
+  hydrate: () => void;
   setLanguage: (lang: Language) => void;
   t: (key: string, params?: Record<string, string | number>) => string;
 }
 
 const STORAGE_KEY = "xmart_language";
 
-function getInitialLanguage(): Language {
-  if (typeof window === "undefined") return "th";
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === "th" || saved === "en") return saved;
-  } catch {
-    // fallback
-  }
-  return "th";
-}
-
 export const useLanguageStore = create<LanguageState>((set, get) => ({
-  language: typeof window !== "undefined" ? getInitialLanguage() : "th",
+  language: "th",
+  hydrated: false,
+  hydrate: () => {
+    if (typeof window === "undefined") return;
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === "th" || saved === "en") {
+        set({ language: saved, hydrated: true });
+        return;
+      }
+    } catch {
+      // ignore
+    }
+    set({ hydrated: true });
+  },
   setLanguage: (lang: Language) => {
     try {
       if (typeof window !== "undefined") {
@@ -53,16 +58,10 @@ export function useTranslation() {
   const language = useLanguageStore(s => s.language);
   const setLanguage = useLanguageStore(s => s.setLanguage);
   const t = useLanguageStore(s => s.t);
+  const hydrate = useLanguageStore(s => s.hydrate);
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if ((saved === "th" || saved === "en") && saved !== language) {
-        useLanguageStore.setState({ language: saved });
-      }
-    } catch {
-      // ignore
-    }
+    hydrate();
 
     const onStorage = (e: StorageEvent) => {
       if (e.key === STORAGE_KEY && (e.newValue === "th" || e.newValue === "en")) {
@@ -71,7 +70,7 @@ export function useTranslation() {
     };
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
-  }, [language]);
+  }, [hydrate]);
 
   return {
     language,

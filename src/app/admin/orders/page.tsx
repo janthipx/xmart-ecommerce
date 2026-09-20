@@ -258,8 +258,8 @@ export default function AdminOrdersPage() {
                                         ) : (
                                             <span className="inline-flex items-center gap-1"><SmartphoneIcon className="w-4 h-4 text-blue-600" /> QR</span>
                                         )} —
-                                        <span className={selected.paymentStatus === 'PAID' ? ' text-green-600' : ' text-orange-500'}>
-                                            {selected.paymentStatus === 'PAID' ? ' ชำระแล้ว' : ' รอชำระ'}
+                                        <span className={(selected.paymentStatus === 'PAID' || (selected.paymentMethod === 'CASH' && selected.orderStatus === 'DELIVERED')) ? ' text-green-600' : ' text-orange-500'}>
+                                            {(selected.paymentStatus === 'PAID' || (selected.paymentMethod === 'CASH' && selected.orderStatus === 'DELIVERED')) ? ' ชำระแล้ว' : ' รอชำระ'}
                                         </span>
                                     </p>
                                 </div>

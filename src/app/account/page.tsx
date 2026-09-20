@@ -8,10 +8,12 @@ import { useEffect, useState } from "react";
 import { Order } from "@/types";
 import { STATUS_LABELS } from "@/lib/order-status";
 import { OrderIcon, OrderStatusIcon } from "@/components/icons";
+import { useTranslation, getOrderStatusLabel, getPaymentStatusLabel } from "@/lib/i18n";
 
 export default function AccountPage() {
     const { user, logout } = useAuthStore();
     const router = useRouter();
+    const { language, t } = useTranslation();
     const [orders, setOrders] = useState<Order[]>([]);
 
     useEffect(() => {
@@ -93,26 +95,40 @@ export default function AccountPage() {
                                             <p className="text-xs text-zinc-400">{new Date(order.createdAt).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
                                         </div>
                                         <div className="flex items-center gap-1.5 flex-wrap justify-end">
-                                            {order.orderStatus === 'CANCELLED' ? (
-                                                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-600">
-                                                    ยกเลิกแล้ว
-                                                </span>
-                                            ) : order.paymentStatus === 'PAID' ? (
-                                                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-green-100 text-green-700">
-                                                    ชำระเงินแล้ว
-                                                </span>
-                                            ) : order.paymentMethod === 'PROMPTPAY' ? (
-                                                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-600">
-                                                    รอชำระเงิน
-                                                </span>
-                                            ) : (
-                                                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-600">
-                                                    เงินสดปลายทาง
-                                                </span>
-                                            )}
+                                            {(() => {
+                                                const isCashDelivered = order.paymentMethod === 'CASH' && order.orderStatus === 'DELIVERED';
+                                                const isPaid = order.paymentStatus === 'PAID' || isCashDelivered;
+
+                                                if (order.orderStatus === 'CANCELLED') {
+                                                    return (
+                                                        <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-600">
+                                                            {language === 'en' ? 'Cancelled' : 'ยกเลิกแล้ว'}
+                                                        </span>
+                                                    );
+                                                }
+                                                if (isPaid) {
+                                                    return (
+                                                        <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-green-100 text-green-700">
+                                                            {getPaymentStatusLabel('PAID', language)}
+                                                        </span>
+                                                    );
+                                                }
+                                                if (order.paymentMethod === 'PROMPTPAY') {
+                                                    return (
+                                                        <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-600">
+                                                            {getPaymentStatusLabel('PENDING', language)}
+                                                        </span>
+                                                    );
+                                                }
+                                                return (
+                                                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-600">
+                                                        {language === 'en' ? 'Cash on Delivery (COD)' : 'เงินสดปลายทาง'}
+                                                    </span>
+                                                );
+                                            })()}
                                             <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full shrink-0 inline-flex items-center gap-1 ${order.orderStatus === 'DELIVERED' ? 'bg-green-100 text-green-700' : order.orderStatus === 'CANCELLED' ? 'bg-red-100 text-red-600' : 'bg-blue-100 text-blue-700'}`}>
                                                 <OrderStatusIcon status={order.orderStatus} className="w-3 h-3" />
-                                                <span>{STATUS_LABELS[order.orderStatus]}</span>
+                                                <span>{getOrderStatusLabel(order.orderStatus, language)}</span>
                                             </span>
                                         </div>
                                     </div>

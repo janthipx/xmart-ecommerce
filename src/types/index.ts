@@ -78,6 +78,7 @@ export interface Order {
   paymentStatus: PaymentStatus;
   orderStatus: OrderStatus;
   statusUpdatedAt?: string;
+  paidAt?: string;
   delivery?: {
     driverName: string;
     driverPhone: string;

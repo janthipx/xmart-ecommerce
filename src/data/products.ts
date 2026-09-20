@@ -25,7 +25,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 8,
         "promotionPrice": 7,
         "isPromotion": true,
-        "promotionLabel": "ราคาพิเศษ"
+        "promotionLabel": "ราคาพิเศษ",
+        "nameTh": "มาม่า บะหมี่กึ่งสำเร็จรูป รสต้มยำกุ้ง 55g",
+        "nameEn": "Mama Instant Noodles Tom Yum Kung Flavor 55g",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "บะหมี่กึ่งสำเร็จรูปรสต้มยำกุ้งยอดนิยม ซุปเข้มข้นถึงเครื่องต้มยำแท้ เส้นเหนียวนุ่ม อร่อยทุกคำ",
+        "descriptionEn": "Popular spicy and sour shrimp tom yum instant noodles, rich authentic broth and springy noodles."
     },
     {
         "id": "p2",
@@ -39,7 +45,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 100,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "มาม่า บะหมี่กึ่งสำเร็จรูป รสหมูสับ 55g",
+        "nameEn": "Mama Instant Noodles Minced Pork Flavor 55g",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "รสชาติคลาสสิกที่ทุกคนคุ้นเคย น้ำซุปหมูสับหอมกรุ่น กลมกล่อม เส้นนุ่มละมุนลิ้น",
+        "descriptionEn": "Classic comforting minced pork flavor instant noodles with aromatic mild broth and soft noodles."
     },
     {
         "id": "p3",
@@ -56,7 +68,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 245,
         "promotionPrice": 215,
         "isPromotion": true,
-        "promotionLabel": "ลด 12%"
+        "promotionLabel": "ลด 12%",
+        "nameTh": "ข้าวหอมมะลิ 100% ตราหงษ์ทอง 5 กก.",
+        "nameEn": "Golden Phoenix 100% Jasmine Rice 5kg",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "ข้าวหอมมะลิแท้คัดพิเศษ เมล็ดเรียวยาว หุงขึ้นหม้อ นุ่มเหนียวกำลังดี กลิ่นหอมธรรมชาติ",
+        "descriptionEn": "Premium selected Thai Hom Mali jasmine rice, tender texture and naturally fragrant aroma."
     },
     {
         "id": "p4",
@@ -70,7 +88,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ไข่ไก่สด เบอร์ 2 แพ็ค 10 ฟอง",
+        "nameEn": "Fresh Chicken Eggs No. 2 (Pack of 10)",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "ไข่ไก่สดคัดคุณภาพจากฟาร์มมาตรฐาน สะอาด ปลอดภัย อุดมด้วยโปรตีนและสารอาหารจำเป็น",
+        "descriptionEn": "Farm-fresh quality grade 2 hen eggs, cleaned and hygienically packed, high in natural protein."
     },
     {
         "id": "p5",
@@ -84,7 +108,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำปลาแท้ ตราทิพรส 700 มล.",
+        "nameEn": "Tiparos Pure Fish Sauce 700ml",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "น้ำปลาแท้คุณภาพอันดับหนึ่ง หมักจากปลากะตักสดตามธรรมชาติ กลิ่นหอม รสชาติเค็มกลมกล่อม",
+        "descriptionEn": "Traditional Thai fish sauce made from quality anchovies, naturally fermented for rich umami flavor."
     },
     {
         "id": "p22",
@@ -101,7 +131,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 139,
         "promotionPrice": 119,
         "isPromotion": true,
-        "promotionLabel": "ลด 14%"
+        "promotionLabel": "ลด 14%",
+        "nameTh": "น้ำจิ้มสุกี้ กวางตุ้ง พันท้ายนรสิงห์ 330g",
+        "nameEn": "Pantai Norasingh Cantonese Suki Sauce 330g",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "น้ำจิ้มสุกี้สูตรกวางตุ้งยอดนิยม รสชาติเข้มข้น หอมกลิ่นงาขาวคั่ว ครบรสเปรี้ยว หวาน เค็ม เผ็ด",
+        "descriptionEn": "Authentic Cantonese sukiyaki dipping sauce with roasted sesame and chili, rich and mildly spicy."
     },
     {
         "id": "p23",
@@ -115,7 +151,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 80,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำตาลทรายขาวบริสุทธิ์ มิตรผล 1 กก.",
+        "nameEn": "Mitr Phol Pure Refined White Sugar 1kg",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "น้ำตาลทรายขาวบริสุทธิ์จากอ้อยธรรมชาติ เกล็ดขาวสะอาด ละลายง่าย เหมาะสำหรับทำอาหารและขนม",
+        "descriptionEn": "100% pure refined white cane sugar, crystal clean, dissolves easily for cooking and beverages."
     },
     {
         "id": "p-food-008",
@@ -129,7 +171,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 90,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ปลากระป๋องในซอสมะเขือเทศ สามแม่ครัว 155g",
+        "nameEn": "Three Lady Cooks Canned Sardines in Tomato Sauce 155g",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "ปลาซาร์ดีนเนื้อแน่นในซอสมะเขือเทศเข้มข้น รสชาติกลมกล่อม สะอาด ผ่านการฆ่าเชื้อด้วยระบบสเตอริไลซ์",
+        "descriptionEn": "High quality sardines simmered in rich tomato sauce, packed with calcium and omega-3."
     },
     {
         "id": "p-food-009",
@@ -143,7 +191,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 75,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำมันถั่วเหลือง องุ่น 1 ลิตร",
+        "nameEn": "Angoon Pure Soybean Cooking Oil 1L",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "น้ำมันพืชสกัดจากถั่วเหลือง 100% ไม่เป็นไข ไม่มีคอเลสเตอรอล เหมาะสำหรับผัดและทอดอาหารทุกชนิด",
+        "descriptionEn": "100% refined soybean cooking oil, heart-healthy and odorless, ideal for frying and stir-frying."
     },
     {
         "id": "p-food-010",
@@ -157,7 +211,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ซอสหอยนางรม ตราแม่ครัว 600 มล.",
+        "nameEn": "Mae Krua Oyster Sauce 600ml",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "ซอสหอยนางรมแท้สูตรดั้งเดิม ผลิตจากหอยนางรมสด คัดสรรอย่างดี รสชาติกลมกล่อมหอมอร่อย",
+        "descriptionEn": "Original Thai oyster sauce made from real oyster extract, adds savory gloss and rich umami to dishes."
     },
     {
         "id": "p-food-011",
@@ -171,7 +231,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 85,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "คนอร์ คัพโจ๊ก รสหมู 35g",
+        "nameEn": "Knorr Cup Joke Instant Rice Porridge Pork Flavor 35g",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "โจ๊กกึ่งสำเร็จรูปรสหมู ทำจากข้าวหอมมะลิแท้ มีวิตามินบี 1, 3, 6 สูง อิ่มอร่อยง่ายๆ ใน 2 นาที",
+        "descriptionEn": "Smooth jasmine rice porridge cup with real dried pork and scallions, ready in 2 minutes."
     },
     {
         "id": "p-food-012",
@@ -185,7 +251,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ซอสพริก ศรีราชาพานิช เผ็ดกลาง 230g",
+        "nameEn": "Sriraja Panich Medium Hot Chili Sauce 230g",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "ซอสพริกศรีราชาสูตรดั้งเดิม รสชาติเผ็ดกำลังดี เปรี้ยวหวานกลมกล่อม ไม่ใส่วัตถุกันเสีย",
+        "descriptionEn": "Legendary authentic Sriracha chili sauce, balanced sweet, sour and spicy flavor."
     },
     {
         "id": "p-food-013",
@@ -199,7 +271,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ซีอิ๊วขาวเห็ดหอม เด็กสมบูรณ์ 600 มล.",
+        "nameEn": "Healthy Boy Shiitake Mushroom Light Soy Sauce 600ml",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "ซีอิ๊วขาวสูตรพิเศษผสมสารสกัดเห็ดหอมธรรมชาติ ให้กลิ่นหอมชวนรับประทาน เพิ่มรสชาติให้อาหารจานโปรด",
+        "descriptionEn": "Naturally brewed light soy sauce infused with fragrant shiitake mushrooms, vegan and flavorful."
     },
     {
         "id": "p-food-014",
@@ -213,7 +291,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 65,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "วุ้นเส้นถั่วเขียว ตราต้นสน 100g",
+        "nameEn": "Double Pine Mung Bean Glass Noodles 100g",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "วุ้นเส้นผลิตจากถั่วเขียวชั้นดี เส้นเหนียวนุ่ม ไม่อืด ไม่เละ เหมาะสำหรับยำ ผัด ต้มจืด และชาบู",
+        "descriptionEn": "100% premium mung bean vermicelli noodles, chewy and springy, stays intact when boiled or stir-fried."
     },
     {
         "id": "p-food-015",
@@ -227,7 +311,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ทูน่าสเต็กในน้ำแร่ ซีเล็คทูน่า 165g",
+        "nameEn": "SEALECT Tuna Steak in Spring Water 165g",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "เนื้อปลาทูน่าแท้ชิ้นใหญ่ แคลอรีต่ำ อุดมด้วยโปรตีนและโอเมก้า 3 ไม่มีวัตถุกันเสีย",
+        "descriptionEn": "Premium solid white tuna steak in natural spring water, low sodium and high in lean protein."
     },
     {
         "id": "p-food-016",
@@ -241,7 +331,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 90,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เกลือบริสุทธิ์เสริมไอโอดีน ปรุงทิพย์ 500g",
+        "nameEn": "Prung Thip Iodized Refined Table Salt 500g",
+        "categoryNameTh": "อาหาร",
+        "categoryNameEn": "Food & Groceries",
+        "descriptionTh": "เกลือแกงบริสุทธิ์ 99.9% ขาวสะอาด เมล็ดละเอียด ไม่ชื้นง่าย เสริมไอโอดีนป้องกันโรคคอพอก",
+        "descriptionEn": "Ultra-fine refined table salt fortified with essential iodine, moisture-resistant and clean."
     },
     {
         "id": "p-drink-1",
@@ -258,7 +354,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 18,
         "promotionPrice": 15,
         "isPromotion": true,
-        "promotionLabel": "ราคาพิเศษ"
+        "promotionLabel": "ราคาพิเศษ",
+        "nameTh": "น้ำดื่มคริสตัล 600 มล.",
+        "nameEn": "Crystal Drinking Water 600ml",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "น้ำดื่มคุณภาพมาตรฐานระดับสากล สะอาด บริสุทธิ์ ผ่านการกรอง RO และฆ่าเชื้อด้วย UV และโอโซน",
+        "descriptionEn": "Pure and crystal clean bottled drinking water certified by NSF international standards."
     },
     {
         "id": "p-drink-2",
@@ -272,7 +374,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 120,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "โค้ก ออริจินัล 325 มล.",
+        "nameEn": "Coca-Cola Original Taste 325ml Can",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "โคคา-โคล่า รสชาติออริจินัล เย็นสดชื่น ซ่าสะใจ ดับกระหายได้ทุกช่วงเวลา",
+        "descriptionEn": "The classic refreshing sparkling cola beverage, best served ice-cold."
     },
     {
         "id": "p-drink-3",
@@ -289,7 +397,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 20,
         "promotionPrice": 16,
         "isPromotion": true,
-        "promotionLabel": "ลดพิเศษ"
+        "promotionLabel": "ลดพิเศษ",
+        "nameTh": "เป๊ปซี่ ออริจินัล 325 มล.",
+        "nameEn": "Pepsi Original Cola 325ml Can",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "เป๊ปซี่ ซ่า สดชื่น เต็มรสชาติโคล่าเข้มข้น ดื่มคู่กับมื้ออาหารอร่อยลงตัว",
+        "descriptionEn": "Refreshing crisp cola with bold carbonation and sweet burst of classic flavor."
     },
     {
         "id": "p-drink-4",
@@ -303,7 +417,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 90,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "อิชิตัน ชาเขียว รสต้นตำรับ 500 มล.",
+        "nameEn": "Ichitan Green Tea Original Flavor 500ml",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "ชาเขียวพร้อมดื่ม รสชาติต้นตำรับ หอมกรุ่นใบชาธรรมชาติ สดชื่นดีต่อสุขภาพ",
+        "descriptionEn": "Brewed from organic green tea leaves, naturally sweet and aromatic taste."
     },
     {
         "id": "p-drink-5",
@@ -317,7 +437,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 100,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "นมจืดไทยเดนมาร์ค UHT 180 มล.",
+        "nameEn": "Thai-Denmark 100% UHT Plain Milk 180ml",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "นมโคแท้ 100% ไม่ผสมนมผง อุดมด้วยแคลเซียมและโปรตีนธรรมชาติ เสริมสร้างกระดูกแข็งแรง",
+        "descriptionEn": "100% pure cow's milk from Thai-Danish dairy farms, rich calcium and no added powdered milk."
     },
     {
         "id": "p-drink-6",
@@ -331,7 +457,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เนสกาแฟ เบลนด์ แอนด์ บรู ริช อโรมา (แพ็ค 27 ซอง)",
+        "nameEn": "Nescafe Blend & Brew Rich Aroma (Pack of 27 Sticks)",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "เนสกาแฟผสมกาแฟคั่วบดละเอียด รสชาติกลมกล่อม หอมกรุ่น อร่อยลงตัวทุกแก้ว",
+        "descriptionEn": "Instant 3-in-1 coffee blended with finely ground roasted coffee beans, rich and aromatic."
     },
     {
         "id": "p-drink-7",
@@ -345,7 +477,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 75,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เรดบูล เอเนอร์จี้ดริงก์ 250 มล.",
+        "nameEn": "Red Bull Energy Drink European Edition 250ml",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "เครื่องดื่มชูกำลังระดับพรีเมียม เพิ่มความสดชื่น กระปรี้กระเปร่า ปลุกพลังพร้อมลุยงาน",
+        "descriptionEn": "World-renowned carbonated energy drink, revitalizes body and mind with taurine and B-vitamins."
     },
     {
         "id": "p-drink-8",
@@ -359,7 +497,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "นมพาสเจอร์ไรส์ ดัชมิลล์ ซีเล็คเต็ด รสจืด 400 มล.",
+        "nameEn": "Dutch Mill Selected Pasteurized Plain Milk 400ml",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "นมพาสเจอร์ไรส์รสจืด ผลิตจากน้ำนมโคคุณภาพ สดใหม่ หอมมันธรรมชาติ ดื่มง่าย",
+        "descriptionEn": "Fresh pasteurized whole milk, rich and creamy texture with essential nutrients."
     },
     {
         "id": "p6",
@@ -376,7 +520,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 65,
         "promotionPrice": 55,
         "isPromotion": true,
-        "promotionLabel": "ราคาพิเศษ"
+        "promotionLabel": "ราคาพิเศษ",
+        "nameTh": "น้ำดื่มสิงห์ 1.5 ลิตร (แพ็ค 6 ขวด)",
+        "nameEn": "Singha Drinking Water 1.5L (Pack of 6 Bottles)",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "น้ำดื่มสะอาดสิงห์ ผ่านการกรองด้วยเทคโนโลยี Smart Micro Filter สะอาด ปลอดภัย คงคุณค่าแร่ธาตุ",
+        "descriptionEn": "Clean drinking water purified with microfiltration and ozone technology, value pack."
     },
     {
         "id": "p7",
@@ -390,7 +540,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กาแฟปรุงสำเร็จ เขาช่อง คอนเดนซ์มิลค์ (แพ็ค 25 ซอง)",
+        "nameEn": "Khao Shong Condensed Milk Coffee (Pack of 25 Sticks)",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "กาแฟเขาช่องรสชาตินมข้น หวานมัน กลมกล่อม กลิ่นหอมกาแฟแท้คั่วสดตามแบบฉบับไทย",
+        "descriptionEn": "Traditional Thai-style sweet and creamy coffee with condensed milk flavor."
     },
     {
         "id": "p8",
@@ -404,7 +560,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 55,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "นมโฟร์โมสต์ รสช็อกโกแลต 225 มล. (แพ็ค 6 กล่อง)",
+        "nameEn": "Foremost Chocolate Milk 225ml (Pack of 6 Cartons)",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "นมโคผสมช็อกโกแลตเข้มข้น หอม อร่อย ได้สารอาหารและแคลเซียมสูง เหมาะสำหรับทุกคนในครอบครัว",
+        "descriptionEn": "Delicious chocolate flavored cow's milk enriched with 9 essential vitamins and minerals."
     },
     {
         "id": "p-drink-012",
@@ -418,7 +580,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 80,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "นมถั่วเหลือง ไวตามิ้ลค์ ทูโก ออริจินัล 300 มล.",
+        "nameEn": "Vitamilk To Go Original Soy Milk 300ml Glass Bottle",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "น้ำนมถั่วเหลืองสูตรต้นตำรับ โปรตีนจากธรรมชาติ อิ่มสบายท้อง พกพาสะดวกพร้อมดื่ม",
+        "descriptionEn": "High-protein soy milk made from whole soybeans, rich and creamy on-the-go nourishment."
     },
     {
         "id": "p-drink-013",
@@ -432,7 +600,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 95,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เครื่องดื่มชูกำลัง M-150 ขนาด 150 มล.",
+        "nameEn": "M-150 Energy Drink 150ml Glass Bottle",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "เครื่องดื่มให้พลังงาน ผสมวิตามินบี 3, บี 6, บี 12 เติมความสดชื่นกระฉับกระเฉง พร้อมสู้งาน",
+        "descriptionEn": "Popular Thai energy drink packed with vitamins B3, B5, B6 and taurine for instant alertness."
     },
     {
         "id": "p-drink-014",
@@ -446,7 +620,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 120,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำแร่ธรรมชาติ มิเนเร่ 500 มล.",
+        "nameEn": "Minere 100% Natural Mineral Water 500ml",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "น้ำแร่ธรรมชาติ 100% จากแหล่งน้ำใต้ดินธรรมชาติ สะอาด บริสุทธิ์ อุดมด้วยแร่ธาตุจำเป็นต่อร่างกาย",
+        "descriptionEn": "Natural mineral water sourced from deep underground springs in Thailand."
     },
     {
         "id": "p-drink-015",
@@ -460,7 +640,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 70,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ชาเขียว โออิชิ รสข้าวญี่ปุ่น 500 มล.",
+        "nameEn": "Oishi Green Tea Genmaicha Japanese Roasted Rice 500ml",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "ชาเขียวแท้ต้มสดจากยอดอ่อนใบชา ผสมข้าวญี่ปุ่นคั่วหอมกรุ่น หวานน้อย สดชื่นละมุนใจ",
+        "descriptionEn": "Authentic Japanese green tea infused with fragrant roasted brown rice grains."
     },
     {
         "id": "p-drink-016",
@@ -474,7 +660,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 65,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เครื่องดื่ม มอลต์สกัด โอวัลติน 3in1 (แพ็ค 5 ซอง)",
+        "nameEn": "Ovaltine 3-in-1 Malt Chocolate Drink (Pack of 5 Sticks)",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "โอวัลตินสูตรช็อกโกแลตมอลต์ อุดมด้วยวิตามินและสารอาหาร 15 ชนิด หอม อร่อย มีประโยชน์ทุกเช้า",
+        "descriptionEn": "Nutritious malt and cocoa beverage packed with vitamins and minerals for active lifestyles."
     },
     {
         "id": "p-drink-017",
@@ -488,7 +680,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แบรนด์ ซุปไก่สกัด สูตรต้นตำรับ 42 มล.",
+        "nameEn": "BRAND'S Essence of Chicken Original 42ml",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "ซุปไก่สกัดเข้มข้นสูตรดั้งเดิม ดูดซึมง่าย มีโปรตีนและเปปไทด์ บำรุงร่างกายและสมอง เหมาะกับทุกวัย",
+        "descriptionEn": "Traditional natural essence of chicken extract, clinically researched for cognitive wellness."
     },
     {
         "id": "p-drink-018",
@@ -502,7 +700,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 90,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กาแฟกระป๋องพร้อมดื่ม เบอร์ดี้ โรบัสต้า 180 มล.",
+        "nameEn": "Birdy Robusta Canned Iced Coffee 180ml",
+        "categoryNameTh": "เครื่องดื่ม",
+        "categoryNameEn": "Beverages",
+        "descriptionTh": "กาแฟกระป๋องยอดนิยม รสชาติเข้มข้นเต็มเมล็ดกาแฟโรบัสต้า ตื่นเต็มตา เย็นชื่นใจทุกครั้งที่ดื่ม",
+        "descriptionEn": "Ready-to-drink canned iced coffee brewed from robusta beans, strong and awakening."
     },
     {
         "id": "p11",
@@ -519,7 +723,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 35,
         "promotionPrice": 29,
         "isPromotion": true,
-        "promotionLabel": "ลดพิเศษ"
+        "promotionLabel": "ลดพิเศษ",
+        "nameTh": "เลย์ มันฝรั่งทอดกรอบ รสคลาสสิค 50g",
+        "nameEn": "Lay's Classic Potato Chips 50g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "มันฝรั่งแท้ทอดกรอบแผ่นเรียบ รสชาติเค็มมันกลมกล่อม กรอบอร่อยเพลินทุกคำ ผลิตจากมันฝรั่งคุณภาพดี",
+        "descriptionEn": "Crispy thinly sliced golden potato chips lightly seasoned with pure sea salt."
     },
     {
         "id": "p12",
@@ -533,7 +743,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 70,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "โอรีโอ คุกกี้แซนวิช รสวานิลลา 133g",
+        "nameEn": "Oreo Vanilla Creme Sandwich Cookies 133g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "คุกกี้ช็อกโกแลตสอดไส้ครีมรสวานิลลา บิด ชิมครีม จุ่มนม อร่อยเข้มข้นลงตัว",
+        "descriptionEn": "Rich chocolate sandwich cookies filled with smooth, sweet vanilla cream."
     },
     {
         "id": "p13",
@@ -547,7 +763,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ยูโร่เค้ก พัฟเค้กสอดไส้ครีมคัสตาร์ด กล่อง 6 ชิ้น",
+        "nameEn": "Euro Custard Cake Puff with Custard Cream (Box of 6)",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "พัฟเค้กเนื้อนุ่ม หวานละมุน สอดไส้ครีมคัสตาร์ดเข้มข้น หอม อร่อย รองท้องได้ทุกเวลา",
+        "descriptionEn": "Soft sponge puff cake filled with luscious sweet custard cream."
     },
     {
         "id": "p14",
@@ -564,7 +786,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 30,
         "promotionPrice": 25,
         "isPromotion": true,
-        "promotionLabel": "ราคาพิเศษ"
+        "promotionLabel": "ราคาพิเศษ",
+        "nameTh": "ช็อกโกแลต คิทแคท 4 ฟิงเกอร์ 35g",
+        "nameEn": "KitKat 4-Finger Milk Chocolate Wafer 35g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "เวเฟอร์กรุบกรอบเคลือบช็อกโกแลตนมเข้มข้น คิดจะพัก คิดถึงคิทแคท อร่อยถูกใจ",
+        "descriptionEn": "Crispy baked wafer bars enrobed in smooth milk chocolate. Have a break, have a KitKat."
     },
     {
         "id": "p-snack-005",
@@ -578,7 +806,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 75,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กูลิโกะ ป๊อกกี้ บิสกิตแท่งเคลือบช็อกโกแลต 45g",
+        "nameEn": "Glico Pocky Chocolate Biscuit Sticks 45g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "บิสกิตแท่งกรอบเคลือบช็อกโกแลตเนียนนุ่ม รสชาติหวานมันเข้มข้น ทานง่าย ไม่เลอะมือ",
+        "descriptionEn": "Crisp pretzel biscuit sticks dipped in rich creamy milk chocolate."
     },
     {
         "id": "p-snack-006",
@@ -592,7 +826,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 90,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เบนโตะ ปลาหมึกอบทรงเครื่อง รสเผ็ดจัด 20g",
+        "nameEn": "Bento Sweet & Spicy Squid Snack Super Hot 20g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "ปลาหมึกอบทรงเครื่องรสเผ็ดจัดจ้าน อร่อยเด็ด เผ็ดร้อนถึงใจ ขนมขบเคี้ยวยอดฮิต",
+        "descriptionEn": "Spicy seasoned squid sheet snack with intense Thai chili heat and chewy texture."
     },
     {
         "id": "p-snack-007",
@@ -606,7 +846,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 80,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ทาโร่ ปลาสวรรค์ รสเข้มข้น 52g",
+        "nameEn": "Taro Fish Snack Intense Flavor 52g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "ปลาสวรรค์เส้นทาโร่ ทำจากเนื้อปลาทะเลแท้ มีโปรตีน ไขมันต่ำ เคี้ยวเพลิน อร่อยเข้มข้น",
+        "descriptionEn": "Savory dried fish snack strips seasoned with signature barbecue spices, high protein."
     },
     {
         "id": "p-snack-008",
@@ -620,7 +866,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ฮานามิ ข้าวเกรียบรวยเพื่อน รสดั้งเดิม 60g",
+        "nameEn": "Hanami Prawn Cracker Snack Original Flavor 60g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "ข้าวเกรียบกุ้งกรอบอร่อยรสต้นตำรับ เคี้ยวกรุบกรอบ หอมกลิ่นกุ้งแท้ ขนมในตำนานที่ครองใจคนไทย",
+        "descriptionEn": "Crispy fried prawn flavored snack sticks, light and savory."
     },
     {
         "id": "p-snack-009",
@@ -634,7 +886,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 55,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ตะวัน ข้าวเกรียบ รสกุ้งกรอบ 56g",
+        "nameEn": "Tawan Crispy Prawn Crackers 56g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "ข้าวเกรียบทรงสามเหลี่ยมกรอบฟู รสกุ้งเข้มข้น เคี้ยวเพลินได้ทุกช่วงเวลาพักผ่อน",
+        "descriptionEn": "Square ridged crispy crackers packed with rich garlic and shrimp flavor."
     },
     {
         "id": "p-snack-010",
@@ -648,7 +906,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กูลิโกะ โคลอน บิสกิตสอดไส้ครีมวานิลลา 47g",
+        "nameEn": "Glico Collon Vanilla Cream Biscuit Rolls 47g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "เวเฟอร์โรลกรุบกรอบสอดไส้ครีมวานิลลาหอมหวาน กลมกล่อม อร่อยพอดีคำ",
+        "descriptionEn": "Crispy waffle biscuit rolls generously filled with fluffy sweet vanilla cream."
     },
     {
         "id": "p-snack-011",
@@ -662,7 +926,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "มโนห์รา ข้าวเกรียบเผือกกุ้ง 100g",
+        "nameEn": "Manora Fried Taro & Prawn Chips 100g Can",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "ข้าวเกรียบเผือกผสมกุ้งทอดกรอบ รสชาติเข้มข้น หอมกลิ่นพริกไทยและเครื่องเทศไทยแท้",
+        "descriptionEn": "Traditional Thai crispy prawn and taro crackers packed with savory pepper crunch."
     },
     {
         "id": "p-snack-012",
@@ -676,7 +946,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เม็ดมะม่วงหิมพานต์อบเกลือ ทองการ์เด้น 40g",
+        "nameEn": "Tong Garden Salted Roasted Cashew Nuts 40g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "เม็ดมะม่วงหิมพานต์คัดเกรดพรีเมียม อบกรอบเค็มมันกำลังดี อุดมด้วยไขมันดีและโปรตีน",
+        "descriptionEn": "Golden roasted jumbo cashew nuts lightly tossed in sea salt, nutritious and crunchy."
     },
     {
         "id": "p-snack-013",
@@ -690,7 +966,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 65,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "สาหร่ายทอดกรอบ เถ้าแก่น้อย รสคลาสสิค 32g",
+        "nameEn": "Tao Kae Noi Crispy Seaweed Classic Flavor 32g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "สาหร่ายทะเลแท้ทอดกรอบ รสกลมกล่อม กรอบอร่อยเต็มแผ่น หอมกลิ่นน้ำมันงาธรรมชาติ",
+        "descriptionEn": "Flash-fried crunchy seaweed sheets seasoned with savory spices."
     },
     {
         "id": "p-snack-014",
@@ -704,7 +986,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 100,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ลูกอม ฮอลล์ รสไอซ์ซี่สตรอเบอร์รี่ แผง 8 เม็ด",
+        "nameEn": "Halls Icy Strawberry Lozenges Stick (8 Drops)",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "ลูกอมเมนทอลกลิ่นสตรอเบอร์รี่ ชุ่มคอ สดชื่น เย็นสะใจ ลมหายใจหอมสดชื่น",
+        "descriptionEn": "Cooling strawberry flavored hard candy drops with soothing menthol."
     },
     {
         "id": "p-snack-015",
@@ -718,7 +1006,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "บิสชิน เวเฟอร์สอดไส้ครีมโกโก้ 100g",
+        "nameEn": "Bissin Cocoa Cream Filled Wafers 100g",
+        "categoryNameTh": "ขนม",
+        "categoryNameEn": "Snacks & Sweets",
+        "descriptionTh": "เวเฟอร์กรอบบางเบา สอดไส้ครีมช็อกโกแลตโกโก้เข้มข้น รสชาติหวานมัน อร่อยคู่กับชาหรือกาแฟ",
+        "descriptionEn": "Crisp layered wafers filled with rich dark cocoa cream."
     },
     {
         "id": "p15",
@@ -732,7 +1026,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 80,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "สบู่ก้อน โพรเทคส์ สูตรพรอพโพลิส 65g",
+        "nameEn": "Protex Propolis Antibacterial Bar Soap 65g",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "สบู่ก้อนแอนตี้แบคทีเรีย ผสมสารสกัดพรอพโพลิสจากธรรมชาติ ช่วยปกป้องกลิ่นกายและชำระล้างแบคทีเรีย 99.9%",
+        "descriptionEn": "Antibacterial beauty soap bar enriched with natural bee propolis extract."
     },
     {
         "id": "p16",
@@ -746,7 +1046,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แชมพู แพนทีน โปร-วี เดลี่ มอยซ์เจอร์ 410 มล.",
+        "nameEn": "Pantene Pro-V Daily Moisture Shampoo 410ml",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "แชมพูสูตรโปร-วิตามินเข้มข้น ช่วยฟื้นบำรุงผมแห้งเสีย ให้ผมนุ่มลื่น มีน้ำหนัก สุขภาพดีตั้งแต่โคนจรดปลาย",
+        "descriptionEn": "Pro-vitamin moisture renewal formula hydrates dry hair from root to tip."
     },
     {
         "id": "p17",
@@ -760,7 +1066,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ยาสีฟัน คอลเกต โททอล โปร คลีน 150g",
+        "nameEn": "Colgate Total Pro Clean Toothpaste 150g",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "ยาสีฟันสูตรแอนตี้แบคทีเรีย 12 ชั่วโมง ปกป้องฟันผุ ลดคราบพลัค ช่วยให้เหงือกแข็งแรง ลมหายใจหอมสดชื่น",
+        "descriptionEn": "12-hour antibacterial protection toothpaste with fluoride for healthy teeth and gums."
     },
     {
         "id": "p-care-004",
@@ -774,7 +1086,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 90,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "สบู่ก้อน พฤกษานกแก้ว กลิ่นพฤกษานานาพรรณ 105g",
+        "nameEn": "Parrot Botanical Floral Herbal Bar Soap 105g",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "สบู่พฤกษานกแก้วสีเขียวในตำนาน กลิ่นหอมสะอาดสดชื่นติดทนนาน อาบสะอาดสดชื่น ผ่อนคลายผิว",
+        "descriptionEn": "Legendary Thai botanical bar soap infused with unique blend of Thai floral essential oils."
     },
     {
         "id": "p-care-005",
@@ -788,7 +1106,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ครีมอาบน้ำ โชกุบุสซึ โมโนกาตาริ สูตรผิวเนียนนุ่ม 500 มล.",
+        "nameEn": "Shokubutsu Monogatari Nourishing Body Shower Cream 500ml",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "ครีมอาบน้ำสกัดจากพืชธรรมชาติ 99% อุดมด้วยมอยส์เจอร์ไรเซอร์ บำรุงผิวให้เนียนนุ่ม ชุ่มชื้น ไม่แห้งตึง",
+        "descriptionEn": "Japanese plant-based moisturizing shower cream with sweet almond milk."
     },
     {
         "id": "p-care-006",
@@ -802,7 +1126,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แชมพู เฮด แอนด์ โชว์เดอร์ สูตรคูลเมนทอล 410 มล.",
+        "nameEn": "Head & Shoulders Cool Menthol Anti-Dandruff Shampoo 410ml",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "แชมพูขจัดรังแคสูตรเย็นเมนทอล ให้ความรู้สึกเย็นสดชื่นทันทีที่สระ หนังศีรษะสะอาด ไร้รังแคมั่นใจตลอดวัน",
+        "descriptionEn": "Cooling menthol formula relieves scalp itch and removes up to 100% of visible dandruff."
     },
     {
         "id": "p-care-007",
@@ -816,7 +1146,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ครีมนวดผม ซันซิล สมูท แอนด์ เมเนจเจเบิ้ล 380 มล.",
+        "nameEn": "Sunsilk Smooth & Manageable Conditioner 380ml",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "ครีมนวดผมสีชมพูสูตรผมมีน้ำหนัก จัดทรงง่าย ไม่ชี้ฟู ผสานน้ำมันธรรมชาติ 5 ชนิด บำรุงลึกถึงแกนผม",
+        "descriptionEn": "Enriched with 5 natural oils to keep hair silky, fragrant and effortlessly manageable."
     },
     {
         "id": "p-care-008",
@@ -830,7 +1166,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 65,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แปรงสีฟัน ออรัลบี ครอสแอคชั่น แอนตี้แบคทีเรีย",
+        "nameEn": "Oral-B CrossAction Anti-Bacterial Toothbrush",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "ขนแปรงไขว้แบบพิเศษซอกซอนทำความสะอาดลึกถึงร่องฟัน ยับยั้งการเจริญเติบโตของแบคทีเรียบนขนแปรง",
+        "descriptionEn": "CrissCross angled bristles lift away plaque while silver ions inhibit bacterial growth on bristles."
     },
     {
         "id": "p-care-009",
@@ -844,7 +1186,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ยาสีฟัน เซ็นโซดายน์ เฟรช มินต์ ป้องกันเสียวฟัน 100g",
+        "nameEn": "Sensodyne Fresh Mint Sensitivity Toothpaste 100g",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "ยาสีฟันสำหรับผู้มีอาการเสียวฟัน ปกป้องลดการเสียวฟันอย่างตรงจุด รสมินต์สดชื่น ทำความสะอาดฟันอย่างอ่อนโยน",
+        "descriptionEn": "Clinically proven daily sensitivity relief with refreshing mint breath."
     },
     {
         "id": "p-care-010",
@@ -858,7 +1206,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "โลชั่นบำรุงผิว วาสลีน เฮลธี้ ไบรท์ ยูวี เอ็กซ์ตร้า 400 มล.",
+        "nameEn": "Vaseline Healthy Bright UV Extra Whitening Body Lotion 400ml",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "โลชั่นบำรุงผิวกายเพื่อผิวดูกระจ่างใสขึ้น ผสมวิตามินบี 3 และสารกันแดด Triple Sunscreen ซึมซาบเร็ว ไม่เหนียวเหนอะหนะ",
+        "descriptionEn": "Triple sunscreens and Vitamin B3 restore radiance to sun-damaged skin."
     },
     {
         "id": "p-care-011",
@@ -872,7 +1226,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 55,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "โรลออนระงับกลิ่นกาย เรโซนา แอดวานซ์ ไบรท์เทนนิ่ง 50 มล.",
+        "nameEn": "Rexona Advanced Brightening Roll-On Deodorant 50ml",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "โรลออนสูตรแห้งสบายยาวนาน 48 ชั่วโมง ปกป้องกลิ่นเหงื่อและกลิ่นกาย ให้ใต้วงแขนดูกระจ่างใสอย่างเป็นธรรมชาติ",
+        "descriptionEn": "48-hour sweat and odor protection with skin brightening sunflower seed oil."
     },
     {
         "id": "p-care-012",
@@ -886,7 +1246,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "โฟมล้างหน้า การ์นิเย่ สกิน แนทเชอรัลส์ ไบรท์ คอมพลีท 100 มล.",
+        "nameEn": "Garnier Skin Naturals Bright Complete Face Wash 100ml",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "โฟมล้างหน้าสูตรวิตามินซีบริสุทธิ์ ช่วยทำความสะอาดผิวหน้าล้ำลึก ผลัดเซลล์ผิวหมองคล้ำ ให้หน้าดูกระจ่างใสทันที",
+        "descriptionEn": "Enriched with pure Yuzu lemon extract to cleanse deeply and brighten dull skin."
     },
     {
         "id": "p-care-013",
@@ -900,7 +1266,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 80,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แป้งเย็น เภสัช กลิ่นมาดาม 100g",
+        "nameEn": "Bhaesaj Cooling Powder Madame Scent 100g",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "แป้งเย็นผสมเมนทอลและสารสกัดธรรมชาติ ให้ความเย็นสดชื่น สบายผิว ระงับผดผื่นคัน กลิ่นหอมคลาสสิก",
+        "descriptionEn": "Refreshing cooling talc powder with luxurious Madame French perfume fragrance."
     },
     {
         "id": "p-care-014",
@@ -914,7 +1286,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "มีดโกนหนวด ยิลเลตต์ บลู 3 คอมฟอร์ต (แพ็ค 3 ด้าม)",
+        "nameEn": "Gillette Blue3 Comfort Disposable Razors (Pack of 3)",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "มีดโกนหนวดระบบ 3 ใบมีด พร้อมแถบหล่อลื่นโกนลื่นสบายผิว ไม่ระคายเคือง ด้ามจับกระชับมือ",
+        "descriptionEn": "3 precision blades with lubrastrip for an ultra-smooth, irritation-free shave."
     },
     {
         "id": "p-care-015",
@@ -928,7 +1306,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำยาบ้วนปาก ลิสเตอรีน คูลมินต์ 500 มล.",
+        "nameEn": "Listerine Cool Mint Antiseptic Mouthwash 500ml",
+        "categoryNameTh": "ของใช้ส่วนตัว",
+        "categoryNameEn": "Personal Care",
+        "descriptionTh": "น้ำยาบ้วนปากสูตรลดแบคทีเรียในช่องปาก 99.9% ดูแลเหงือกและฟัน ลมหายใจสดชื่นยาวนาน",
+        "descriptionEn": "Kills up to 99.9% of germs that cause bad breath and plaque for 24-hour protection."
     },
     {
         "id": "p18",
@@ -945,7 +1329,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 169,
         "promotionPrice": 145,
         "isPromotion": true,
-        "promotionLabel": "ลด 14%"
+        "promotionLabel": "ลด 14%",
+        "nameTh": "ผงซักฟอก แอทแทค อีซี่ ซอฟท์ 1800g",
+        "nameEn": "Attack Easy Soft Concentrated Laundry Detergent Powder 1800g",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "ผงซักฟอกสูตรมาตรฐาน ละลายน้ำง่าย ขจัดคราบฝังลึกได้หมดจด หอมสะอาดสดชื่น ถนอมใยผ้า",
+        "descriptionEn": "Deep-cleaning enzyme laundry powder dissolves fast and leaves fabrics soft and fragrant."
     },
     {
         "id": "p19",
@@ -962,7 +1352,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 55,
         "promotionPrice": 47,
         "isPromotion": true,
-        "promotionLabel": "ราคาพิเศษ"
+        "promotionLabel": "ราคาพิเศษ",
+        "nameTh": "น้ำยาล้างจาน ซันไลต์ เลมอนเทอร์โบ 750 มล.",
+        "nameEn": "Sunlight Lemon Turbo Dishwashing Liquid 750ml",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "น้ำยาล้างจานสูตรเข้มข้น พลังมะนาวแท้ ขจัดคราบมันได้เร็วขึ้น 1.5 เท่า ล้างฟองออกง่าย สะอาดไร้กลิ่นคาว",
+        "descriptionEn": "Power-boosted lemon formula cuts through stubborn grease 5x faster."
     },
     {
         "id": "p20",
@@ -976,7 +1372,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 75,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กระดาษทิชชูม้วน สก๊อตต์ เอ็กซ์ตร้า แคร์ (แพ็ค 6 ม้วน)",
+        "nameEn": "Scott Extra Care Bathroom Tissue Rolls (Pack of 6)",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "กระดาษชำระ 2 ชั้น เหนียวนุ่ม ซึมซับดีเยี่ยม ไม่เป็นขุย ละลายน้ำได้ดี เป็นมิตรกับระบบสุขภัณฑ์",
+        "descriptionEn": "Soft 2-ply quilted bathroom tissue, absorbent and gentle on skin."
     },
     {
         "id": "p21",
@@ -990,7 +1392,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 85,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "หน้ากากอนามัย ทางการแพทย์ 3 ชั้น (กล่อง 50 ชิ้น)",
+        "nameEn": "Medical 3-Ply Protective Face Masks (Box of 50)",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "หน้ากากอนามัยมาตรฐานทางการแพทย์ กรองฝุ่น PM2.5 และแบคทีเรียได้ 99% สายคล้องหูไม่เจ็บ หายใจสะดวก",
+        "descriptionEn": "Certified 3-ply surgical masks with high bacterial filtration efficiency (BFE >= 99%)."
     },
     {
         "id": "p-home-005",
@@ -1004,7 +1412,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำยาปรับผ้านุ่ม ดาวน์นี่ พรีเมียม เพอร์ฟูม มิสทีค 500 มล.",
+        "nameEn": "Downy Premium Parfum Fabric Softener Mystique 500ml Refill",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "น้ำยาปรับผ้านุ่มสูตรเข้มข้นพิเศษ กลิ่นน้ำหอมฝรั่งเศสหรูหรา ติดทนนานตลอดวัน ผ้านุ่มน่าสัมผัส",
+        "descriptionEn": "Concentrated fabric softener with perfume pearls that release fragrance with every movement."
     },
     {
         "id": "p-home-006",
@@ -1018,7 +1432,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 55,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำยาซักผ้าสูตรเข้มข้น บรีส เอกเซล ลิควิด 700 มล.",
+        "nameEn": "Breeze Excel Concentrated Liquid Detergent 700ml",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "ผลิตภัณฑ์ซักผ้าชนิดน้ำ สูตรเข้มข้น ซอกซอนขจัดคราบหนักได้โดยไม่ต้องแช่นาน เหมาะกับทั้งซักมือและซักเครื่อง",
+        "descriptionEn": "High-performance liquid laundry detergent removes tough stains without scrubbing."
     },
     {
         "id": "p-home-007",
@@ -1032,7 +1452,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 70,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำยาล้างห้องน้ำ เป็ดโปร สูตรเข้มข้น 900 มล.",
+        "nameEn": "Duck Pro Concentrated Toilet Bowl Cleaner 900ml",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "น้ำยาล้างห้องน้ำสูตรทรงพลัง ขจัดคราบฝังแน่น คราบสนิม และหินปูน ฆ่าเชื้อโรค 99.9% ให้ห้องน้ำสะอาดเงางาม",
+        "descriptionEn": "Powerful formula eliminates tough rust, limescale and kills 99.9% of germs."
     },
     {
         "id": "p-home-008",
@@ -1046,7 +1472,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 90,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ถุงขยะดำแบบม้วน แชมเปี้ยน ไซส์ L 30x40 นิ้ว (12 ใบ)",
+        "nameEn": "Champion Heavy Duty Garbage Bags Roll Size L 30x40 in (12 Bags)",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "ถุงขยะพลาสติกหนาพิเศษ มีกลิ่นหอมมะนาวช่วยลดกลิ่นอับ เหนียว ทน ไม่ขาดง่าย มีเชือกมัดปากถุงในตัว",
+        "descriptionEn": "Tear-resistant leakproof star-bottom black trash bags on easy-tear roll."
     },
     {
         "id": "p-home-009",
@@ -1060,7 +1492,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 80,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ฟองน้ำใยขัด 3M สก๊อตช์-ไบรต์ แอนตี้แบคทีเรีย (แพ็ค 3 ชิ้น)",
+        "nameEn": "3M Scotch-Brite Antibacterial Heavy Duty Scrub Sponge (Pack of 3)",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "ฟองน้ำใยขัดคุณภาพสูง ใยขัดทนทานไม่หลุดร่วงง่าย ยับยั้งแบคทีเรีย ไม่เหม็นอับ ขจัดคราบอาหารไหม้ได้ดี",
+        "descriptionEn": "High quality scrubbing fiber paired with absorbent sponge, sanitized against odors."
     },
     {
         "id": "p-home-010",
@@ -1074,7 +1512,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 65,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ทิชชูเปียก คลีเน็กซ์ สูตรแอนตี้แบคทีเรีย (20 แผ่น)",
+        "nameEn": "Kleenex Antibacterial Moist Wet Wipes (20 Sheets)",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "ผ้าเช็ดทำความสะอาดผิวแบบเปียก สูตรยับยั้งแบคทีเรีย 99.9% ปราศจากแอลกอฮอล์ อ่อนโยน ปลอดภัยสำหรับทุกคน",
+        "descriptionEn": "Gentle alcohol-free cleansing wipes killing 99.9% of bacteria, travel pack."
     },
     {
         "id": "p-home-011",
@@ -1088,7 +1532,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 25,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ไม้ถูพื้นไมโครไฟเบอร์ 3M สก๊อตช์-ไบรต์ หมุนได้ 360 องศา",
+        "nameEn": "3M Scotch-Brite 360-Degree Swivel Microfiber Mop",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "ม็อบถูพื้นด้ามปรับระดับได้ ผ้าไมโครไฟเบอร์ดักจับฝุ่นและเส้นผมได้อย่างดีเยี่ยม เข้าถึงทุกซอกมุมได้อย่างง่ายดาย",
+        "descriptionEn": "Ergonomic flat microfiber mop head swivels 360 degrees for effortless floor cleaning."
     },
     {
         "id": "p-home-012",
@@ -1102,7 +1552,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "สเปรย์กำจัดยุงและแมลง ไบกอน สูตรไร้กลิ่น 600 มล.",
+        "nameEn": "Baygon Odorless Mosquito and Flying Insect Killer Spray 600ml",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "สเปรย์กำจัดยุง มด แมลงสาบ สูตรไร้กลิ่นฉุน ออกฤทธิ์เร็ว ป้องกันแมลงร้ายได้อย่างมั่นใจในทุกห้อง",
+        "descriptionEn": "Fast-knockdown aerosol spray targeting mosquitoes, flies and crawling insects with no odor."
     },
     {
         "id": "p-home-013",
@@ -1116,7 +1572,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กล่องถนอมอาหาร ซูเปอร์ล็อก Super Lock 850 มล.",
+        "nameEn": "Super Lock Airtight Food Storage Container 850ml BPA Free",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "กล่องถนอมอาหารระบบล็อก 4 ด้าน ป้องกันอากาศและแบคทีเรียเข้า ยืดอายุอาหาร เข้าไมโครเวฟและช่องฟรีซได้",
+        "descriptionEn": "100% leakproof food storage box with silicone gasket and antibacterial Microban."
     },
     {
         "id": "p-home-014",
@@ -1130,7 +1592,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "มีดทำครัวสแตนเลส ตรากีวี Kiwi ปลายแหลม 7 นิ้ว",
+        "nameEn": "Kiwi Stainless Steel Pointed Kitchen Utility Knife 7-Inch",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "มีดทำครัวคุณภาพสูงจากเหล็กสแตนเลส คมกริบ น้ำหนักเบา หั่น สับ ซอยได้อย่างคล่องตัว ด้ามไม้จับถนัดมือ",
+        "descriptionEn": "Sharp and lightweight stainless steel kitchen prep knife with ergonomic wooden handle."
     },
     {
         "id": "p-home-015",
@@ -1144,7 +1612,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำยาดันฝุ่นและเคลือบเงา มาจิคลีน สเปรย์ 400 มล.",
+        "nameEn": "Magiclean Floor Dust Magnet & Gloss Spray 400ml",
+        "categoryNameTh": "ของใช้ในบ้าน",
+        "categoryNameEn": "Household Goods",
+        "descriptionTh": "สเปรย์ดักจับฝุ่นละออง ไม่ให้ฝุ่นฟุ้งกระจาย เพิ่มความเงางามให้กับพื้นไม้ กระเบื้อง และเฟอร์นิเจอร์",
+        "descriptionEn": "Anti-static floor cleaner spray captures dust without water, leaving shiny streak-free tiles."
     },
     {
         "id": "p-elec-001",
@@ -1161,7 +1635,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 14999,
         "promotionPrice": 13999,
-        "promotionLabel": "ลด 1,000.-"
+        "promotionLabel": "ลด 1,000.-",
+        "nameTh": "สมาร์ทโฟน Apple iPhone 16 128GB สีดำ",
+        "nameEn": "Apple iPhone 16 128GB Black Smartphone",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "ชิป A18 ล้ำยุค กล้อง Fusion 48MP พร้อมปุ่ม Camera Control ใหม่ล่าสุด ดีไซน์อะลูมิเนียมทนทาน จอภาพ Super Retina XDR",
+        "descriptionEn": "Latest Apple smartphone with A18 chip, Camera Control button, and stunning Super Retina XDR OLED."
     },
     {
         "id": "p-elec-002",
@@ -1175,7 +1655,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 12,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "สมาร์ทโฟน Samsung Galaxy S24 256GB Onyx Black",
+        "nameEn": "Samsung Galaxy S24 256GB Onyx Black 5G Smartphone",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "ขับเคลื่อนด้วย Galaxy AI อัจฉริยะ วงค้นหา Circle to Search จอ Dynamic AMOLED 2X 120Hz กล้อง 50MP คมชัดทุกแสง",
+        "descriptionEn": "Flagship Galaxy AI phone with Dynamic AMOLED 2X display and triple pro-grade camera."
     },
     {
         "id": "p-elec-003",
@@ -1189,7 +1675,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 18,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แท็บเล็ต Apple iPad 10th Gen 64GB Wi-Fi สีเงิน",
+        "nameEn": "Apple iPad 10th Gen 64GB Wi-Fi Silver Tablet",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "จอภาพ Liquid Retina 10.9 นิ้วเต็มตา ชิป A14 Bionic เร็วแรง รองรับ Apple Pencil และ Magic Keyboard Folio พอร์ต USB-C",
+        "descriptionEn": "10.9-inch Liquid Retina display, A14 Bionic chip, and versatile USB-C connectivity."
     },
     {
         "id": "p-elec-004",
@@ -1206,7 +1698,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 14990,
         "promotionPrice": 12990,
-        "promotionLabel": "Flash Sale"
+        "promotionLabel": "Flash Sale",
+        "nameTh": "หูฟังไร้สาย Apple AirPods Pro (รุ่นที่ 2) MagSafe Case",
+        "nameEn": "Apple AirPods Pro 2 with USB-C MagSafe Case",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "ระบบตัดเสียงรบกวนแบบแอ็คทีฟดีขึ้นสูงสุด 2 เท่า โหมดฟังเสียงภายนอกปรับตามสภาวะ ระบบเสียงตามตำแหน่ง และเคสชาร์จ USB-C",
+        "descriptionEn": "Pro active noise cancellation, Transparency mode, and personalized spatial audio."
     },
     {
         "id": "p-elec-005",
@@ -1220,7 +1718,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 8,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ลำโพงบลูทูธพกพา Marshall Emberton II Black & Brass",
+        "nameEn": "Marshall Emberton II Portable Bluetooth Speaker Black & Brass",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "เสียงรอบทิศทาง 360 องศา True Stereophonic ใช้งานได้ต่อเนื่องยาวนานกว่า 30 ชั่วโมง กันน้ำกันฝุ่นระดับ IP67 พกพาได้ทุกที่",
+        "descriptionEn": "True Stereophonic 360 sound, 30+ hours of battery life, and IP67 dust/water resistance."
     },
     {
         "id": "p-elec-006",
@@ -1234,7 +1738,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 20,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เมาส์ไร้สายเพื่อสุขภาพ Logitech MX Master 3S Graphite",
+        "nameEn": "Logitech MX Master 3S Performance Wireless Ergonomic Mouse Graphite",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "สวิตช์ Quiet Clicks ทำงานเงียบ ล้อเลื่อน MagSpeed แม่นยำ เซ็นเซอร์ 8000 DPI ทำงานได้บนกระจก แบตเตอรี่อยู่ได้นาน 70 วัน",
+        "descriptionEn": "8K DPI track-on-glass sensor, Quiet Clicks, and MagSpeed electromagnetic scroll wheel."
     },
     {
         "id": "p-elec-007",
@@ -1251,7 +1761,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 990,
         "promotionPrice": 790,
-        "promotionLabel": "ลด 20%"
+        "promotionLabel": "ลด 20%",
+        "nameTh": "คีย์บอร์ดไร้สายบลูทูธ Logitech K380 Multi-Device",
+        "nameEn": "Logitech K380 Multi-Device Bluetooth Wireless Keyboard",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "เชื่อมต่อได้ 3 อุปกรณ์พร้อมกันผ่าน Easy-Switch ปุ่มกดกลมเงียบ พิมพ์สบาย ขนาดกะทัดรัดพกพาสะดวก ใช้งานได้กับ Windows, Mac, iOS",
+        "descriptionEn": "Compact lightweight typing across PC, Mac, iPad and phone with Easy-Switch keys."
     },
     {
         "id": "p-elec-008",
@@ -1265,7 +1781,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แบตเตอรี่สำรอง Anker PowerCore 20,000mAh PD 20W",
+        "nameEn": "Anker PowerCore 20,000mAh 20W PD Portable Power Bank",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "ความจุสูง 20,000mAh ชาร์จเร็ว Power Delivery 20W จ่ายไฟเสถียร มีระบบความปลอดภัย MultiProtect ชาร์จ iPhone ได้ 4-5 รอบ",
+        "descriptionEn": "High-capacity power bank charges iPhone 3x over with PowerIQ and USB-C fast charging."
     },
     {
         "id": "p-elec-009",
@@ -1279,7 +1801,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "หัวชาร์จเร็ว Baseus GaN5 Pro 65W Fast Charger (3 พอร์ต)",
+        "nameEn": "Baseus GaN5 Pro 65W Fast Wall Charger (3 Ports)",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "เทคโนโลยีแกลเลียมไนไตรด์ GaN ขนาดกะทัดรัด จ่ายไฟสูงสุด 65W รองรับ Type-C 2 ช่อง และ USB 1 ช่อง ชาร์จโน้ตบุ๊กและมือถือได้พร้อมกัน",
+        "descriptionEn": "Gallium Nitride multi-port fast charger powering laptops, tablets, and phones simultaneously."
     },
     {
         "id": "p-elec-010",
@@ -1293,7 +1821,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 80,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "สายชาร์จเร็ว Ugreen USB-C to USB-C 100W ถักไนลอน 1M",
+        "nameEn": "Ugreen 100W USB-C to USB-C Braided Fast Charging Cable 1M",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "รองรับการจ่ายไฟสูงสุด 100W PD ชาร์จเร็ว MacBook, iPad, และสมาร์ทโฟน สายถักไนลอนแข็งแรง ทนต่อการหักงอมากกว่า 10,000 ครั้ง",
+        "descriptionEn": "Durable nylon braided cable with E-marker smart chip supporting PD 100W fast power delivery."
     },
     {
         "id": "p-elec-011",
@@ -1307,7 +1841,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 22,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ลำโพงพกพาบลูทูธกันน้ำ JBL GO 3 สีดำ",
+        "nameEn": "JBL GO 3 Waterproof Portable Bluetooth Speaker Black",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "เสียงระดับ JBL Pro Sound ในขนาดพกพา กันน้ำและฝุ่นระดับ IP67 แบตเตอรี่ใช้งานได้ 5 ชั่วโมง พร้อมสายคล้องพกพาสะดวก",
+        "descriptionEn": "Compact pocket-sized wireless speaker with punchy JBL Pro Sound and IP67 waterproof design."
     },
     {
         "id": "p-elec-012",
@@ -1321,7 +1861,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แฟลชไดร์ฟ SanDisk Ultra Dual Drive Go Type-C 128GB",
+        "nameEn": "SanDisk Ultra Dual Drive Go Type-C 128GB Flash Drive",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "แฟลชไดร์ฟ 2-in-1 หัว USB Type-C และ Type-A ย้ายไฟล์ระหว่างมือถือและคอมพิวเตอร์ได้อย่างง่ายดาย ความเร็วอ่านสูงสุด 150MB/s",
+        "descriptionEn": "2-in-1 swivel flash drive with USB Type-C and Type-A connectors for easy file transfer."
     },
     {
         "id": "p-elec-013",
@@ -1335,7 +1881,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 5,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "หูฟังครอบหูตัดเสียงรบกวน Sony WH-1000XM5 Black",
+        "nameEn": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones Black",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "ระบบตัดเสียงรบกวนชั้นนำของอุตสาหกรรม ชิปประมวลผล V1 และ QN1 ไมโครโฟน 8 ตัว คุยสายคมชัด แบตเตอรี่ยาวนาน 30 ชั่วโมง",
+        "descriptionEn": "Industry-leading active noise cancellation with 8 microphones and high-res wireless audio."
     },
     {
         "id": "p-elec-014",
@@ -1349,7 +1901,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "อะแดปเตอร์ชาร์จแท้ Apple 20W USB-C Power Adapter",
+        "nameEn": "Apple Original 20W USB-C Power Adapter",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "หัวชาร์จเร็วของแท้จาก Apple ชาร์จแบตเตอรี่ iPhone จาก 0 ถึง 50% ได้ในเวลาประมาณ 30 นาที ปลอดภัย ถนอมสุขภาพแบตเตอรี่",
+        "descriptionEn": "Official Apple USB-C power block providing fast, efficient charging for iPhone and iPad."
     },
     {
         "id": "p-elec-015",
@@ -1363,7 +1921,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 14,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แท็บเล็ต Xiaomi Pad 6 128GB Wi-Fi Gravity Gray",
+        "nameEn": "Xiaomi Pad 6 128GB Wi-Fi Gravity Gray Tablet",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "หน้าจอคมชัด WQHD+ 144Hz ชิปเซ็ต Snapdragon 870 ลำโพงสเตอริโอ 4 ตัว แบตเตอรี่ 8840mAh พร้อมชาร์จเร็ว 33W",
+        "descriptionEn": "11-inch 144Hz WQHD+ display powered by Snapdragon 870 with quad stereo speakers."
     },
     {
         "id": "p-elec-016",
@@ -1377,7 +1941,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แบตเตอรี่สำรอง Eloop E29 ความจุ 30,000mAh Quick Charge",
+        "nameEn": "Eloop E29 30,000mAh Quick Charge 3.0 & PD Power Bank",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "พาวเวอร์แบงค์ไซส์ใหญ่จุใจ 30,000mAh รองรับ Quick Charge 3.0 และ PD 18W บอดี้อะลูมิเนียมเรียบหรู พร้อมไฟ LED บอกสถานะ",
+        "descriptionEn": "Ultra high-capacity power bank with digital LED battery percentage display."
     },
     {
         "id": "p-elec-017",
@@ -1391,7 +1961,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 3,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เมาส์เกมมิ่งไร้สายน้ำหนักเบา Razer Viper V2 Pro Black",
+        "nameEn": "Razer Viper V2 Pro Ultra-Lightweight Wireless Gaming Mouse Black",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "เมาส์อีสปอร์ตไร้สาย น้ำหนักเบาเพียง 58 กรัม เซ็นเซอร์ Focus Pro 30K Optical สวิตช์ Optical Mouse Gen-3 ตอบสนองฉับไว",
+        "descriptionEn": "58g lightweight esports mouse with Focus Pro 30K optical sensor and Gen-3 optical switches."
     },
     {
         "id": "p-elec-018",
@@ -1405,7 +1981,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 10,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เครื่องฟอกอากาศอัจฉริยะ Xiaomi Smart Air Purifier 4",
+        "nameEn": "Xiaomi Smart Air Purifier 4 with High Efficiency Filter",
+        "categoryNameTh": "เครื่องใช้ไฟฟ้า",
+        "categoryNameEn": "Electronics & IT",
+        "descriptionTh": "ฟอกอากาศห้องขนาด 28-48 ตร.ม. กรองฝุ่น PM2.5 ขนสัตว์ ละอองเกสร ด้วยฟิลเตอร์ 3-in-1 ควบคุมผ่านแอป Mi Home เสียงเงียบ",
+        "descriptionEn": "Captures 99.97% of 0.3-micron particles including PM2.5, allergen filtration with app control."
     },
     {
         "id": "p-fash-001",
@@ -1422,7 +2004,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 490,
         "promotionPrice": 390,
-        "promotionLabel": "ลดพิเศษ"
+        "promotionLabel": "ลดพิเศษ",
+        "nameTh": "เสื้อยืดคอกลมผ้าคอตตอนพรีเมียม Uniqlo Supima Cotton",
+        "nameEn": "Uniqlo Supima Cotton Crew Neck T-Shirt",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "ผลิตจากเส้นใยซูพีมาคอตตอน 100% ให้สัมผัสนุ่มลื่น เรียบหรู เนื้อผ้าทนทาน ระบายอากาศดีเยี่ยม ใส่สบายได้ทุกวัน",
+        "descriptionEn": "Crafted from 100% premium extra-long staple Supima cotton, silky smooth and durable."
     },
     {
         "id": "p-fash-002",
@@ -1439,7 +2027,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 3590,
         "promotionPrice": 2890,
-        "promotionLabel": "Super Deal"
+        "promotionLabel": "Super Deal",
+        "nameTh": "รองเท้าผ้าใบ Nike Air Force 1 '07 All White",
+        "nameEn": "Nike Air Force 1 '07 All White Classic Sneakers",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "สนีกเกอร์ระดับตำนาน หนังแท้สีขาวคลีน เย็บซ้อนชั้นทนทาน ระบบลดแรงกระแทก Nike Air สวมใส่สบาย แมตช์ได้กับทุกชุด",
+        "descriptionEn": "Iconic court sneakers with crisp leather overlays, stitched contours and Air cushioning."
     },
     {
         "id": "p-fash-003",
@@ -1453,7 +2047,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 8,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "รองเท้าผ้าใบ Adidas Samba OG White/Core Black",
+        "nameEn": "Adidas Samba OG White/Core Black Retro Sneakers",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "รองเท้าคลาสสิกเรโทรยุค 50 อัปเปอร์หนังแท้ตัดแต่งด้วยแถบหนังกลับรูปตัว T พื้นยางกัมรับแรงกระแทก ยอดฮิตเหนือกาลเวลา",
+        "descriptionEn": "Timeless football heritage sneakers with premium leather upper and suede T-toe design."
     },
     {
         "id": "p-fash-004",
@@ -1467,7 +2067,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 20,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กางเกงยีนส์ขายาว Levi's 501 Original Fit สีน้ำเงินเข้ม",
+        "nameEn": "Levi's 501 Original Fit Jeans Dark Indigo",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "ยีนส์ทรงขากระบอกตรงระดับไอคอนิก กระดุมโลหะ Button Fly ตัดเย็บจากผ้าคอตตอน 100% แข็งแรง ทนทาน ใส่สวยยาวนาน",
+        "descriptionEn": "The quintessential straight-leg denim jeans featuring signature button fly."
     },
     {
         "id": "p-fash-005",
@@ -1481,7 +2087,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เสื้อเชิ้ตขาวกันเปื้อน GQ White Shirt ทรง Slim Fit",
+        "nameEn": "GQ White Shirt Spill-Resistant Slim Fit Shirt",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "นวัตกรรมเสื้อเชิ้ตกันน้ำและคราบเลอะ กาแฟ ซอส ไม่ซึม ปกคอเคลือบสารป้องกันคราบเหลือง ระบายอากาศดี รีดง่าย",
+        "descriptionEn": "Hydrophobic technology repels liquid spills while remaining breathable and wrinkle-free."
     },
     {
         "id": "p-fash-006",
@@ -1498,7 +2110,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 4500,
         "promotionPrice": 3890,
-        "promotionLabel": "ลด 13%"
+        "promotionLabel": "ลด 13%",
+        "nameTh": "เสื้อโปโลคลาสสิก Lacoste Classic Fit L1212",
+        "nameEn": "Lacoste Classic Fit L1212 Cotton Petit Pique Polo",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "เสื้อโปโลผ้าปิเก้คอตตอน Petit Pique แท้ ปักโลโก้จระเข้สีเขียวที่อก ทรงคลาสสิก สวมใส่สบาย ดูภูมิฐานทุกโอกาส",
+        "descriptionEn": "The original tennis polo cut from signature cotton petit pique with embroidered crocodile."
     },
     {
         "id": "p-fash-007",
@@ -1512,7 +2130,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กระเป๋าสะพายข้างทรงกลม Uniqlo Round Mini Shoulder Bag",
+        "nameEn": "Uniqlo Round Mini Shoulder Bag (Viral Dumpling Bag)",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "กระเป๋าสะพายไนลอนทรงพระจันทร์เสี้ยว น้ำหนักเบา จุของได้เยอะเกินตัว เคลือบสารสะท้อนหยดน้ำ พกพาสะดวกในทุกวัน",
+        "descriptionEn": "Lightweight water-repellent nylon crossbody bag with surprisingly roomy compartment."
     },
     {
         "id": "p-fash-008",
@@ -1526,7 +2150,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 25,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "หมวกแก๊ปเบสบอล New Era 9FORTY New York Yankees Black",
+        "nameEn": "New Era 9FORTY New York Yankees Baseball Cap Black",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "หมวกแก๊ปปีกโค้ง ปักโลโก้ NY สีขาวคมชัด โครงสร้าง 6 ชิ้นปรับขนาดด้านหลังได้ สายสตรีทและสปอร์ตแวร์ต้องมี",
+        "descriptionEn": "Adjustable 6-panel structured cap with embroidered NY logo and curved visor."
     },
     {
         "id": "p-fash-009",
@@ -1540,7 +2170,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 14,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "รองเท้าแตะสุขภาพ Birkenstock Arizona Birko-Flor",
+        "nameEn": "Birkenstock Arizona Birko-Flor Ergonomic Sandals",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "รองเท้าแตะสองสายปรับระดับได้ พื้นคอร์กรูปเท้าตามหลักกายวิภาค รองรับอุ้งเท้า ลดความเมื่อยล้า ทนทานคลาสสิก",
+        "descriptionEn": "Two-strap comfort slides with anatomical natural cork-latex footbed."
     },
     {
         "id": "p-fash-010",
@@ -1554,7 +2190,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 18,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กระเป๋าเป้สะพายหลัง Anello Classic Backpack Canvas",
+        "nameEn": "Anello Classic Canvas Backpack with Wide Opening",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "กระเป๋าเป้ปากกว้างดีไซน์เอกลักษณ์จากญี่ปุ่น ผ้าแคนวาสทนทาน จุเอกสาร A4 และโน้ตบุ๊กได้ มีช่องใส่ขวดน้ำด้านข้าง",
+        "descriptionEn": "Signature doctor bag wire-frame wide opening with padded laptop sleeve."
     },
     {
         "id": "p-fash-011",
@@ -1568,7 +2210,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ถุงเท้าข้อสั้นกีฬา Nike Everyday Cushion (แพ็ค 3 คู่)",
+        "nameEn": "Nike Everyday Cushion Ankle Training Socks (Pack of 3 Pairs)",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "เทคโนโลยี Dri-FIT ระบายเหงื่อได้ดี พื้นถุงเท้าหนานุ่มรองรับแรงกระแทก กระชับข้อเท้า ไม่เลื่อนหลุดขณะออกกำลังกาย",
+        "descriptionEn": "Dri-FIT moisture-wicking athletic socks with reinforced arch band and cushioned heel."
     },
     {
         "id": "p-fash-012",
@@ -1582,7 +2230,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 22,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เสื้อกันหนาวฮู้ดดี้ H&M Relaxed Fit Fleece Hoodie",
+        "nameEn": "H&M Relaxed Fit Fleece Hoodie Pullover",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "เสื้อฮู้ดดี้ทรงโอเวอร์ไซส์ บุผ้าฟรีซด้านในนุ่มอุ่น มีกระเป๋าจิงโจ้ด้านหน้า เหมาะสำหรับสวมใส่ในห้องแอร์และฤดูหนาว",
+        "descriptionEn": "Soft brushed-back cotton blend fleece hoodie with kangaroo pocket."
     },
     {
         "id": "p-fash-013",
@@ -1596,7 +2250,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กางเกงขาสั้นลำลอง Uniqlo Chino Shorts ผ้ายืด",
+        "nameEn": "Uniqlo Stretch Chino Casual Shorts",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "กางเกงขาสั้นผ้าคอตตอนชิโนผสมสแปนเด็กซ์ ยืดหยุ่นคล่องตัว ทรงสวยพอดีเข่า ใส่เที่ยวหรืออยู่บ้านก็สบาย",
+        "descriptionEn": "Clean-cut casual shorts made from soft stretch twill cotton for all-day comfort."
     },
     {
         "id": "p-fash-014",
@@ -1610,7 +2270,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 5,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แว่นกันแดด Ray-Ban Classic Wayfarer RB2140",
+        "nameEn": "Ray-Ban Classic Wayfarer RB2140 Polarized Sunglasses",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "แว่นตากันแดดระดับตำนาน เลนส์กระจก G-15 สีเขียว ป้องกันรังสี UV 100% กรอบอะซิเตทสีดำเงา ทนทานหรูหรา",
+        "descriptionEn": "Timeless black acetate sunglasses with crystal green G-15 100% UV protection lenses."
     },
     {
         "id": "p-fash-015",
@@ -1624,7 +2290,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 20,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เข็มขัดหนังแท้ Levi's Classic Reversible Leather Belt",
+        "nameEn": "Levi's Classic Reversible Leather Belt Black/Brown",
+        "categoryNameTh": "แฟชั่น",
+        "categoryNameEn": "Fashion & Apparel",
+        "descriptionTh": "เข็มขัดหนังแท้เกรดพรีเมียม สลับใส่ได้ 2 ด้าน (สีดำ/น้ำตาล) หัวเข็มขัดโลหะเคลือบเงา แข็งแรงทนทาน",
+        "descriptionEn": "100% genuine leather belt featuring swivel harness buckle for versatile 2-in-1 styling."
     },
     {
         "id": "p-hlth-001",
@@ -1641,7 +2313,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 580,
         "promotionPrice": 499,
-        "promotionLabel": "ราคาพิเศษ"
+        "promotionLabel": "ราคาพิเศษ",
+        "nameTh": "ครีมบำรุงผิวหน้าและผิวกาย CeraVe Moisturising Cream 454g",
+        "nameEn": "CeraVe Moisturising Cream for Dry to Very Dry Skin 454g",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "ครีมบำรุงเข้มข้นสำหรับผิวแห้งมาก ผสานเซราไมด์ 3 ชนิดและไฮยาลูโรนิกแอซิด ฟื้นฟูปราการผิว ล็อคความชุ่มชื้น 24 ชั่วโมง",
+        "descriptionEn": "Formulated with 3 essential ceramides and hyaluronic acid to restore the protective skin barrier."
     },
     {
         "id": "p-hlth-002",
@@ -1658,7 +2336,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 1050,
         "promotionPrice": 890,
-        "promotionLabel": "ลด 15%"
+        "promotionLabel": "ลด 15%",
+        "nameTh": "ครีมกันแดด La Roche-Posay Anthelios UVMune 400 50ml",
+        "nameEn": "La Roche-Posay Anthelios UVMune 400 Invisible Fluid SPF50+ 50ml",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "กันแดดเนื้อฟลูอิดบางเบา ปกป้องผิวสูงสุดด้วยฟิลเตอร์ Mexoryl 400 ป้องกันรังสี Ultra-Long UVA คุมมัน กันน้ำ กันเหงื่อ",
+        "descriptionEn": "Ultra-long UVA protection daily sunscreen, sweat and water resistant with invisible finish."
     },
     {
         "id": "p-hlth-003",
@@ -1672,7 +2356,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "โลชั่นน้ำตบฮาดะลาโบะ Hada Labo Hydrating Lotion 170ml",
+        "nameEn": "Hada Labo Hydrating Lotion Hyaluronic Acid 170ml",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "โลชั่นบำรุงผิวหน้าสูตรไฮยาลูโรนิก 4 ชนิด เติมน้ำให้ผิวอย่างล้ำลึก ผิวอิ่มฟู เนียนนุ่ม ไม่เหนียวเหนอะหนะ ไม่มีน้ำหอม",
+        "descriptionEn": "Infused with 4 types of hyaluronic acid to deeply infuse hydration into skin layers."
     },
     {
         "id": "p-hlth-004",
@@ -1686,7 +2376,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เซรั่ม The Ordinary Niacinamide 10% + Zinc 1% 30ml",
+        "nameEn": "The Ordinary Niacinamide 10% + Zinc 1% Blemish Serum 30ml",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "เซรั่มลดเลือนรอยดำ รอยแดงจากสิว คุมความมันส่วนเกิน กระชับรูขุมขน ปรับสมดุลผิวให้เรียบเนียนสม่ำเสมอ",
+        "descriptionEn": "High-strength vitamin and mineral blemish serum reduces skin congestion and balances sebum."
     },
     {
         "id": "p-hlth-005",
@@ -1703,7 +2399,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 690,
         "promotionPrice": 550,
-        "promotionLabel": "ราคาพิเศษ"
+        "promotionLabel": "ราคาพิเศษ",
+        "nameTh": "ลิปสติกจิ้มจุ่ม Maybelline Superstay Matte Ink 5ml",
+        "nameEn": "Maybelline Superstay Matte Ink Liquid Lipstick 5ml",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "ลิปแมตต์ติดทนยาวนาน 16 ชั่วโมง จูบไม่หลุด ไม่ติดแมสก์ สีสดชัด กลบสีปากมิดในปาดเดียว ไม่แห้งตึงปาก",
+        "descriptionEn": "Transfer-proof saturated matte liquid lipstick with up to 16 hours of wear."
     },
     {
         "id": "p-hlth-006",
@@ -1717,7 +2419,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "รองพื้นคุมมัน L'Oreal Paris Infallible 24H Fresh Wear 30ml",
+        "nameEn": "L'Oreal Paris Infallible 24H Fresh Wear Liquid Foundation 30ml",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "รองพื้นเนื้อเบาสบายผิว ให้การปกปิดระดับ Medium to Full ควบคุมความมัน กันน้ำ กันเหงื่อ ผิวดูสดใสตลอด 24 ชั่วโมง",
+        "descriptionEn": "Breathable, sweatproof medium-to-full coverage liquid foundation with radiant matte finish."
     },
     {
         "id": "p-hlth-007",
@@ -1731,7 +2439,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 55,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แป้งพัฟคุมมัน Maybelline Fit Me Matte + Poreless 6g",
+        "nameEn": "Maybelline Fit Me Matte + Poreless Pressed Powder 6g",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "แป้งคุมมันผสมสารกันแดด SPF 28 PA+++ ล็อคผิวเนียนแมตต์นาน 12 ชั่วโมง อำพรางรูขุมขน ให้ผิวดูเป็นธรรมชาติ",
+        "descriptionEn": "Perlite mineral powder absorbs oil to mattify skin while pores virtually disappear."
     },
     {
         "id": "p-hlth-008",
@@ -1745,7 +2459,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "คลีนซิ่งเช็ดเครื่องสำอาง Bioderma Sensibio H2O 500ml",
+        "nameEn": "Bioderma Sensibio H2O Micellar Water Cleanser 500ml",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "ไมเซล่าคลีนซิ่งวอเตอร์สูตรอ่อนโยนสำหรับผิวแพ้ง่าย เช็ดเมคอัพและสิ่งสกปรกหมดจดโดยไม่ต้องล้างน้ำซ้ำ ไม่ระคายเคืองผิว",
+        "descriptionEn": "Soothing non-rinse micellar water gently captures impurities and waterproof makeup."
     },
     {
         "id": "p-hlth-009",
@@ -1759,7 +2479,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 20,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เครื่องวัดความดันโลหิตอัตโนมัติ Omron HEM-7120",
+        "nameEn": "Omron HEM-7120 Automatic Digital Blood Pressure Monitor",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "เครื่องวัดความดันที่ต้นแขน ใช้งานง่ายด้วยปุ่มเดียว เทคโนโลยี IntelliSense แม่นยำ ตรวจจับการเต้นผิดปกติของหัวใจได้",
+        "descriptionEn": "One-touch precision blood pressure measurement with Intellisense and irregular heartbeat detector."
     },
     {
         "id": "p-hlth-010",
@@ -1773,7 +2499,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 25,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เครื่องวัดออกซิเจนปลายนิ้ว Beurer Pulse Oximeter PO 30",
+        "nameEn": "Beurer Pulse Oximeter PO 30 Fingertip Oxygen Monitor",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "อุปกรณ์ตรวจวัดระดับความอิ่มตัวของออกซิเจนในเลือด (SpO2) และอัตราการเต้นของหัวใจ หน้าจอสี ปรับมุมมองได้ 4 ทิศทาง",
+        "descriptionEn": "Accurate non-invasive measurement of arterial oxygen saturation (SpO2) and heart pulse rate."
     },
     {
         "id": "p-hlth-011",
@@ -1787,7 +2519,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 150,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ยาพาราเซตามอล ซาร่า Sara 500 มก. (แผง 10 เม็ด)",
+        "nameEn": "Sara Paracetamol 500mg Pain Reliever & Fever Reducer (Blister of 10)",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "ยาสามัญประจำบ้าน บรรเทาอาการปวดศีรษะ ลดไข้ ตัวร้อน เม็ดกลมกลืนง่าย ออกฤทธิ์ไว ปลอดภัยเมื่อรับประทานตามขนาด",
+        "descriptionEn": "Effective relief from headache, muscle aches, toothache and fever, gentle on the stomach."
     },
     {
         "id": "p-hlth-012",
@@ -1801,7 +2539,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 70,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "พลาสเตอร์บรรเทาปวด ตราเสือ Tiger Balm Plaster (แพ็ค 2 แผ่น)",
+        "nameEn": "Tiger Balm Plaster Medicated Pain Relief Warm (Pack of 2 Patches)",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "แผ่นแปะแก้ปวดเมื่อยกล้ามเนื้อสูตรร้อน ช่วยกระตุ้นการไหลเวียนโลหิต บรรเทาอาการปวดคอ บ่า ไหล่ และหลังได้อย่างมีประสิทธิภาพ",
+        "descriptionEn": "Herbal hydrogel plaster provides soothing, long-lasting relief from muscular aches."
     },
     {
         "id": "p-hlth-013",
@@ -1815,7 +2559,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เจลว่านหางจระเข้บริสุทธิ์ Nature Republic Soothing Gel 300ml",
+        "nameEn": "Nature Republic 92% Pure Aloe Vera Soothing Gel 300ml",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "เจลว่านหางจระเข้ 92% เติมความชุ่มชื้น ปลอบประโลมผิวหลังโดนแดด ทาได้ทั้งใบหน้า ลำตัว และเส้นผม ซึมไว สดชื่น",
+        "descriptionEn": "Multipurpose cooling soothing gel calms sun-exposed skin, face and dry hair."
     },
     {
         "id": "p-hlth-014",
@@ -1829,7 +2579,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "มาสก์บำรุงผิวหน้า Leaders Insolution Clinic Mask 25ml",
+        "nameEn": "Leaders Insolution Aquaringer Clinic Sheet Mask 25ml",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "แผ่นมาสก์หน้าสูตรดูแลผิวหน้าที่มีปัญหาสิวและรอยแดง พัฒนาโดยแพทย์ผิวหนังเกาหลี แผ่นมาสก์แนบสนิทกับผิวหน้า",
+        "descriptionEn": "Korean dermatological sheet mask drenched in alpine glacier water to quench parched skin."
     },
     {
         "id": "p-hlth-015",
@@ -1843,7 +2599,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 120,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ยาดมโป๊ยเซียน ตราโป๊ยเซียน แบบ 2 ตอน",
+        "nameEn": "Poy-Sian Mark II 2-in-1 Menthol Nasal Inhaler",
+        "categoryNameTh": "สุขภาพและความงาม",
+        "categoryNameEn": "Health & Beauty",
+        "descriptionTh": "ยาดมสมุนไพรคู่คนไทย บรรเทาอาการวิงเวียนศีรษะ หน้ามืด คัดจมูก ใช้ดมและทาได้ในหลอดเดียว หอมเย็นสดชื่น",
+        "descriptionEn": "Classic Thai dual-action herbal inhaler with eucalyptus and menthol for fast dizziness and nasal relief."
     },
     {
         "id": "p-baby-001",
@@ -1860,7 +2622,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 599,
         "promotionPrice": 529,
-        "promotionLabel": "Super Deal"
+        "promotionLabel": "Super Deal",
+        "nameTh": "ผ้าอ้อมสำเร็จรูป MamyPoko Extra Dry Skin ไซส์ L (แพ็ค 52 ชิ้น)",
+        "nameEn": "MamyPoko Tape Diapers Extra Dry Skin Size L (Pack of 52)",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "ผ้าอ้อมเด็กแบบเทป นวัตกรรม Speed Air Wave ซึมซับปัสสาวะได้รวดเร็ว ระบายอากาศรอบทิศทาง แห้งสบายยาวนานถึง 12 ชั่วโมง",
+        "descriptionEn": "Speed Air Wave sheet absorbs wetness instantly, keeping baby's bottom dry for up to 12 hours."
     },
     {
         "id": "p-baby-002",
@@ -1874,7 +2642,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ผ้าอ้อมกางเกง BabyLove PlayPants Nano Power ไซส์ M (54 ชิ้น)",
+        "nameEn": "BabyLove PlayPants Nano Power Diaper Pants Size M (Pack of 54)",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "กางเกงผ้าอ้อมเด็กผิวสัมผัสนุ่ม ขอบขากระชับ ยืดหยุ่น 360 องศา ซึมซับดีเยี่ยม ไม่รั่วซึม ลูกน้อยขยับสบายตัวทุกการเคลื่อนไหว",
+        "descriptionEn": "Slim diaper pants with Nano Power absorbent core for maximum mobility and leak protection."
     },
     {
         "id": "p-baby-003",
@@ -1891,7 +2665,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 420,
         "promotionPrice": 350,
-        "promotionLabel": "ลดพิเศษ"
+        "promotionLabel": "ลดพิเศษ",
+        "nameTh": "นมผง ดูเม็กซ์ ไฮคิว 1 พลัส ซูเปอร์โกลด์ พลัส ซี-ซินไบโอโพรเทก 1800g",
+        "nameEn": "Dumex Hi-Q 1 Plus Super Gold Plus C-Synbio Proteq Powder 1800g",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "นมผงสูตรสำหรับเด็กอายุ 1 ปีขึ้นไป มีซินไบโอติก โพรไบโอติก บิฟิโดแบคทีเรียม เบรเว และดีเอชเอ เสริมสร้างภูมิคุ้มกันและการเรียนรู้",
+        "descriptionEn": "Formulated milk powder with Synbiotic blend, DHA, and essential nutrients for growing toddlers."
     },
     {
         "id": "p-baby-004",
@@ -1905,7 +2685,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 20,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "นมผง เอส-26 โกลด์ โปรเกรส สูตร 3 ขนาด 1650g",
+        "nameEn": "S-26 Gold Progress Stage 3 Growing-up Milk Powder 1650g",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "มีสฟิงโกไมอีลิน 2FL และดีเอชเอ สารอาหารสำคัญเพื่อพัฒนาการสมองและร่างกายของลูกน้อยวัยกำลังเจริญเติบโต",
+        "descriptionEn": "Fortified formula milk with Sphingomyelin, DHA, Lutein and Choline for children 1 year and above."
     },
     {
         "id": "p-baby-005",
@@ -1919,7 +2705,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 18,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "นมผง เอนฟาโกร เอพลัส มายด์โปร ดีเอชเอ พลัส 1900g",
+        "nameEn": "Enfagrow A+ MindPro DHA+ Infant Formula Stage 3 1900g",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "มี MFGM โปรตีนคุณภาพ และดีเอชเอ 40 มก. ต่อแก้ว ช่วยเสริมสร้างการเชื่อมต่อของเซลล์สมอง อร่อย รสจืด ทานง่าย",
+        "descriptionEn": "Enriched with MFGM, high DHA, and 2'-FL prebiotic fibers to support brain and digestive health."
     },
     {
         "id": "p-baby-006",
@@ -1933,7 +2725,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ขวดนมเสมือนนมแม่ Pigeon SofTouch PPSU Wide Neck 240ml",
+        "nameEn": "Pigeon SofTouch PPSU Wide-Neck Nursing Bottle 240ml",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "ขวดนมคอกว้างผลิตจากพลาสติก PPSU สีชา ทนความร้อนสูงถึง 180 องศา จุกนมเสมือนนมมารดาป้องกันอาการโคลิก",
+        "descriptionEn": "Heat-resistant medical grade PPSU bottle with natural peristaltic latch nipple."
     },
     {
         "id": "p-baby-007",
@@ -1947,7 +2745,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำยาล้างขวดนมและจุกนม ดีนี่ ออร์แกนิค ถุงเติม 600 มล.",
+        "nameEn": "D-nee Organic Baby Bottle & Nipple Cleanser Refill 600ml",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "น้ำยาล้างขวดนมผสมสารสกัดออร์แกนิค อโลเวร่า ล้างคราบโปรตีนน้ำนมและไขมันออกง่าย ปราศจากสารตกค้าง ปลอดภัยต่อทารก",
+        "descriptionEn": "Natural plant-derived cleanser safely dissolves milk fats and residues with food-grade ingredients."
     },
     {
         "id": "p-baby-008",
@@ -1961,7 +2765,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 75,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แป้งเด็กโคโดโม สูตรเอ็กซ์ตร้ามายด์ 350g",
+        "nameEn": "Kodomo Extra Mild Baby Talcum Powder 350g",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "แป้งเด็กเนื้อละเอียด อ่อนโยนต่อผิวบอบบาง ป้องกันผดผื่นจากความเปียกชื้น กลิ่นหอมละมุน ผ่านการทดสอบทางการแพทย์",
+        "descriptionEn": "Hypoallergenic sterilized baby powder prevents chafing and keeps baby's skin soft and dry."
     },
     {
         "id": "p-baby-009",
@@ -1975,7 +2785,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ทิชชู่เปียกเด็ก Pigeon เบบี้ไวพส์ คาโมมายล์ (แพ็ค 80 แผ่น x 2)",
+        "nameEn": "Pigeon Baby Wipes Chamomile (Twin Pack 80 Sheets x 2)",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "ผ้าเช็ดทำความสะอาดผิวเด็ก สูตรผสมสารสกัดจากดอกคาโมมายล์ อ่อนโยนต่อผิว ปราศจากพาราเบนและแอลกอฮอล์",
+        "descriptionEn": "Ultra-soft moisturizing wipes with chamomile extract, 100% food grade and alcohol-free."
     },
     {
         "id": "p-baby-010",
@@ -1989,7 +2805,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "สบู่เหลวอาบและสระ เบบี้มายด์ อัลตร้ามายด์ 800 มล.",
+        "nameEn": "Babi Mild Ultra Mild Head & Body Baby Bath 800ml Pump",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "สูตรเฮดทูโท อ่อนโยน ใช้สระผมและอาบน้ำได้ในขวดเดียว ผสมสารสกัดจากพืชธรรมชาติ pH สมดุล ไม่ระคายเคืองตา",
+        "descriptionEn": "Soap-free 2-in-1 head-to-toe baby wash infused with organic wheat germ and Vitamin E."
     },
     {
         "id": "p-baby-011",
@@ -2003,7 +2825,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 25,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ยางกัดเสริมพัฒนาการซิลิโคน Ange Monkey Teether",
+        "nameEn": "Ange Monkey Food-Grade Silicone Baby Teether",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "ยางกัดรูปลิงซิลิโคนฟู้ดเกรด ไร้สาร BPA นวดเหงือกบรรเทาอาการคันเหงือกช่วงฟันเริ่มขึ้น จับถนัดมือ ล้างต้มฆ่าเชื้อได้",
+        "descriptionEn": "BPA-free flexible monkey teether relieves gum itching with textured chew bumps."
     },
     {
         "id": "p-baby-012",
@@ -2017,7 +2845,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 15,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ชุดของเล่นตัวต่อเลโก้ LEGO Classic Creative Bricks 10696",
+        "nameEn": "LEGO Classic Creative Bricks 10696 Building Set",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "ตัวต่อเสริมทักษะความคิดสร้างสรรค์ 484 ชิ้น คละสีสดใส พร้อมล้อ ตา และชิ้นส่วนพิเศษ เหมาะสำหรับเด็กอายุ 4 ขวบขึ้นไป",
+        "descriptionEn": "484-piece assorted LEGO bricks in 35 colors to inspire endless open-ended imagination."
     },
     {
         "id": "p-baby-013",
@@ -2031,7 +2865,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 8,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เก้าอี้ทานข้าวเด็กปรับระดับ Fisher-Price Booster Seat",
+        "nameEn": "Fisher-Price Healthy Care Deluxe Booster Dining Seat",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "เก้าอี้หัดทานข้าวสำหรับเด็ก ถาดอาหารมีฝาปิด ถอดล้างทำความสะอาดได้ พับเก็บพกพาสะดวก ปลอดภัยด้วยสายรัด 3 จุด",
+        "descriptionEn": "Adjustable baby dining booster seat with dishwasher-safe snap-on feeding tray."
     },
     {
         "id": "p-baby-014",
@@ -2045,7 +2885,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 5,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เครื่องนึ่งขวดนมพร้อมอบแห้ง Philips Avent 2-in-1",
+        "nameEn": "Philips Avent 2-in-1 Electric Steam Baby Bottle Sterilizer",
+        "categoryNameTh": "แม่และเด็ก",
+        "categoryNameEn": "Mother & Baby",
+        "descriptionTh": "เครื่องฆ่าเชื้อขวดนมด้วยไอน้ำบริสุทธิ์ ฆ่าเชื้อแบคทีเรียได้ 99.9% ภายใน 10 นาที จุขวดนมได้สูงสุด 6 ขวด ปลอดสาร BPA",
+        "descriptionEn": "Natural steam sterilization kills 99.9% of harmful germs in just 10 minutes."
     },
     {
         "id": "p-offc-001",
@@ -2059,7 +2905,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 120,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ปากกาหมึกเจล Pentel EnerGel 0.5 มม. หมึกน้ำเงิน",
+        "nameEn": "Pentel EnerGel Liquid Gel Roller Pen 0.5mm Blue Ink",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "ปากกาหมึกเจลคุณภาพสูง หมึกแห้งเร็วเป็นพิเศษ ไม่เลอะมือเวลาเขียน เส้นคมชัด ลื่นไหล นุ่มมือ ด้ามจับยางกระชับ",
+        "descriptionEn": "Super-smooth liquid gel pen with quick-drying smudge-free ink, rubber grip barrel."
     },
     {
         "id": "p-offc-002",
@@ -2073,7 +2925,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 100,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ปากกาเจล Zebra Sarasa Clip 0.5 มม. สีน้ำเงิน",
+        "nameEn": "Zebra Sarasa Clip Retractable Gel Pen 0.5mm Blue",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "ปากกาเจลคลิปหนีบสปริงเอกลักษณ์จากญี่ปุ่น หมึกกันน้ำ สีสดสม่ำเสมอ เขียนลื่น ไม่สะดุด เหมาะสำหรับการจดบันทึก",
+        "descriptionEn": "Smooth water-based pigment gel ink pen with functional spring-loaded binder clip."
     },
     {
         "id": "p-offc-003",
@@ -2087,7 +2945,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ปากกาลูกลื่น Lancer Spiral 825 หัว 0.5 มม. (กล่อง 50 ด้าม)",
+        "nameEn": "Lancer Spiral 825 Ballpoint Pen 0.5mm (Box of 50 Pens)",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "ปากกาลูกลื่นยอดนิยมด้ามลายเกลียว หมึกไหลสม่ำเสมอ หัวปากกาแข็งแรงทนทาน กล่องประหยัดสำหรับสำนักงานและโรงเรียน",
+        "descriptionEn": "Classic spiral grip fine ballpoint pens with oil-based ink, popular value box for offices."
     },
     {
         "id": "p-offc-004",
@@ -2101,7 +2965,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ปากกาเน้นข้อความ Stabilo Boss Original คละสี (แพ็ค 4 ด้าม)",
+        "nameEn": "Stabilo Boss Original Pastel Highlighters (Set of 4 Colors)",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "ปากกาไฮไลท์ระดับพรีเมียมจากเยอรมนี สีสะท้อนแสงชัดเจน เทคโนโลยี Anti-Dry-Out เปิดฝาทิ้งไว้ได้นานถึง 4 ชั่วโมงโดยไม่แห้ง",
+        "descriptionEn": "Iconic flat highlighters with 4-hour anti-dry-out technology in pleasant pastel shades."
     },
     {
         "id": "p-offc-005",
@@ -2115,7 +2985,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ดินสอกด Rotring Tikky 0.5 มม. ด้ามจับยาง สีดำ",
+        "nameEn": "Rotring Tikky Mechanical Pencil 0.5mm Black",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "ดินสอกดวิศวกรรมคุณภาพเยอรมนี หัวดินสอทำมุมเขียนแม่นยำ ด้ามจับยางคลื่นกระชับนิ้ว ทนทานสำหรับเขียนและวาดแบบ",
+        "descriptionEn": "Precision German mechanical pencil with rubberized grip and cushioned lead mechanism."
     },
     {
         "id": "p-offc-006",
@@ -2129,7 +3005,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 80,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กระดาษถ่ายเอกสาร Double A A4 80 แกรม (รีม 500 แผ่น)",
+        "nameEn": "Double A Premium A4 Copy Paper 80gsm (Ream of 500 Sheets)",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "กระดาษพรีเมียมเนื้อเนียน ขาวสว่าง พิมพ์ได้ 2 หน้า ไม่ติดเครื่องพิมพ์ เหมาะกับเครื่องถ่ายเอกสารและเลเซอร์พรินเตอร์",
+        "descriptionEn": "High-opacity jam-free smooth white copier paper suitable for high-speed printing."
     },
     {
         "id": "p-offc-007",
@@ -2143,7 +3025,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 20,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "สมุดบันทึก Moleskine Classic Notebook ปกแข็ง มีเส้น A5",
+        "nameEn": "Moleskine Classic Hardcover Ruled Notebook A5 Black",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "สมุดโน้ตระดับตำนาน กระดาษสีงาช้าง Acid-Free 70 แกรม ถนอมสายตา สายรัดยางยืดและริบบิ้นคั่นหน้า สวยหรูทนทาน",
+        "descriptionEn": "Durable thread-bound notebook with ivory acid-free pages, ribbon bookmark and elastic band."
     },
     {
         "id": "p-offc-008",
@@ -2157,7 +3045,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แฟ้มสันกว้าง ตราช้าง Elephant รุ่น 2100F สัน 3 นิ้ว A4",
+        "nameEn": "Elephant 2100F Lever Arch File Binder 3-Inch A4",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "แฟ้มเอกสารห่วงเหล็กกลไกทนทาน จุเอกสารได้ถึง 500 แผ่น ปกบอร์ดแข็งหุ้มกระดาษพิมพ์ลาย เคลือบกันน้ำ มุมโลหะเสริมความแข็งแรง",
+        "descriptionEn": "Heavy-duty paper lever arch binder with locking compressor bar and metal-edged corners."
     },
     {
         "id": "p-offc-009",
@@ -2171,7 +3065,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เครื่องเย็บกระดาษ MAX HD-10D พร้อมลวดเย็บเบอร์ 10",
+        "nameEn": "MAX HD-10D Desktop Stapler with No. 10 Staples",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "เครื่องเย็บกระดาษมาตรฐานญี่ปุ่น เย็บได้หนาสูงสุด 20 แผ่น โครงสร้างเหล็กแข็งแรง ทนทาน ไม่ติดขัดเวลาเย็บ",
+        "descriptionEn": "Reliable Japanese handheld stapler binds up to 20 sheets with staple remover."
     },
     {
         "id": "p-offc-010",
@@ -2185,7 +3085,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กรรไกรตัดกระดาษอเนกประสงค์ Scotch 3M ขนาด 7 นิ้ว",
+        "nameEn": "3M Scotch Precision Multi-Purpose Scissors 7-Inch",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "ใบมีดสแตนเลสคุณภาพสูง คมทน ไม่เป็นสนิม ด้ามจับนุ่มถนัดมือ ตัดได้ทั้งกระดาษ ผ้า และพลาสติกอย่างแม่นยำ",
+        "descriptionEn": "Hardened stainless steel blades with soft comfort-grip handles for effortless cutting."
     },
     {
         "id": "p-offc-011",
@@ -2199,7 +3105,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 90,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กาวตราช้าง Elephant Super Glue 3g แห้งเร็วติดแน่น",
+        "nameEn": "Elephant Super Glue Cyanoacrylate Fast-Drying 3g",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "กาวช้างไซยาโนอะคริเลต พลังยึดติดแน่นเป็นพิเศษ แห้งเร็วใน 10 วินาที ติดได้ทั้งไม้ พลาสติก ยาง เซรามิก และโลหะ",
+        "descriptionEn": "Instant heavy-duty bonding adhesive for plastics, ceramics, wood, rubber and metal."
     },
     {
         "id": "p-offc-012",
@@ -2213,7 +3125,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 70,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เทปใส Scotch 3M ขนาด 3/4 นิ้ว x 36 หลา (แพ็ค 3 ม้วน)",
+        "nameEn": "3M Scotch Transparent Tape 3/4 in x 36 yds (Pack of 3 Rolls)",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "เทปใสเนื้อกาวเหนียวพิเศษ ไม่เหลืองกรอบ ติดแน่นสนิท เหมาะสำหรับปิดกล่อง เอกสาร และงานฝีมือ",
+        "descriptionEn": "Crystal clear glossy stationery tape, strong adhesion and non-yellowing over time."
     },
     {
         "id": "p-offc-013",
@@ -2227,7 +3145,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เครื่องคิดเลขตั้งโต๊ะ Casio รุ่น MX-12B หน้าจอ 12 หลัก",
+        "nameEn": "Casio MX-12B Desktop Calculator 12-Digit Display",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "เครื่องคิดเลขหน้าจอขนาดใหญ่ ชัดเจน ปุ่มกดทนทาน ระบบพลังงานแสงอาทิตย์และแบตเตอรี่ ฟังก์ชันคำนวณภาษีครบครัน",
+        "descriptionEn": "Dual-powered large display calculator with mark-up percentage and key rollover."
     },
     {
         "id": "p-offc-014",
@@ -2241,7 +3165,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 25,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ไวท์บอร์ดแม่เหล็กพร้อมปากกาและแปรงลบ ตราม้า 30x40 ซม.",
+        "nameEn": "Horse Magnetic Whiteboard with Marker & Eraser 30x40 cm",
+        "categoryNameTh": "เครื่องเขียนและสำนักงาน",
+        "categoryNameEn": "Stationery & Office",
+        "descriptionTh": "กระดานไวท์บอร์ดผิวเรียบลบง่าย ขอบอะลูมิเนียม ติดแถบแม่เหล็กได้ มาพร้อมปากกาเคมีและแปรงลบกระดานในชุด",
+        "descriptionEn": "Compact aluminum-framed magnetic dry-erase board with hanging hooks and accessory tray."
     },
     {
         "id": "p-auto-001",
@@ -2258,7 +3188,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 1890,
         "promotionPrice": 1590,
-        "promotionLabel": "Hot Deal"
+        "promotionLabel": "Hot Deal",
+        "nameTh": "น้ำมันเครื่องสังเคราะห์แท้ 100% Castrol EDGE 5W-30 4 ลิตร",
+        "nameEn": "Castrol EDGE 5W-30 Advanced Full Synthetic Engine Oil 4L",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "เทคโนโลยี Fluid TITANIUM เปลี่ยนโครงสร้างเพื่อต้านทานแรงกดอัด ปกป้องเครื่องยนต์เต็มสมรรถนะ ประหยัดน้ำมันเชื้อเพลิง",
+        "descriptionEn": "Engine oil with Fluid TITANIUM technology transforms under pressure to reduce friction."
     },
     {
         "id": "p-auto-002",
@@ -2272,7 +3208,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 15,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำมันเครื่องสังเคราะห์ Shell Helix Ultra 0W-40 4 ลิตร",
+        "nameEn": "Shell Helix Ultra 0W-40 PurePlus Synthetic Motor Oil 4L",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "ผลิตจากก๊าซธรรมชาติด้วยเทคโนโลยี Shell PurePlus ทำความสะอาดลูกสูบ ป้องกันการสึกหรอในสภาวะความร้อนสูง",
+        "descriptionEn": "Crafted from natural gas using PurePlus technology for ultimate engine performance and protection."
     },
     {
         "id": "p-auto-003",
@@ -2289,7 +3231,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 350,
         "promotionPrice": 280,
-        "promotionLabel": "ลด 20%"
+        "promotionLabel": "ลด 20%",
+        "nameTh": "น้ำมันเครื่องเบนซิน PTT Performa Super Synthetic 0W-20 4 ลิตร",
+        "nameEn": "PTT Performa Super Synthetic 0W-20 Gasoline Engine Oil 4L",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "น้ำมันเครื่องสังเคราะห์สูตรประหยัดน้ำมันสำหรับรถ Eco Car และรถยนต์เบนซินยุคใหม่ ยืดอายุการเปลี่ยนถ่ายสูงสุด 15,000 กม.",
+        "descriptionEn": "Eco-car synthetic lubricant with High Film Strength for maximum fuel economy and cold-start wear protection."
     },
     {
         "id": "p-auto-004",
@@ -2303,7 +3251,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แชมพูล้างรถสูตรผสมแว็กซ์ 3M Car Wash with Wax 1000 มล.",
+        "nameEn": "3M Car Wash with Wax Concentrated Shampoo 1000ml",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "แชมพูล้างรถสูตร 2-in-1 ขจัดคราบฝังแน่นและคราบไขมันบนสีรถ พร้อมเคลือบเงาให้รถดูเงาฉ่ำเหมือนใหม่โดยไม่ทำลายชั้นแว็กซ์",
+        "descriptionEn": "Ph-neutral car wash soap lifts road grime while leaving a glossy protective carnauba wax shine."
     },
     {
         "id": "p-auto-005",
@@ -2317,7 +3271,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 25,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำยาเคลือบเงายางรถยนต์ Meguiar's Hot Shine Tire Spray 710 มล.",
+        "nameEn": "Meguiar's Hot Shine High Gloss Tire Coating Spray 710ml",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "สเปรย์เคลือบแก้มยางรถยนต์ ให้ความดำเงาเข้มแบบ Wet-Look ทนทานต่อการชะล้างของน้ำฝน ป้องกันยางกรอบแตกจากรังสี UV",
+        "descriptionEn": "High gloss silicone formula gives tires deep black wet look with anti-ozonant protection."
     },
     {
         "id": "p-auto-006",
@@ -2331,7 +3291,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "สเปรย์เคลือบเงาสีรถยนต์ Turtle Wax Wax & Dry 769 มล.",
+        "nameEn": "Turtle Wax Wax & Dry Spray Car Wax 769ml",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "นวัตกรรมฉีดแล้วเช็ดขณะรถเปียก ให้ความเงางามลื่นไล่น้ำ เม็ดน้ำไม่เกาะ ปกป้องผิวสีรถยนต์ได้อย่างสะดวกรวดเร็ว",
+        "descriptionEn": "Formulated with minute carnauba wax to shine and protect while drying wet car surfaces."
     },
     {
         "id": "p-auto-007",
@@ -2345,7 +3311,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ผ้าไมโครไฟเบอร์เช็ดรถหนานุ่ม 3M Car Care ขนาด 40x40 ซม.",
+        "nameEn": "3M Car Care Ultra-Plush Microfiber Detailing Cloth 40x40 cm",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "เส้นใยไมโครไฟเบอร์ถักทอพิเศษ หนานุ่ม ซับน้ำได้ดีเยี่ยม ไม่ทำให้เกิดรอยขนแมวบนสีรถยนต์ ล้างทำความสะอาดง่าย",
+        "descriptionEn": "Lint-free non-scratching plush microfiber towel for streak-free drying, waxing, and polishing."
     },
     {
         "id": "p-auto-008",
@@ -2359,7 +3331,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "หัวชาร์จในรถยนต์ Baseus 65W Fast Car Charger Type-C + USB",
+        "nameEn": "Baseus 65W Fast Dual-Port Car Charger USB-C + USB-A",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "หัวชาร์จเร็วในรถรองรับไฟ 12V-24V จ่ายไฟสูงสุด 65W ชาร์จโน้ตบุ๊กและมือถือพร้อมกัน ตัวบอดี้อะลูมิเนียมระบายความร้อนดี",
+        "descriptionEn": "All-metal mini car adapter supporting PD 3.0 and QC 4.0 fast charging for phones and laptops."
     },
     {
         "id": "p-auto-009",
@@ -2373,7 +3351,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 14,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กล้องติดหน้ารถยนต์ 70mai Dash Cam Pro Plus+ A500S 2.7K",
+        "nameEn": "70mai Dash Cam Pro Plus+ A500S 2.7K with Built-in GPS",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "ความละเอียดคมชัด 1944P มี GPS ในตัว ระบบแจ้งเตือน ADAS รูรับแสง F1.8 ถ่ายกลางคืนชัดเจน รองรับการบันทึกขณะจอดรถ",
+        "descriptionEn": "Crystal clear 1944P ultra-HD recording with Sony sensor, ADAS driver assistance and night vision."
     },
     {
         "id": "p-auto-010",
@@ -2387,7 +3371,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ที่วางโทรศัพท์ในรถยนต์ Baseus Metal Gravity Car Mount",
+        "nameEn": "Baseus Metal Gravity Air Vent Car Phone Mount",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "ที่จับโทรศัพท์ติดช่องแอร์ ล็อกอัตโนมัติตามน้ำหนักมือถือ บอดี้โลหะอัลลอยด์แข็งแรง หมุนได้ 360 องศา ขับขี่ปลอดภัย",
+        "descriptionEn": "Auto-locking one-hand operation gravity phone holder with 360-degree rotation ball joint."
     },
     {
         "id": "p-auto-011",
@@ -2401,7 +3391,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 20,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เครื่องวัดแรงดันลมยางดิจิตอล Michelin Digital Tyre Gauge",
+        "nameEn": "Michelin Programmable Digital Tire Pressure Gauge",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "เกจวัดลมยางดิจิตอลความแม่นยำสูง หน้าจอ LCD มีไฟส่องสว่างตอนกลางคืน วัดได้ทั้งหน่วย PSI, BAR และ KPA ด้ามจับยางกระชับ",
+        "descriptionEn": "Backlit digital gauge delivers precise tire pressure readings with built-in LED flashlight."
     },
     {
         "id": "p-auto-012",
@@ -2415,7 +3411,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "น้ำยาทำความสะอาดและเคลือบกระจก Rain-X Glass Cleaner 473 มล.",
+        "nameEn": "Rain-X 2-in-1 Glass Cleaner & Water Repellent Spray 473ml",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "น้ำยาเช็ดกระจกรถยนต์สูตรพิเศษ 2-in-1 เช็ดคราบแมลงและคราบมัน พร้อมสร้างฟิล์มไล่น้ำฝน เพิ่มทัศนวิสัยปลอดภัยขณะฝนตก",
+        "descriptionEn": "Cleans automotive glass streak-free while adding hydrophobic rain-beading rain guard."
     },
     {
         "id": "p-auto-013",
@@ -2429,7 +3431,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 12,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ปั๊มลมพกพาไร้สายสำหรับยางรถยนต์ Xiaomi Portable Air Compressor 2",
+        "nameEn": "Xiaomi Portable Electric Air Compressor 2 Cordless Tire Inflator",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "ที่สูบลมไฟฟ้าไร้สายขนาดพกพา ตั้งค่าแรงดันลมยางอัตโนมัติ ตัดเมื่อลมเต็ม มีไฟ LED ฉุกเฉิน เติมได้ทั้งรถยนต์ มอเตอร์ไซค์ และลูกบอล",
+        "descriptionEn": "Rechargeable high-pressure pump with digital pressure detection and auto shutoff."
     },
     {
         "id": "p-auto-014",
@@ -2443,7 +3451,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 5,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "รถจักรยานยนต์ Honda Wave 110i",
+        "nameEn": "Honda Wave 110i Fuel-Injected Commuter Motorcycle",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "รถจักรยานยนต์ยอดนิยม ประหยัดน้ำมัน ทนทาน ใช้งานคล่องตัว เหมาะสำหรับการขับขี่ในชีวิตประจำวัน (พาหนะจริง — รายละเอียดการรับสินค้าและการขนส่งจะขึ้นอยู่กับประเภทของพาหนะ สินค้าพาหนะจริงในระบบนี้เป็น Mock Product สำหรับ Mini Project การซื้อขายจริงอาจต้องมีเอกสาร การจดทะเบียน และขั้นตอนตามกฎหมาย)",
+        "descriptionEn": "Thailand's #1 popular 110cc commuter motorbike with PGM-FI fuel injection and durable engine."
     },
     {
         "id": "p-auto-015",
@@ -2457,7 +3471,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 3,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "รถยนต์ Toyota Yaris",
+        "nameEn": "Toyota Yaris 1.2 Sport Hatchback Compact Car",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "รถยนต์แฮทช์แบ็ก Eco Car ดีไซน์สปอร์ตทันสมัย ขับขี่คล่องตัว ประหยัดน้ำมัน พร้อมระบบความปลอดภัยมาตรฐานระดับสากล (พาหนะจริง — รายละเอียดการรับสินค้าและการขนส่งจะขึ้นอยู่กับประเภทของพาหนะ สินค้าพาหนะจริงในระบบนี้เป็น Mock Product สำหรับ Mini Project การซื้อขายจริงอาจต้องมีเอกสาร การจดทะเบียน และขั้นตอนตามกฎหมาย)",
+        "descriptionEn": "Agile 5-door compact hatchback with Toyota Safety Sense and economical fuel efficiency."
     },
     {
         "id": "p-auto-016",
@@ -2471,7 +3491,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 2,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "รถยนต์ Honda City",
+        "nameEn": "Honda City 1.0 VTEC Turbo Sedan",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "รถยนต์ซีดานดีไซน์หรูหรา กว้างขวาง สมรรถนะการขับขี่ดีเยี่ยม พร้อมฟังก์ชันความสะดวกสบายและเทคโนโลยีครบครัน (พาหนะจริง — รายละเอียดการรับสินค้าและการขนส่งจะขึ้นอยู่กับประเภทของพาหนะ สินค้าพาหนะจริงในระบบนี้เป็น Mock Product สำหรับ Mini Project การซื้อขายจริงอาจต้องมีเอกสาร การจดทะเบียน และขั้นตอนตามกฎหมาย)",
+        "descriptionEn": "Sporty 4-door sedan powered by 122PS 1.0L VTEC Turbo engine with premium spacious cabin."
     },
     {
         "id": "p-auto-017",
@@ -2485,7 +3511,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 10,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "จักรยานเสือภูเขา Trek Marlin",
+        "nameEn": "Trek Marlin 5 Hardtail Cross Country Mountain Bike",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "จักรยานเสือภูเขาเฟรมอะลูมิเนียม Alpha Silver ทนทานน้ำหนักเบา ระบบเกียร์แม่นยำ พร้อมโช้กอัพหน้าและดิสก์เบรกไฮดรอลิกสำหรับเส้นทางลุยและทางเรียบ (พาหนะจริง — สามารถจัดส่งโดยบริการขนส่งสินค้าขนาดใหญ่ตามพื้นที่ให้บริการ)",
+        "descriptionEn": "Trail-ready mountain bike with lightweight aluminum frame, hydraulic disc brakes and suspension fork."
     },
     {
         "id": "p-auto-018",
@@ -2499,7 +3531,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 8,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "จักรยานพับได้ Brompton",
+        "nameEn": "Brompton C Line Explore 6-Speed Folding Bicycle",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "จักรยานพับระดับพรีเมียมจากประเทศอังกฤษ พับเก็บได้กะทัดรัด สะดวกต่อการพกพาและเดินทางในเมือง โครงสร้างเหล็กแข็งแกร่งทนทาน (พาหนะจริง — สามารถจัดส่งโดยบริการขนส่งสินค้าขนาดใหญ่ตามพื้นที่ให้บริการ)",
+        "descriptionEn": "Handmade British folding bicycle engineered to fold compactly in seconds for city commuting."
     },
     {
         "id": "p-auto-019",
@@ -2513,7 +3551,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 15,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "สกู๊ตเตอร์ไฟฟ้า Xiaomi Electric Scooter",
+        "nameEn": "Xiaomi Electric Scooter 4 Pro 25km/h Commuter Scooter",
+        "categoryNameTh": "ยานยนต์",
+        "categoryNameEn": "Automotive & Vehicles",
+        "descriptionTh": "สกู๊ตเตอร์ไฟฟ้าพับได้ มอเตอร์กำลังสูง ขับขี่ได้ไกลถึง 30 กม. ต่อการชาร์จหนึ่งครั้ง พร้อมระบบเบรกคู่ E-ABS และไฟส่องสว่างสำหรับการเดินทางในเมือง (พาหนะจริง — สามารถจัดส่งโดยบริการขนส่งสินค้าขนาดใหญ่ตามพื้นที่ให้บริการ)",
+        "descriptionEn": "High-power 700W motor with 55km maximum range and 10-inch puncture-resistant tubeless tires."
     },
     {
         "id": "p-pet-001",
@@ -2527,7 +3571,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "อาหารสุนัขพันธุ์เล็ก Royal Canin Mini Adult ขนาด 2 กก.",
+        "nameEn": "Royal Canin Mini Adult Dry Dog Food 2kg",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "อาหารเม็ดสำหรับสุนัขโตพันธุ์เล็ก (อายุ 10 เดือน - 8 ปี) รักษาน้ำหนักตัวที่เหมาะสม ดูแลสุขภาพผิวหนังและขน บำรุงระบบย่อยอาหาร",
+        "descriptionEn": "Tailored nutrition for small breed adult dogs, supports healthy weight and digestive flora."
     },
     {
         "id": "p-pet-002",
@@ -2541,7 +3591,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "อาหารสุนัขโต เพดดิกรี Pedigree รสเนื้อวัวและผัก 3 กก.",
+        "nameEn": "Pedigree Adult Beef & Vegetable Dry Dog Food 3kg",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "อาหารเม็ดรสเนื้อวัวเข้มข้น ครบถ้วนด้วยสารอาหาร 5 ประการ อุดมด้วยกรดไขมันโอเมก้า 6 และสังกะสี ให้ขนสวยเงางาม กระดูกแข็งแรง",
+        "descriptionEn": "Nutritionally complete dry dog kibble with real beef flavor, omega-6 and zinc for shiny coat."
     },
     {
         "id": "p-pet-003",
@@ -2555,7 +3611,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "อาหารสุนัขพรีเมียม SmartHeart Gold Holistic ขนาด 1.5 กก.",
+        "nameEn": "SmartHeart Gold Holistic Small Breed Dog Food 1.5kg",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "สูตรโฮลิสติก คัดสรรโปรตีนจากเนื้อแกะและข้าวกล้องธรรมชาติ ไม่มีผลพลอยได้จากสัตว์ ช่วยบำรุงระบบภูมิคุ้มกันและทางเดินอาหาร",
+        "descriptionEn": "Grain-free holistic formula with wild salmon and superfoods for sensitive digestion."
     },
     {
         "id": "p-pet-004",
@@ -2569,7 +3631,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "อาหารแมวโต รอยัลคานิน Royal Canin Fit 32 ขนาด 2 กก.",
+        "nameEn": "Royal Canin Fit 32 Adult Cat Dry Food 2kg",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "อาหารเม็ดสำหรับแมวโตอายุ 1 ปีขึ้นไป มีกิจกรรมปานกลาง สารอาหารครบถ้วน ควบคุมปัญหาก้อนขน และดูแลสุขภาพทางเดินปัสสาวะ",
+        "descriptionEn": "Balanced complete dry nutrition formulated for moderately active adult cats 1-7 years."
     },
     {
         "id": "p-pet-005",
@@ -2583,7 +3651,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "อาหารแมว มีโอ Me-O รสปลาทู ขนาด 1.2 กก.",
+        "nameEn": "Me-O Adult Mackerel Flavor Dry Cat Food 1.2kg",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "อาหารเม็ดรสปลาทูแสนอร่อยที่แมวโปรดปราน มีทอรีนช่วยบำรุงสายตา วิตามินซีเสริมภูมิคุ้มกัน และฟอสฟอรัสบำรุงฟันและกระดูก",
+        "descriptionEn": "Delicious crunchy kibble enriched with taurine for clear eyesight and low sodium formula."
     },
     {
         "id": "p-pet-006",
@@ -2597,7 +3671,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 55,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "อาหารแมว วิสกัส Whiskas รสปลาทะเล ขนาด 1.2 กก.",
+        "nameEn": "Whiskas Ocean Fish Flavor Adult Cat Food 1.2kg",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "อาหารเม็ดพ็อกเก็ตกรุบกรอบสอดไส้ครีมรสปลาทะเล อุดมด้วยโอเมก้า 3 และ 6 ช่วยให้ขนสวยเงางาม สุขภาพแข็งแรง ร่าเริงตลอดวัน",
+        "descriptionEn": "Tasty ocean fish kibble with crunchy pockets containing essential nutrients and DHA."
     },
     {
         "id": "p-pet-007",
@@ -2611,7 +3691,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "อาหารแมวพรีเมียม Kaniva รสไก่ ปลาทูน่าและข้าว 1.4 กก.",
+        "nameEn": "Kaniva Chicken, Tuna & Rice Premium Cat Food 1.4kg",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "อาหารแมวเกรนฟรี ไม่มีข้าวโพดและกลูเตน อุดมด้วยน้ำมันแซลมอนและน้ำมันพริมโรส ขนสวยนุ่ม เงางาม ขับถ่ายเป็นก้อน ลดกลิ่นมูล",
+        "descriptionEn": "Gluten-free premium cat kibble packed with salmon oil and evening primrose oil for lush coat."
     },
     {
         "id": "p-pet-008",
@@ -2625,7 +3711,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 25,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ทรายแมวภูเขาไฟไร้ฝุ่น Odour Lock กลิ่น Baby Powder 12 กก.",
+        "nameEn": "Odour Lock Ultra-Premium Unscented/Baby Powder Bentonite Cat Litter 12kg",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "ทรายแมวนำเข้าจากแคนาดา ปราศจากฝุ่น 99.9% จับตัวเป็นก้อนเร็ว ควบคุมกลิ่นได้ยาวนานถึง 40 วัน อ่อนโยนต่ออุ้งเท้าแมว",
+        "descriptionEn": "99.9% dust-free clumping clay litter neutralizes ammonia odor for up to 40 days."
     },
     {
         "id": "p-pet-009",
@@ -2639,7 +3731,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ทรายแมวเต้าหู้ธรรมชาติ Cature Tofu Clumping 6 ลิตร",
+        "nameEn": "Cature Natural Tofu Clumping Flushable Cat Litter 6L",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "ผลิตจากกากถั่วเหลืองธรรมชาติ 100% ไร้ฝุ่น ดับกลิ่นดีเยี่ยม ตักทิ้งลงชักโครกได้ เป็นมิตรกับสิ่งแวดล้อม ปลอดภัยหากเผลอกลืน",
+        "descriptionEn": "Eco-friendly edible pea fiber tofu cat litter, fast clumping and safely flushable down the toilet."
     },
     {
         "id": "p-pet-010",
@@ -2653,7 +3751,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 80,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ขนมแมวเลีย Ciao Churu รสทูน่ามากุโระ (ซอง 4 หลอด)",
+        "nameEn": "Inaba Ciao Churu Tuna Maguro Puree Cat Treats (Pack of 4 Tubes)",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "ขนมแมวเลียยอดฮิตจากญี่ปุ่น ผลิตจากเนื้อปลาทูน่าแท้ รสชาติอร่อยถูกใจ กลิ่นหอมเย้ายวน เสริมสารสกัดชาเขียวลดกลิ่นปาก",
+        "descriptionEn": "Creamy lickable cat treats made with 100% pure wild tuna and green tea extract."
     },
     {
         "id": "p-pet-011",
@@ -2667,7 +3771,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แชมพูสุนัข Chaingard เชนการ์ด กำจัดเห็บหมัด 350 มล.",
+        "nameEn": "Chaingard Flea & Tick Medicated Dog Shampoo 350ml",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "แชมพูฟอกอาบน้ำสุนัข กำจัดเห็บและหมัดได้อย่างเด็ดขาด กลิ่นหอมสะอาด ฟองละเอียด ล้างออกง่าย ขนนุ่มน่ากอด",
+        "descriptionEn": "Eliminates fleas and ticks while leaving fur deodorized, conditioned and soft."
     },
     {
         "id": "p-pet-012",
@@ -2681,7 +3791,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ขนมขบเคี้ยวขัดฟันสุนัข Pedigree Dentastix พันธุ์กลาง (แพ็ค)",
+        "nameEn": "Pedigree Dentastix Medium Breed Dog Dental Chews (Value Pack)",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "แท่งขัดฟันรูปทรงตัว X ออกแบบพิเศษ ช่วยลดการสะสมของคราบหินปูนได้ถึง 80% บำรุงเหงือก ลมหายใจสะอาดสดชื่น",
+        "descriptionEn": "Unique X-shape chews with active ingredients scientifically proven to reduce tartar by up to 80%."
     },
     {
         "id": "p-pet-013",
@@ -2695,7 +3811,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 70,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ของเล่นแมว ไม้ตกแมวขนนกธรรมชาติพร้อมกระดิ่ง",
+        "nameEn": "Interactive Natural Feather Wand Cat Teaser Toy with Bell",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "ไม้ตกแมวด้ามจับยืดหยุ่น ขนนกธรรมชาติดึงดูดสัญชาตญาณนักล่า กระตุ้นให้แมวออกกำลังกาย ลดความเครียด สนุกสนาน",
+        "descriptionEn": "Flexible carbon fiber teaser wand stimulates your cat's natural hunting and pouncing instincts."
     },
     {
         "id": "p-pet-014",
@@ -2709,7 +3831,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ชามอาหารสัตว์เลี้ยงสแตนเลสคู่ พร้อมฐานกันลื่น Petkit",
+        "nameEn": "Petkit Double Stainless Steel Elevated Cat & Dog Bowls",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "ชามอาหารและน้ำสแตนเลสสตีลเกรด 304 ปรับเอียงได้ 15 องศาเพื่อสรีระการกินที่ดีต่อกระดูกสันหลัง ถอดล้างทำความสะอาดง่าย",
+        "descriptionEn": "Ergonomically tilted 15-degree elevated feeding station protecting your pet's cervical spine."
     },
     {
         "id": "p-pet-015",
@@ -2723,7 +3851,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 5,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ลูกสุนัขพันธุ์ชิวาวา",
+        "nameEn": "Purebred Chihuahua Companion Puppy",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "ลูกสุนัขพันธุ์ชิวาวา (Chihuahua) สุขภาพแข็งแรง ร่าเริง ฉลาด ได้รับการฉีดวัคซีนเข็มแรกและตรวจสุขภาพจากสัตวแพทย์แล้ว สัตว์เลี้ยงจริง — กรุณาตรวจสอบพื้นที่ให้บริการและเงื่อนไขการขนส่งก่อนสั่งซื้อ",
+        "descriptionEn": "Lively, affectionate purebred Chihuahua puppy with health certification and initial vaccinations."
     },
     {
         "id": "p-pet-016",
@@ -2737,7 +3871,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 4,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ลูกแมวพันธุ์บริติชชอร์ตแฮร์",
+        "nameEn": "British Shorthair Plush Companion Kitten",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "ลูกแมวพันธุ์บริติชชอร์ตแฮร์ (British Shorthair) โครงสร้างสวย ขนแน่นนุ่ม แก้มกลม นิสัยสงบ ขี้อ้อน ได้รับวัคซีนเข็มแรก สัตว์เลี้ยงจริง — กรุณาตรวจสอบพื้นที่ให้บริการและเงื่อนไขการขนส่งก่อนสั่งซื้อ",
+        "descriptionEn": "Chubby-cheeked British Shorthair kitten with dense plush coat and gentle calm temperament."
     },
     {
         "id": "p-pet-017",
@@ -2751,7 +3891,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 20,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ปลากัดแฟนซี",
+        "nameEn": "Halfmoon Show Plakat Fancy Siamese Fighting Fish (Betta)",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "ปลากัดแฟนซี (Fancy Betta Fish) สีสันสดใส ครีบและหางสมบูรณ์ แข็งแรงว่ายน้ำคล่องแคล่ว เลี้ยงง่าย เหมาะสำหรับตกแต่งตู้ปลา สัตว์เลี้ยงจริง — กรุณาตรวจสอบพื้นที่ให้บริการและเงื่อนไขการขนส่งก่อนสั่งซื้อ",
+        "descriptionEn": "Hand-selected vibrant colorful fancy Betta fish with flared fins and healthy active swimming."
     },
     {
         "id": "p-pet-018",
@@ -2765,7 +3911,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 12,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "นกหงส์หยก",
+        "nameEn": "Hand-Tamed Budgerigar Companion Parakeet",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "นกหงส์หยก (Budgerigar) สีสันสดใส ร่าเริง ขนสวยสะอาด ร้องเพลงเสียงไพเราะ คุ้นเคยกับคนง่าย สัตว์เลี้ยงจริง — กรุณาตรวจสอบพื้นที่ให้บริการและเงื่อนไขการขนส่งก่อนสั่งซื้อ",
+        "descriptionEn": "Cheerful social pet bird with colorful plumage, vetted and healthy, loves human interaction."
     },
     {
         "id": "p-pet-019",
@@ -2779,7 +3931,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 6,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "งูบอลไพธอน",
+        "nameEn": "Captive-Bred Morph Ball Python Companion Snake",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "งูบอลไพธอน (Ball Python) สัตว์เลี้ยง Exotic ยอดนิยม นิสัยเชื่อง เลี้ยงง่าย ไม่ดุร้าย กินเหยื่อแช่แข็งได้ปกติ สัตว์เลี้ยงจริง — กรุณาตรวจสอบพื้นที่ให้บริการและเงื่อนไขการขนส่งก่อนสั่งซื้อ (การซื้อขายหรือขนส่งอาจมีข้อกำหนดด้านกฎหมายและเอกสารตามพื้นที่)",
+        "descriptionEn": "Docile and gentle captive-bred ball python with striking morph patterns, ideal first exotic pet."
     },
     {
         "id": "p-pet-020",
@@ -2793,7 +3951,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 8,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เต่าซูลคาต้า",
+        "nameEn": "African Sulcata Spurred Tortoise Juvenile",
+        "categoryNameTh": "สัตว์เลี้ยง",
+        "categoryNameEn": "Pets & Supplies",
+        "descriptionTh": "เต่าซูลคาต้า (Sulcata Tortoise) เต่าบกกินพืช กระดองสวยสมบูรณ์ แข็งแรง กินเก่ง เดินกระฉับกระเฉง สัตว์เลี้ยงจริง — กรุณาตรวจสอบพื้นที่ให้บริการและเงื่อนไขการขนส่งก่อนสั่งซื้อ (การซื้อขายหรือขนส่งอาจมีข้อกำหนดด้านกฎหมายและเอกสารตามพื้นที่)",
+        "descriptionEn": "Hardy active baby spur-thighed tortoise with strong shell, microchipped and farm-raised."
     },
     {
         "id": "p-sprt-001",
@@ -2810,7 +3974,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 890,
         "promotionPrice": 690,
-        "promotionLabel": "ลด 22%"
+        "promotionLabel": "ลด 22%",
+        "nameTh": "กระบอกน้ำเก็บอุณหภูมิ Hydro Flask Wide Mouth 32 oz Black",
+        "nameEn": "Hydro Flask Wide Mouth Insulated Stainless Steel Bottle 32 oz Black",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "กระบอกน้ำสุญญากาศ TempShield สแตนเลสเกรดโปร 18/8 เก็บความเย็นได้นาน 24 ชั่วโมง เก็บความร้อนได้ 12 ชั่วโมง ฝา Flex Cap",
+        "descriptionEn": "TempShield double-wall vacuum insulation keeps drinks ice cold for 24 hours or piping hot for 12."
     },
     {
         "id": "p-sprt-002",
@@ -2824,7 +3994,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 18,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แก้วน้ำเก็บความเย็น Stanley The Quencher H2.0 FlowState 40 oz",
+        "nameEn": "Stanley The Quencher H2.0 FlowState Tumbler 40 oz",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "แก้วเก็บความเย็นยอดฮิตพร้อมหูจับ ฝา FlowState 3 ฟังก์ชัน สแตนเลสรีไซเคิล 90% วางในช่องใส่แก้วรถยนต์ได้ เก็บความเย็นตลอดวัน",
+        "descriptionEn": "Recycled stainless steel travel tumbler with ergonomic grip handle and FlowState 3-position lid."
     },
     {
         "id": "p-sprt-003",
@@ -2841,7 +4017,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 1200,
         "promotionPrice": 950,
-        "promotionLabel": "Hot Deal"
+        "promotionLabel": "Hot Deal",
+        "nameTh": "เสื่อโยคะคุณภาพสูง Manduka PROLite Yoga Mat หนา 4.7 มม.",
+        "nameEn": "Manduka PROLite High Density Yoga Mat 4.7mm Thickness",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "เสื่อโยคะระดับโปรจากเยอรมนี ผิวหน้าหนาแน่นรองรับข้อต่อ ไม่ลื่น ไม่ดูดซับเหงื่อและแบคทีเรีย รับประกันตลอดอายุการใช้งาน",
+        "descriptionEn": "Zero-waste lifetime warranty yoga mat with unmatched joint cushioning and non-slip surface."
     },
     {
         "id": "p-sprt-004",
@@ -2855,7 +4037,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ลูกฟุตบอลแข่งขัน Molten Vantaggio 3400 หนังเย็บ เบอร์ 5",
+        "nameEn": "Molten Vantaggio 3400 Hand-Stitched Soccer Ball Size 5",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "ลูกฟุตบอลมาตรฐาน FIFA มาตรฐานหนัง PU คุณภาพสูง เย็บมือด้วยความประณีต สัมผัสนุ่ม ควบคุมทิศทางและวิถีบอลแม่นยำ",
+        "descriptionEn": "FIFA quality high-performance synthetic leather match football with consistent flight path."
     },
     {
         "id": "p-sprt-005",
@@ -2869,7 +4057,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 25,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ลูกบาสเกตบอลกลางแจ้ง Spalding TF-150 Outdoor Rubber เบอร์ 7",
+        "nameEn": "Spalding TF-150 Heavy Duty Outdoor Rubber Basketball Size 7",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "ลูกบาสเกตบอลยางทนทานพิเศษ ออกแบบมาสำหรับพื้นคอนกรีตกลางแจ้ง ลายปุ่มจับกระชับมือ ทนทานต่อการสึกหรอ",
+        "descriptionEn": "Durable deep-groove rubber composite basketball designed for maximum grip on outdoor blacktop."
     },
     {
         "id": "p-sprt-006",
@@ -2883,7 +4077,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 20,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ไม้แบดมินตัน Yonex Astrox Lite 27i น้ำหนักเบา 78g",
+        "nameEn": "Yonex Astrox Lite 27i Lightweight Badminton Racket 78g",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "ไม้แบดมินตันหัวหนักแบบ Ultra Light น้ำหนัก 5U ช่วยเพิ่มพลังตบและการเคลื่อนไหวที่รวดเร็ว ก้านกราไฟต์ยืดหยุ่นสูง ตีง่าย",
+        "descriptionEn": "Isometric head with Rotational Generator System enables lightning-fast smashes and maneuverability."
     },
     {
         "id": "p-sprt-007",
@@ -2897,7 +4097,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ดัมเบลยางหุ้มนีโอพรีน Domyos น้ำหนัก 2 กก. (คู่)",
+        "nameEn": "Domyos Neoprene Coated Fitness Dumbbells 2kg (Pair)",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "ดัมเบลหุ้มยางนีโอพรีนสัมผัสนุ่ม ไม่ลื่นหลุดมือ ป้องกันรอยขีดข่วนบนพื้นบ้าน ดีไซน์เหลี่ยมไม่กลิ้ง เหมาะสำหรับเวทเทรนนิ่ง",
+        "descriptionEn": "Cast iron weights encased in soft non-slip neoprene coating that protects floors from scuffs."
     },
     {
         "id": "p-sprt-008",
@@ -2911,7 +4117,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ยางยืดออกกำลังกาย Resistance Loop Bands ชุด 5 ระดับ",
+        "nameEn": "Resistance Loop Bands Workout Set (5 Resistance Levels)",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "ยางยืดธรรมชาติคุณภาพสูง แรงต้าน 5 ระดับ (X-Light ถึง X-Heavy) เหมาะสำหรับบริหารก้น ขา แขน และฟื้นฟูกล้ามเนื้อ",
+        "descriptionEn": "100% natural latex exercise bands for glute activation, yoga, strength training and rehabilitation."
     },
     {
         "id": "p-sprt-009",
@@ -2925,7 +4137,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 8,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เต็นท์แคมป์ปิ้งน้ำหนักเบา Naturehike Cloud Up 2 คน กันน้ำ",
+        "nameEn": "Naturehike Cloud Up 2-Person Ultralight Waterproof Camping Tent",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "เต็นท์เดินป่าน้ำหนักเบาเพียง 1.8 กก. ผ้าไนลอน 20D กันน้ำ PU4000mm เสาอะลูมิเนียม 7001 ทนลมแรง กางง่าย ระบายอากาศดีเยี่ยม",
+        "descriptionEn": "Double-layer silicone coated 20D ripstop nylon tent weighing under 1.8kg with 4000mm waterproofing."
     },
     {
         "id": "p-sprt-010",
@@ -2939,7 +4157,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 15,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เก้าอี้แคมป์ปิ้งพับได้ Coleman Compact Folding Chair",
+        "nameEn": "Coleman Compact Low Folding Camping Chair with Armrests",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "เก้าอี้สนามทรงเตี้ยโครงอะลูมิเนียมน้ำหนักเบา ที่วางแขนไม้จริง นั่งสบาย พับเก็บแบนราบพกพาสะดวก รับน้ำหนักได้ 100 กก.",
+        "descriptionEn": "Sturdy aluminum frame chair with natural wooden armrests and quick-folding carry design."
     },
     {
         "id": "p-sprt-011",
@@ -2953,7 +4177,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 12,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ตะเกียงแคมป์ปิ้ง LED สไตล์วินเทจ Barebones Forest Lantern",
+        "nameEn": "Barebones Forest Vintage LED Dimmable Camping Lantern",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "ตะเกียง LED ย้อนยุคชาร์จไฟผ่าน USB ให้แสงวอร์มไวท์อบอุ่น ปรับหรี่ความสว่างได้ ใช้งานได้ยาวนานถึง 80 ชั่วโมง บอดี้เหล็กหรูหรา",
+        "descriptionEn": "Antique steel stamped outdoor lantern with warm Edison LED filament and rechargeable USB-C battery."
     },
     {
         "id": "p-sprt-012",
@@ -2967,7 +4197,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กระเป๋ากันน้ำ Ocean Pack ดรายแบ็ก ความจุ 10 ลิตร สีเหลือง",
+        "nameEn": "Ocean Pack Waterproof Dry Bag 10L Yellow with Shoulder Strap",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "กระเป๋ากันน้ำ PVC Tarpaulin 500D ทนทาน ระบบพับล็อกปากถุงแน่นหนา ป้องกันน้ำ 100% เหมาะสำหรับพายเรือ ดำน้ำ เที่ยวทะเล",
+        "descriptionEn": "Heavy-duty 500D PVC tarpaulin waterproof dry sack for rafting, kayaking, boating and beach trips."
     },
     {
         "id": "p-sprt-013",
@@ -2981,7 +4217,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "เชือกกระโดดนักกีฬาปรับสายได้ ลูกปืนความเร็วสูง Nike Speed Rope",
+        "nameEn": "Nike Speed Rope Adjustable High-Speed Ball Bearing Jump Rope",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "เชือกกระโดดสายสลิงหุ้มโพลียูรีเทน ระบบลูกปืนคู่หมุนลื่นไหลไม่สะดุด ด้ามจับกระชับมือ เหมาะสำหรับการเบิร์นไขมันและคาร์ดิโอ",
+        "descriptionEn": "Smooth 360-degree rotation ball bearings for cardio endurance and cross-training workouts."
     },
     {
         "id": "p-sprt-014",
@@ -2995,7 +4237,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 20,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "แว่นตาว่ายน้ำเคลือบกันฝ้า Speedo Futura Biofuse Flexiseal",
+        "nameEn": "Speedo Futura Biofuse Flexiseal Anti-Fog Swimming Goggles",
+        "categoryNameTh": "กีฬาและกิจกรรมกลางแจ้ง",
+        "categoryNameEn": "Sports & Outdoors",
+        "descriptionTh": "แว่นตาว่ายน้ำเทคโนโลยี Biofuse ซีลซิลิโคนนุ่มกระชับ ไม่กดเบ้าตา เลนส์เคลือบสารป้องกันฝ้าและรังสี UV มองเห็นใต้น้ำชัดเจน",
+        "descriptionEn": "Ultra-flexible gel seals cushion eye contours with wide vision clear lenses and UV protection."
     },
     {
         "id": "p-gard-001",
@@ -3012,7 +4260,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 450,
         "promotionPrice": 350,
-        "promotionLabel": "ลดพิเศษ"
+        "promotionLabel": "ลดพิเศษ",
+        "nameTh": "สว่านกระแทกไร้สาย Bosch GSB 120-LI พร้อมแบตเตอรี่และแท่นชาร์จ",
+        "nameEn": "Bosch GSB 120-LI Cordless Combi Hammer Drill with Battery & Charger",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "สว่านไร้สาย 12V ปรับความเร็วได้ 2 ระดับ เจาะได้ทั้งไม้ เหล็ก และปูน บอดี้กะทัดรัด แข็งแรงทนทานตามมาตรฐานเยอรมัน",
+        "descriptionEn": "Versatile 12V 2-speed planetary gearbox impact drill for drilling into wood, metal and masonry."
     },
     {
         "id": "p-gard-002",
@@ -3026,7 +4280,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 18,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ชุดกล่องเครื่องมือช่างสามัญประจำบ้าน Stanley 65 ชิ้น",
+        "nameEn": "Stanley 65-Piece Essential Home Repair Tool Kit with Carry Case",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "ชุดเครื่องมือช่างครบครัน ค้อน คีม ไขควง ประแจ และตลับเมตร บรรจุในกล่องพลาสติกขึ้นรูป แข็งแรง พกพาสะดวก ซ่อมแซมบ้านง่ายดาย",
+        "descriptionEn": "Comprehensive DIY household tool set featuring hammer, pliers, screwdrivers, sockets and tape measure."
     },
     {
         "id": "p-gard-003",
@@ -3040,7 +4300,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ตลับเมตรล็อกอัตโนมัติ Stanley FatMax 5 เมตร",
+        "nameEn": "Stanley FatMax 5M / 16FT Auto-Lock Heavy Duty Tape Measure",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "ตลับเมตรเคลือบ BladeArmor ทนทานต่อการขูดขีด ยืดได้ไกลโดยไม่หักงอ ตะขอเกี่ยวแม่เหล็ก ล็อกอัตโนมัติ แม่นยำทุกการวัด",
+        "descriptionEn": "BladeArmor coated steel tape with 3.3m standout and dual magnetic hook for solo measurement."
     },
     {
         "id": "p-gard-004",
@@ -3054,7 +4320,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 35,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "กรรไกรตัดแต่งกิ่งไม้ปากโค้ง Solo 8 นิ้ว คมทน",
+        "nameEn": "Solo 8-Inch Curved Bypass Garden Pruning Shears",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "ใบมีดเหล็กคาร์บอนสูง ชุบแข็งพิเศษ ตัดกิ่งไม้สดได้เนียนเรียบ แผลต้นไม้หายเร็ว สปริงผ่อนแรง ด้ามจับหุ้มยางกันลื่น",
+        "descriptionEn": "Forged carbon steel blades with sap groove and safety lock for trimming branches and shrubs."
     },
     {
         "id": "p-gard-005",
@@ -3071,7 +4343,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isPromotion": true,
         "originalPrice": 590,
         "promotionPrice": 490,
-        "promotionLabel": "ราคาพิเศษ"
+        "promotionLabel": "ราคาพิเศษ",
+        "nameTh": "ชุดสายยางรดน้ำพร้อมโรลม้วน Takagi Compact Reel 15 เมตร",
+        "nameEn": "Takagi Compact Garden Hose Reel Set 15 Meters",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "ชุดสายยางนำเข้าจากญี่ปุ่น สายยางไม่บิดหักงอ หัวฉีดปรับระดับน้ำได้ 4 แบบ หมุนเก็บง่าย น้ำหนักเบา ประหยัดพื้นที่จัดเก็บ",
+        "descriptionEn": "Japanese space-saving winding hose reel with 4-pattern water spray nozzle."
     },
     {
         "id": "p-gard-006",
@@ -3085,7 +4363,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 50,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ปุ๋ยควบคุมการปลดปล่อย ออสโมโค้ท Osmocote 13-13-13 ขนาด 1 กก.",
+        "nameEn": "Osmocote Controlled Release Fertilizer 13-13-13 (1kg Bag)",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "ปุ๋ยเม็ดละลายช้าสูตรเสมอ ค่อยๆ ปลดปล่อยธาตุอาหารยาวนาน 3 เดือน บำรุงราก ใบ ดอก สม่ำเสมอ ไม่ทำให้ต้นไม้ช็อกปุ๋ย",
+        "descriptionEn": "3-month continuous nutrient feed for ornamentals, potted plants, vegetables and trees."
     },
     {
         "id": "p-gard-007",
@@ -3099,7 +4383,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 120,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "หลอดไฟ LED ประหยัดไฟ Philips LED Bulb 10W แสงขาว Daylight",
+        "nameEn": "Philips LED Bulb 10W E27 Daylight 6500K Energy Saving",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "หลอดไฟขั้ว E27 สว่าง 1055 ลูเมน ประหยัดพลังงาน 88% แสงนุ่มนวลถนอมสายตา EyeComfort อายุการใช้งานยาวนาน 15,000 ชั่วโมง",
+        "descriptionEn": "Bright 1055-lumen LED bulb saves up to 88% electricity with EyeComfort non-flicker light."
     },
     {
         "id": "p-gard-008",
@@ -3113,7 +4403,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 30,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "หลอดไฟอัจฉริยะเปลี่ยนสีได้ Xiaomi Smart LED Bulb Essential",
+        "nameEn": "Xiaomi Smart LED Bulb Essential 16 Million Colors E27",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "ปรับแสงได้ 16 ล้านสี และปรับอุณหภูมิสีขาว-วอร์มไวท์ เชื่อมต่อ Wi-Fi สั่งงานด้วยเสียงผ่าน Google Assistant หรือแอป Mi Home",
+        "descriptionEn": "Smart Wi-Fi color changing bulb compatible with Google Home and Alexa, no hub required."
     },
     {
         "id": "p-gard-009",
@@ -3127,7 +4423,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 45,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ปลั๊กพ่วงกันไฟกระชาก Toshino 4 ช่อง 4 สวิตช์ สายยาว 3 เมตร",
+        "nameEn": "Toshino 4-Outlet Surge Protector Power Strip with 4 Individual Switches 3M",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "รางปลั๊กไฟมาตรฐาน มอก. วัสดุไม่ลามไฟ สวิตช์แยกเปิด-ปิด ระบบตัดไฟเกินอัตโนมัติ มีม่านนิรภัยป้องกันไฟดูด รองรับไฟ 2300W",
+        "descriptionEn": "Flame-retardant surge protected extension cord with overload circuit breaker and safety shutters."
     },
     {
         "id": "p-gard-010",
@@ -3141,7 +4443,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 25,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ถังขยะขาเหยียบสแตนเลสทรงกลม ฝาปิด Soft Close ขนาด 12 ลิตร",
+        "nameEn": "Stainless Steel Round Step Trash Can 12L with Soft-Close Lid",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "ถังขยะสแตนเลสกันสนิม ดีไซน์โมเดิร์น ฝาปิดนุ่มนวลไร้เสียงรบกวน มีถังพลาสติกด้านในพร้อมหูหิ้ว สะดวกเวลาเปลี่ยนถุงขยะ",
+        "descriptionEn": "Fingerprint-resistant brushed stainless steel pedal bin with removable inner plastic bucket."
     },
     {
         "id": "p-gard-011",
@@ -3155,7 +4463,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 40,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "บัวรดน้ำพลาสติกหนาพิเศษ ทรงวินเทจ ความจุ 5 ลิตร",
+        "nameEn": "Heavy-Duty Vintage Plastic Garden Watering Can 5L",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "บัวรดน้ำพลาสติกเกรดพรีเมียม หัวฝักบัวกระจายสายน้ำนุ่มนวล ไม่ทำให้หน้าดินกระจาย ด้ามจับถนัดมือ รดน้ำต้นไม้ได้เพลิดเพลิน",
+        "descriptionEn": "Ergonomic dual-handle watering kettle with removable fine sprinkler rose head."
     },
     {
         "id": "p-gard-012",
@@ -3169,7 +4483,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 60,
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ดินใบก้ามปูผสมมูลไส้เดือนสูตรอินทรีย์ ถุง 5 กก.",
+        "nameEn": "Organic Leaf Mold & Earthworm Castings Potting Soil 5kg",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "ดินปลูกต้นไม้สำเร็จรูป ผสมมูลไส้เดือนและใบก้ามปูหมัก ธาตุอาหารสูง ดินโปร่ง ระบายน้ำดี รากเดินไว ต้นไม้โตเร็ว",
+        "descriptionEn": "Nutrient-dense organic potting soil mix enriched with humic acid for vigorous root growth."
     },
     {
         "id": "p-gard-013",
@@ -3183,7 +4503,13 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 15,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "นาฬิกาแขวนผนังดีไซน์มินิมอล Seiko Quiet Sweep 12 นิ้ว",
+        "nameEn": "Seiko 12-Inch Quiet Sweep Second Hand Minimalist Wall Clock",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "นาฬิกาแขวนทรงกลม เข็มเดินเงียบไร้เสียงรบกวน ตัวเลขชัดเจนดีไซน์มินิมอลญี่ปุ่น เครื่องมาตรฐาน Seiko เที่ยงตรงทนทาน",
+        "descriptionEn": "Silent non-ticking quartz wall clock with large high-contrast numerals and sleek frame."
     },
     {
         "id": "p-gard-014",
@@ -3197,10 +4523,15 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "stock": 12,
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
-        "isPromotion": false
+        "isPromotion": false,
+        "nameTh": "ชั้นวางของเหล็ก 4 ชั้น พับเก็บได้ KASSA HOME สีดำ",
+        "nameEn": "KASSA HOME 4-Tier Heavy-Duty Foldable Metal Storage Shelving Rack Black",
+        "categoryNameTh": "บ้านและสวน",
+        "categoryNameEn": "Home & Garden",
+        "descriptionTh": "ชั้นวางของโครงเหล็กเคลือบสีกันสนิม พับกางใช้งานได้ทันทีไม่ต้องประกอบ มีล้อเลื่อนล็อกได้ รับน้ำหนักได้สูงสุดชั้นละ 30 กก.",
+        "descriptionEn": "Sturdy powder-coated carbon steel rack with 4 lockable wheels, folds flat in 5 seconds."
     },
     {
-    
         "id": "p-prop-001",
         "sku": "XM-PROP-0001",
         "name": "บ้านเดี่ยว 2 ชั้น สไตล์โมเดิร์น เศรษฐสิริ กรุงเทพกรีฑา",
@@ -3219,10 +4550,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-002",
         "sku": "XM-PROP-0002",
         "name": "ทาวน์โฮม 3 ชั้น พรีเมียม พาทิโอ พระราม 9",
@@ -3244,10 +4573,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 5890000,
         "promotionPrice": 5490000,
         "promotionLabel": "โปรลดพิเศษ"
-
     },
     {
-    
         "id": "p-prop-003",
         "sku": "XM-PROP-0003",
         "name": "คอนโดมิเนียมหรู 2 ห้องนอน วิวแม่น้ำ แอชตัน สีลม",
@@ -3266,10 +4593,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-004",
         "sku": "XM-PROP-0004",
         "name": "บ้านแฝดสไตล์อังกฤษ แกรนด์ บริทาเนีย บางนา",
@@ -3288,10 +4613,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-005",
         "sku": "XM-PROP-0005",
         "name": "โฮมออฟฟิศ 4 ชั้น พร้อมลิฟต์ บิซทาวน์ สุขุมวิท",
@@ -3310,10 +4633,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-006",
         "sku": "XM-PROP-0006",
         "name": "พูลวิลล่าตากอากาศสไตล์ทรอปิคอล หัวหิน บลูสกาย",
@@ -3332,10 +4653,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-007",
         "sku": "XM-PROP-0007",
         "name": "อาคารพาณิชย์ 3.5 ชั้น ทำเลทอง ชินเขต งามวงศ์วาน",
@@ -3354,10 +4673,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-008",
         "sku": "XM-PROP-0008",
         "name": "ที่ดินเปล่าจัดสรรถมแล้ว 200 ตร.ว. ราชพฤกษ์",
@@ -3376,10 +4693,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-009",
         "sku": "XM-PROP-0009",
         "name": "คอนโดมิเนียม 1 ห้องนอน ติดรถไฟฟ้า ไอดิโอ สุขุมวิท 93",
@@ -3401,10 +4716,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 4100000,
         "promotionPrice": 3890000,
         "promotionLabel": "ราคาพิเศษ"
-
     },
     {
-    
         "id": "p-prop-010",
         "sku": "XM-PROP-0010",
         "name": "บ้านเดี่ยวพูลวิลล่าหรู คฤหาสน์ นันทวัน ปิ่นเกล้า",
@@ -3423,10 +4736,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-011",
         "sku": "XM-PROP-0011",
         "name": "ทาวน์โฮม 2 ชั้น มินิมอล โกลเด้น นีโอ สาทร",
@@ -3445,10 +4756,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-012",
         "sku": "XM-PROP-0012",
         "name": "เพนต์เฮาส์ดูเพล็กซ์ วิว 360 องศา คลาส สุขุมวิท 55",
@@ -3467,10 +4776,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-013",
         "sku": "XM-PROP-0013",
         "name": "บ้านแฝดแนวคิดใหม่ วิลเลจจิโอ รังสิต-คลอง 2",
@@ -3489,10 +4796,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-014",
         "sku": "XM-PROP-0014",
         "name": "ที่ดินแปลงใหญ่ 1 ไร่ ติดถนนใหญ่ เชียงใหม่-หางดง",
@@ -3511,10 +4816,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-015",
         "sku": "XM-PROP-0015",
         "name": "คอนโดมิเนียมสไตล์รีสอร์ต ลุมพินี พาร์คบีช จอมเทียน",
@@ -3533,10 +4836,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-016",
         "sku": "XM-PROP-0016",
         "name": "บ้านเดี่ยวชั้นเดียว สไตล์นอร์ดิก เชียงราย กรีนการ์เดน",
@@ -3555,10 +4856,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-017",
         "sku": "XM-PROP-0017",
         "name": "อาคารสำนักงานขนาดเล็ก 3 ชั้น รามอินทรา ซอย 5",
@@ -3577,10 +4876,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-018",
         "sku": "XM-PROP-0018",
         "name": "ทาวน์โฮมมุม 3 ชั้น หน้ากว้าง 6 เมตร ซิตี้วิลล์ ดอนเมือง",
@@ -3599,10 +4896,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-019",
         "sku": "XM-PROP-0019",
         "name": "บ้านพักตากอากาศริมทะเลสาบ เขาใหญ่ ฟอเรสต์วิว",
@@ -3621,10 +4916,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-prop-020",
         "sku": "XM-PROP-0020",
         "name": "คอนโดมิเนียม Low-Rise เลี้ยงสัตว์ได้ พาร์ค ออริจิ้น ทองหล่อ",
@@ -3643,10 +4936,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-001",
         "sku": "XM-TOY-0001",
         "name": "LEGO Classic กล่องตัวต่อเสริมจินตนาการขนาดกลาง 10696",
@@ -3668,10 +4959,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 1550,
         "promotionPrice": 1350,
         "promotionLabel": "ลดพิเศษ"
-
     },
     {
-    
         "id": "p-toy-002",
         "sku": "XM-TOY-0002",
         "name": "LEGO City สถานีตำรวจพร้อมรถตำรวจและเฮลิคอปเตอร์ 60316",
@@ -3690,10 +4979,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-003",
         "sku": "XM-TOY-0003",
         "name": "ตุ๊กตาบาร์บี้ Barbie Fashionistas ในชุดเดรสลายดอกไม้",
@@ -3712,10 +4999,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-004",
         "sku": "XM-TOY-0004",
         "name": "รถเหล็ก Hot Wheels แพ็ค 10 คัน คละรุ่นยอดนิยม",
@@ -3734,10 +5019,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-005",
         "sku": "XM-TOY-0005",
         "name": "รถบังคับวิทยุออฟโรด RC Monster Truck 4WD ความเร็วสูง",
@@ -3756,10 +5039,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-006",
         "sku": "XM-TOY-0006",
         "name": "ชุดของเล่นบล็อกไม้ตัวต่อสร้างเมือง 100 ชิ้น Melissa & Doug",
@@ -3778,10 +5059,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-007",
         "sku": "XM-TOY-0007",
         "name": "เกมกระดาน Monopoly Classic บอร์ดเกมเศรษฐีฉบับภาษาไทย",
@@ -3800,10 +5079,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-008",
         "sku": "XM-TOY-0008",
         "name": "เกมต่อตึกไม้ตึกถล่ม Jenga Classic แท้จาก Hasbro",
@@ -3822,10 +5099,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-009",
         "sku": "XM-TOY-0009",
         "name": "แป้งโดว์ปลอดสารพิษ Play-Doh Color Collection 8 กระปุก",
@@ -3844,10 +5119,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-010",
         "sku": "XM-TOY-0010",
         "name": "ปืนยิงกระสุนโฟม Nerf Elite 2.0 Commander RD-6",
@@ -3866,10 +5139,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-011",
         "sku": "XM-TOY-0011",
         "name": "ชุดของเล่นจำลองบทบาท เชฟตัวน้อย ครัวทำอาหารพร้อมอุปกรณ์ครบชุด",
@@ -3888,10 +5159,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-012",
         "sku": "XM-TOY-0012",
         "name": "ชุดกล่องแพทย์จำลองพร้อมหูฟังเสียงเต้นหัวใจจริง Fisher-Price",
@@ -3910,10 +5179,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-013",
         "sku": "XM-TOY-0013",
         "name": "กล้องจุลทรรศน์สำหรับเด็กพร้อมชุดทดลองวิทยาศาสตร์ National Geographic",
@@ -3932,10 +5199,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-014",
         "sku": "XM-TOY-0014",
         "name": "ชุดสีไม้และสีน้ำกระเป๋าไม้ระดับพรีเมียม Crayola 140 ชิ้น",
@@ -3954,10 +5219,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-015",
         "sku": "XM-TOY-0015",
         "name": "ลูกฟุตบอลนุ่มเสริมพัฒนาการเด็กเล็ก Fisher-Price Kick & Play",
@@ -3976,10 +5239,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-016",
         "sku": "XM-TOY-0016",
         "name": "ตุ๊กตาหมีขนนุ่มระดับพรีเมียม Teddy Bear 50 ซม.",
@@ -3998,10 +5259,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-017",
         "sku": "XM-TOY-0017",
         "name": "โมเดลกันดั้มแท้ Bandai HG 1/144 RX-78-2 Gundam",
@@ -4020,10 +5279,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-018",
         "sku": "XM-TOY-0018",
         "name": "บ้านตุ๊กตาพร้อมครอบครัวกระต่าย Sylvanian Families Red Roof Cosy Cottage",
@@ -4042,10 +5299,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-019",
         "sku": "XM-TOY-0019",
         "name": "รูบิค 3x3 แท้ หมุนลื่นความเร็วสูง GAN 356 RS Speed Cube",
@@ -4064,10 +5319,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-toy-020",
         "sku": "XM-TOY-0020",
         "name": "สกู๊ตเตอร์ 3 ล้อสำหรับเด็ก ล้อมีไฟ LED Micro Kickboard Mini",
@@ -4086,10 +5339,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-001",
         "sku": "XM-FRSH-0001",
         "name": "หมูสามชั้นสไลซ์ชาบู สดสะอาด S-Pure 500g",
@@ -4111,10 +5362,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 210,
         "promotionPrice": 185,
         "promotionLabel": "ราคาพิเศษ"
-
     },
     {
-    
         "id": "p-frsh-002",
         "sku": "XM-FRSH-0002",
         "name": "สันคอหมูสดหั่นชิ้น CP Selection 1 กก.",
@@ -4133,10 +5382,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-003",
         "sku": "XM-FRSH-0003",
         "name": "อกไก่ลอกหนัง สดปลอดสาร Betagro 1 กก.",
@@ -4155,10 +5402,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-004",
         "sku": "XM-FRSH-0004",
         "name": "น่องไก่ติดสะโพกสด CP 1 กก.",
@@ -4177,10 +5422,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-005",
         "sku": "XM-FRSH-0005",
         "name": "เนื้อวัวสันนอกริบอาย ออสเตรเลียตัดสเต๊ก 300g",
@@ -4199,10 +5442,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-006",
         "sku": "XM-FRSH-0006",
         "name": "เนื้อวัวบดพรีเมียม โคขุนโพนยางคำ 500g",
@@ -4221,10 +5462,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-007",
         "sku": "XM-FRSH-0007",
         "name": "ปลาแซลมอนนอร์เวย์สดตัดชิ้นสเต๊ก 200g",
@@ -4246,10 +5485,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 229,
         "promotionPrice": 199,
         "promotionLabel": "ราคาพิเศษ"
-
     },
     {
-    
         "id": "p-frsh-008",
         "sku": "XM-FRSH-0008",
         "name": "ปลากะพงขาวสด ผ่าผีเสื้อพร้อมทอด 600g",
@@ -4268,10 +5505,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-009",
         "sku": "XM-FRSH-0009",
         "name": "กุ้งขาวสดแกะเปลือกไว้หาง ผ่าหลัง 500g",
@@ -4290,10 +5525,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-010",
         "sku": "XM-FRSH-0010",
         "name": "หมึกกล้วยสดลอกหนัง หั่นวง 500g",
@@ -4312,10 +5545,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-011",
         "sku": "XM-FRSH-0011",
         "name": "ไข่ไก่สดอนามัย เบอร์ 2 CP แพ็ค 30 ฟอง",
@@ -4334,10 +5565,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-012",
         "sku": "XM-FRSH-0012",
         "name": "ผักสลัดกรีนโอ๊ค ไฮโดรโปนิกส์ โครงการหลวง 250g",
@@ -4356,10 +5585,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-013",
         "sku": "XM-FRSH-0013",
         "name": "มะเขือเทศเชอร์รี่หวานสด คัดเกรดพิเศษ 500g",
@@ -4378,10 +5605,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-014",
         "sku": "XM-FRSH-0014",
         "name": "แอปเปิ้ลฟูจิ นำเข้าจากญี่ปุ่น แพ็ค 4 ลูก",
@@ -4400,10 +5625,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": false,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-015",
         "sku": "XM-FRSH-0015",
         "name": "ไส้กรอกหมูรมควันหนังกรอบ Bucher ไส้กรอกบุชเชอร์ 300g",
@@ -4422,10 +5645,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-016",
         "sku": "XM-FRSH-0016",
         "name": "เบคอนหมูรมควันรมควันไม้ธรรมชาติ CP 500g",
@@ -4444,10 +5665,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-017",
         "sku": "XM-FRSH-0017",
         "name": "ลูกชิ้นหมูแท้เกรดพรีเมียม สวนอาหารกานต์ 500g",
@@ -4466,10 +5685,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-018",
         "sku": "XM-FRSH-0018",
         "name": "นักเก็ตไก่กรอบสูตรคลาสสิก Tyson 1 กก.",
@@ -4491,10 +5708,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "originalPrice": 219,
         "promotionPrice": 189,
         "promotionLabel": "ราคาพิเศษ"
-
     },
     {
-    
         "id": "p-frsh-019",
         "sku": "XM-FRSH-0019",
         "name": "เกี๊ยวซ่าหมูผสมผักแช่แข็ง สไตล์ญี่ปุ่น Ajinomoto 30 ชิ้น",
@@ -4513,10 +5728,8 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     },
     {
-    
         "id": "p-frsh-020",
         "sku": "XM-FRSH-0020",
         "name": "เบอร์รี่รวมแช่แข็ง (สตรอว์เบอร์รี บลูเบอร์รี ราสป์เบอร์รี) Aro 1 กก.",
@@ -4535,7 +5748,6 @@ const rawProductsData: Omit<Product, 'image'>[] = [
         "isUnlimitedStock": true,
         "status": "AVAILABLE",
         "isPromotion": false
-
     }
 ];
 

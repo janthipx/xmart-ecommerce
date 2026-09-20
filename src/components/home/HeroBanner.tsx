@@ -3,32 +3,34 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { TruckIcon, ShieldCheckIcon, LockIcon } from "@/components/icons";
+import { useTranslation } from "@/lib/i18n";
 
 export function HeroBanner() {
+    const { language } = useTranslation();
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const slides = [
         {
-            badge: "ส่งฟรี! 24 ชั่วโมง",
-            title: "ไม่มีขั้นต่ำ",
-            subtitle: "ช้อปง่าย สินค้าครบ จัดส่งรวดเร็ว",
-            ctaText: "ช้อปเลย",
+            badge: language === 'en' ? "Free delivery 24/7" : "ส่งฟรี! 24 ชั่วโมง",
+            title: language === 'en' ? "No Minimum" : "ไม่มีขั้นต่ำ",
+            subtitle: language === 'en' ? "Easy shopping, complete catalog, fast delivery" : "ช้อปง่าย สินค้าครบ จัดส่งรวดเร็ว",
+            ctaText: language === 'en' ? "Shop Now" : "ช้อปเลย",
             ctaLink: "/products",
             variant: "truck",
         },
         {
-            badge: "ดีลเด็ดประจำสัปดาห์",
-            title: "ลดสูงสุด 30%",
-            subtitle: "โปรโมชั่นพิเศษ ประหยัดคุ้มค่าทุกคำสั่งซื้อ",
-            ctaText: "ดูโปรโมชั่น",
+            badge: language === 'en' ? "Weekly Hot Deals" : "ดีลเด็ดประจำสัปดาห์",
+            title: language === 'en' ? "Up to 30% OFF" : "ลดสูงสุด 30%",
+            subtitle: language === 'en' ? "Special promotions, save big on every order" : "โปรโมชั่นพิเศษ ประหยัดคุ้มค่าทุกคำสั่งซื้อ",
+            ctaText: language === 'en' ? "View Promotions" : "ดูโปรโมชั่น",
             ctaLink: "/promotions",
             variant: "promo",
         },
         {
-            badge: "การันตีคุณภาพ",
-            title: "สินค้าขายดี",
-            subtitle: "คัดสรรจากยอดสั่งซื้อจริง การันตีความพึงพอใจ",
-            ctaText: "ดูสินค้าขายดี",
+            badge: language === 'en' ? "Quality Guaranteed" : "การันตีคุณภาพ",
+            title: language === 'en' ? "Best Sellers" : "สินค้าขายดี",
+            subtitle: language === 'en' ? "Selected from verified top orders, satisfaction guaranteed" : "คัดสรรจากยอดสั่งซื้อจริง การันตีความพึงพอใจ",
+            ctaText: language === 'en' ? "View Best Sellers" : "ดูสินค้าขายดี",
             ctaLink: "/best-selling",
             variant: "bestseller",
         },
@@ -207,10 +209,10 @@ export function HeroBanner() {
                     </div>
                     <div>
                         <h4 className="font-bold text-zinc-900 text-sm sm:text-[15px] leading-snug">
-                            ส่งฟรี 24 ชั่วโมง
+                            {language === 'en' ? 'Free delivery 24/7' : 'ส่งฟรี 24 ชั่วโมง'}
                         </h4>
                         <p className="text-xs text-zinc-500 mt-0.5 font-medium">
-                            ไม่มีขั้นต่ำ
+                            {language === 'en' ? 'No minimum' : 'ไม่มีขั้นต่ำ'}
                         </p>
                     </div>
                 </div>
@@ -222,10 +224,10 @@ export function HeroBanner() {
                     </div>
                     <div>
                         <h4 className="font-bold text-zinc-900 text-sm sm:text-[15px] leading-snug">
-                            สินค้าคุณภาพ
+                            {language === 'en' ? 'Quality Products' : 'สินค้าคุณภาพ'}
                         </h4>
                         <p className="text-xs text-zinc-500 mt-0.5 font-medium">
-                            คัดสรรจากแบรนด์ชั้นนำ
+                            {language === 'en' ? 'Selected from leading brands' : 'คัดสรรจากแบรนด์ชั้นนำ'}
                         </p>
                     </div>
                 </div>
@@ -237,10 +239,10 @@ export function HeroBanner() {
                     </div>
                     <div>
                         <h4 className="font-bold text-zinc-900 text-sm sm:text-[15px] leading-snug">
-                            ชำระเงินปลอดภัย
+                            {language === 'en' ? 'Secure Payment' : 'ชำระเงินปลอดภัย'}
                         </h4>
                         <p className="text-xs text-zinc-500 mt-0.5 font-medium">
-                            หลากหลายช่องทาง
+                            {language === 'en' ? 'PromptPay & Cash on Delivery' : 'พร้อมเพย์ & ชำระเงินปลายทาง'}
                         </p>
                     </div>
                 </div>

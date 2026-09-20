@@ -66,13 +66,20 @@ export function ProductCard({ product, rank, isBestSeller }: ProductCardProps) {
         dotColor = 'bg-emerald-500';
     }
 
+    // Promo label helper for clean bilingual display
+    const promoLabel = product.promotionLabel
+        ? (language === 'en'
+            ? product.promotionLabel.replace('ราคาพิเศษ', 'Special Price').replace(/ลด\s*(\d+)%/, '$1% OFF')
+            : product.promotionLabel)
+        : (language === 'en' ? 'PROMO' : 'โปรโมชั่น');
+
     return (
         <div className="flex flex-col justify-between h-full bg-white rounded-2xl border border-zinc-200/85 shadow-xs hover:shadow-md transition-all duration-200 p-3 sm:p-4 relative group">
             {/* Top Badges (Promotion / Best-Selling Rank) */}
             <div className="absolute top-3 left-3 z-10 flex flex-col gap-1 items-start max-w-[72%] pointer-events-none">
                 {product.isPromotion && (
                     <span className="bg-[#e60023] text-white text-[11px] sm:text-xs font-bold px-2.5 py-0.5 rounded-md shadow-xs tracking-wide">
-                        {product.promotionLabel || (language === 'en' ? 'PROMO' : 'โปรโมชั่น')}
+                        {promoLabel}
                     </span>
                 )}
                 {rank && rank <= 3 ? (

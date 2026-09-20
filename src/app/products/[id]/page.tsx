@@ -52,7 +52,10 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
         <div className="min-h-screen bg-xmart-bg">
             <Header />
             <div className="flex items-center justify-center min-h-[60vh]">
-                <div className="text-zinc-400 text-center"><ClockIcon className="w-10 h-10 mx-auto mb-2 text-zinc-300 animate-spin" /><p>กำลังโหลด...</p></div>
+                <div className="text-zinc-400 text-center">
+                    <ClockIcon className="w-10 h-10 mx-auto mb-2 text-zinc-300 animate-spin" />
+                    <p>{language === 'en' ? 'Loading...' : 'กำลังโหลด...'}</p>
+                </div>
             </div>
         </div>
     );
@@ -62,8 +65,10 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             <Header />
             <div className="max-w-xl mx-auto px-4 py-20 text-center">
                 <div className="flex justify-center mb-4 text-zinc-300"><AlertCircleIcon className="w-16 h-16" /></div>
-                <h1 className="text-xl font-bold mb-2">ไม่พบสินค้านี้</h1>
-                <Link href="/products" className="text-xmart-primary font-bold hover:underline">กลับไปดูสินค้าทั้งหมด</Link>
+                <h1 className="text-xl font-bold mb-2">{language === 'en' ? 'Product Not Found' : 'ไม่พบสินค้านี้'}</h1>
+                <Link href="/products" className="text-xmart-primary font-bold hover:underline">
+                    {language === 'en' ? 'Back to All Products' : 'กลับไปดูสินค้าทั้งหมด'}
+                </Link>
             </div>
         </div>
     );
@@ -73,7 +78,11 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     const handleAddToCart = () => {
         if (isOutOfStock) return;
         addItem(product, qty);
-        notificationsStorage.add({ title: 'เพิ่มลงตะกร้าแล้ว', message: `${product.name} × ${qty} ชิ้น`, type: 'ORDER' });
+        notificationsStorage.add({
+            title: language === 'en' ? 'Added to Cart' : 'เพิ่มลงตะกร้าแล้ว',
+            message: `${productName} × ${qty} ${language === 'en' ? (qty > 1 ? 'items' : 'item') : 'ชิ้น'}`,
+            type: 'ORDER'
+        });
         setAdded(true);
         setTimeout(() => setAdded(false), 2000);
     };
@@ -123,7 +132,11 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                         <div className="flex items-center gap-2 flex-wrap mb-3">
                             {product.isPromotion && (
                                 <span className="inline-flex items-center text-xs sm:text-sm font-bold text-white bg-[#e60023] rounded-full px-3.5 py-1 shadow-xs tracking-wide">
-                                    {product.promotionLabel || (language === 'en' ? 'PROMO' : 'โปรโมชั่น')}
+                                    {product.promotionLabel
+                                        ? (language === 'en'
+                                            ? product.promotionLabel.replace('ราคาพิเศษ', 'Special Price').replace(/ลด\s*(\d+)%/, '$1% OFF')
+                                            : product.promotionLabel)
+                                        : (language === 'en' ? 'PROMO' : 'โปรโมชั่น')}
                                 </span>
                             )}
                             {bestSellerRank !== null && bestSellerRank <= 10 && (

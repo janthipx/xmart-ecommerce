@@ -58,8 +58,11 @@ function TrackForm() {
             if (latest.orderStatus !== 'CANCELLED' && latest.orderStatus !== 'DELIVERED') {
                 const calc = calculateOrderStatus(latest, Date.now());
                 if (calc.currentStatus !== latest.orderStatus) {
+                    const isDelivered = calc.currentStatus === 'DELIVERED';
+                    const nextPaymentStatus = (latest.paymentMethod === 'CASH' && isDelivered) ? ('PAID' as const) : latest.paymentStatus;
                     const patch: Partial<Order> = {
                         orderStatus: calc.currentStatus,
+                        paymentStatus: nextPaymentStatus,
                         statusUpdatedAt: new Date().toISOString(),
                         updatedAt: new Date().toISOString(),
                     };
@@ -94,8 +97,8 @@ function TrackForm() {
         // Check immediately
         checkAndSync();
 
-        // 60,000 ms background polling interval
-        const pollInterval = setInterval(checkAndSync, 60000);
+        // 1,000 ms background polling interval for live demo status progression
+        const pollInterval = setInterval(checkAndSync, 1000);
 
         // Immediate event synchronization
         const handleCustomSync = () => checkAndSync();
@@ -342,22 +345,34 @@ function TrackForm() {
                         </div>
 
                         <div className="flex items-center gap-2">
-                            {isCancelled || order.paymentStatus === 'FAILED' ? (
-                                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-red-100 text-red-600 inline-flex items-center gap-1">
-                                    <XCircleIcon className="w-3.5 h-3.5" />
-                                    <span>{language === 'en' ? 'Payment Failed' : 'การชำระเงินไม่สำเร็จ'}</span>
-                                </span>
-                            ) : order.paymentStatus === 'PAID' ? (
-                                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 inline-flex items-center gap-1">
-                                    <CheckCircleIcon className="w-3.5 h-3.5" />
-                                    <span>{language === 'en' ? 'Paid' : 'ชำระเงินแล้ว'}</span>
-                                </span>
-                            ) : (
-                                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-orange-100 text-orange-600 inline-flex items-center gap-1">
-                                    <ClockIcon className="w-3.5 h-3.5" />
-                                    <span>{language === 'en' ? 'Waiting for Payment' : 'รอการชำระเงิน'}</span>
-                                </span>
-                            )}
+                            {(() => {
+                                const effectivePaymentStatus = (order.paymentMethod === 'CASH' && currentStatus === 'DELIVERED')
+                                    ? 'PAID'
+                                    : order.paymentStatus;
+
+                                if (isCancelled || effectivePaymentStatus === 'FAILED') {
+                                    return (
+                                        <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-red-100 text-red-600 inline-flex items-center gap-1">
+                                            <XCircleIcon className="w-3.5 h-3.5" />
+                                            <span>{getPaymentStatusLabel('FAILED', language)}</span>
+                                        </span>
+                                    );
+                                }
+                                if (effectivePaymentStatus === 'PAID') {
+                                    return (
+                                        <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 inline-flex items-center gap-1">
+                                            <CheckCircleIcon className="w-3.5 h-3.5" />
+                                            <span>{getPaymentStatusLabel('PAID', language)}</span>
+                                        </span>
+                                    );
+                                }
+                                return (
+                                    <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-orange-100 text-orange-600 inline-flex items-center gap-1">
+                                        <ClockIcon className="w-3.5 h-3.5" />
+                                        <span>{getPaymentStatusLabel('PENDING', language)}</span>
+                                    </span>
+                                );
+                            })()}
                         </div>
                     </div>
 

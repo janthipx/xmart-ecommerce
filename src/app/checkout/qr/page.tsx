@@ -85,12 +85,14 @@ function QrContent() {
 
         await new Promise(r => setTimeout(r, 1200));
 
+        const nowIso = new Date().toISOString();
         // Mark as PAID and advance order to CONFIRMED (Requirement 5 & 6)
         ordersStorage.update(order.orderNumber, {
             paymentStatus: 'PAID',
             orderStatus: 'CONFIRMED',
-            statusUpdatedAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
+            paidAt: nowIso,
+            statusUpdatedAt: nowIso,
+            updatedAt: nowIso,
         });
 
         notificationsStorage.add({

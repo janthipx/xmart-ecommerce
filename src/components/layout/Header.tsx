@@ -81,7 +81,7 @@ export function Header() {
                                     <CartIcon className="w-6 h-6 sm:w-7 sm:h-7 stroke-[2.3]" />
                                 </div>
                             </div>
-                            <span className="text-[11px] sm:text-xs font-semibold text-zinc-500 tracking-tight mt-0.5">
+                            <span className="text-[11px] sm:text-xs font-semibold text-zinc-500 tracking-tight mt-0.5" suppressHydrationWarning>
                                 {language === 'en' ? 'Food & essentials, all in one place' : 'ของกิน ของใช้ ครบจบที่เดียว'}
                             </span>
                         </Link>

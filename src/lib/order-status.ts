@@ -1,6 +1,6 @@
 import { Order, OrderStatus } from "@/types";
 
-export const STEP_DURATION_SEC = 5 * 60; // 300 seconds (5 minutes)
+export const STEP_DURATION_SEC = 5; // 5 seconds per step for Demo / Test
 
 export const STATUS_STEPS: OrderStatus[] = [
     'PENDING',
@@ -33,7 +33,7 @@ export interface OrderStatusCalculation {
     nextStatus: OrderStatus | null;
     stepIndex: number;
     secondsRemaining: number;
-    formattedRemaining: string; // e.g. "04:32"
+    formattedRemaining: string; // e.g. "00:05"
     canCancel: boolean;
     isShipping: boolean;
     isDelivered: boolean;
@@ -56,7 +56,7 @@ export function canCancelOrder(status: OrderStatus): boolean {
 
 /**
  * Returns adjusted createdAt timestamp so that an order manually advanced to targetStatus
- * aligns cleanly with the 5-minute auto-progression timer.
+ * aligns cleanly with the auto-progression timer.
  */
 export function getAdjustedCreatedAtForStatus(status: OrderStatus, nowMs: number = Date.now()): string {
     const idx = STATUS_STEPS.indexOf(status);
@@ -65,12 +65,22 @@ export function getAdjustedCreatedAtForStatus(status: OrderStatus, nowMs: number
 }
 
 /**
- * Calculates current order status based on elapsed time from order.createdAt.
- * 0 - 4:59 min   = PENDING
- * 5 - 9:59 min   = CONFIRMED
- * 10 - 14:59 min = PREPARING
- * 15 - 19:59 min = SHIPPING
- * 20 min and up  = DELIVERED
+ * Calculates current order status based on elapsed time.
+ * Demo timing (5s per step):
+ *
+ * PROMPTPAY (PAID):
+ * Starts at CONFIRMED upon payment confirmation
+ * 0 - 4.99s   = CONFIRMED
+ * 5 - 9.99s   = PREPARING
+ * 10 - 14.99s = SHIPPING
+ * 15s and up  = DELIVERED
+ *
+ * CASH:
+ * 0 - 4.99s   = PENDING
+ * 5 - 9.99s   = CONFIRMED
+ * 10 - 14.99s = PREPARING
+ * 15 - 19.99s = SHIPPING
+ * 20s and up  = DELIVERED
  */
 export function calculateOrderStatus(order: Order, nowMs: number = Date.now()): OrderStatusCalculation {
     if (order.orderStatus === 'CANCELLED') {
@@ -89,7 +99,7 @@ export function calculateOrderStatus(order: Order, nowMs: number = Date.now()): 
 
     // PAYMENT GATE (Requirement 6 & 8):
     // For PromptPay orders, if paymentStatus is PENDING, order CANNOT advance to PREPARING, SHIPPING, or DELIVERED.
-    // It remains strictly at PENDING until paid or cancelled.
+    // It remains strictly at PENDING (or current status) until paid or cancelled.
     if (order.paymentMethod === 'PROMPTPAY' && order.paymentStatus === 'PENDING') {
         return {
             currentStatus: 'PENDING',
@@ -104,30 +114,54 @@ export function calculateOrderStatus(order: Order, nowMs: number = Date.now()): 
         };
     }
 
-    // For CASH orders or PAID PromptPay orders:
-    // If PromptPay was paid, progression time starts from payment confirmation (statusUpdatedAt)
-    const baseTimeMs = (order.paymentMethod === 'PROMPTPAY' && order.paymentStatus === 'PAID' && order.statusUpdatedAt)
-        ? new Date(order.statusUpdatedAt).getTime()
-        : new Date(order.createdAt).getTime();
-
-    const elapsedSec = Math.max(0, Math.floor((nowMs - baseTimeMs) / 1000));
-
-    // Calculate step index based on 5-minute intervals, never regressing below stored status
-    const timeStepIndex = Math.min(STATUS_STEPS.length - 1, Math.floor(elapsedSec / STEP_DURATION_SEC));
     const storedStepIndex = STATUS_STEPS.indexOf(order.orderStatus);
-    const initialStep = (order.paymentMethod === 'PROMPTPAY' && order.paymentStatus === 'PAID') ? 1 : 0; // Starts at CONFIRMED once paid
-    const stepIndex = Math.min(
-        STATUS_STEPS.length - 1,
-        Math.max(storedStepIndex >= 0 ? storedStepIndex : initialStep, timeStepIndex)
-    );
+    let stepIndex = storedStepIndex >= 0 ? storedStepIndex : 0;
+    let secondsRemaining = 0;
+
+    if (order.paymentMethod === 'PROMPTPAY' && order.paymentStatus === 'PAID') {
+        // Progression time starts from payment confirmation
+        const paidTimeMs = order.paidAt
+            ? new Date(order.paidAt).getTime()
+            : (order.statusUpdatedAt ? new Date(order.statusUpdatedAt).getTime() : new Date(order.createdAt).getTime());
+
+        const elapsedSec = Math.max(0, Math.floor((nowMs - paidTimeMs) / 1000));
+        const stepsAfterConfirmed = Math.floor(elapsedSec / STEP_DURATION_SEC);
+        const calculatedIndex = 1 + stepsAfterConfirmed; // Index 1 is CONFIRMED
+
+        stepIndex = Math.min(
+            STATUS_STEPS.length - 1,
+            Math.max(storedStepIndex >= 0 ? storedStepIndex : 1, calculatedIndex)
+        );
+
+        if (stepIndex < STATUS_STEPS.length - 1) {
+            const nextStepBoundarySec = stepIndex * STEP_DURATION_SEC;
+            secondsRemaining = Math.max(0, nextStepBoundarySec - elapsedSec);
+        } else {
+            secondsRemaining = 0;
+        }
+    } else {
+        // CASH orders or default flow
+        const baseTimeMs = new Date(order.createdAt).getTime();
+        const elapsedSec = Math.max(0, Math.floor((nowMs - baseTimeMs) / 1000));
+        const timeStepIndex = Math.floor(elapsedSec / STEP_DURATION_SEC);
+
+        stepIndex = Math.min(
+            STATUS_STEPS.length - 1,
+            Math.max(storedStepIndex >= 0 ? storedStepIndex : 0, timeStepIndex)
+        );
+
+        if (stepIndex < STATUS_STEPS.length - 1) {
+            const nextStepBoundarySec = (stepIndex + 1) * STEP_DURATION_SEC;
+            secondsRemaining = Math.max(0, nextStepBoundarySec - elapsedSec);
+        } else {
+            secondsRemaining = 0;
+        }
+    }
 
     const currentStatus = STATUS_STEPS[stepIndex];
     const isDelivered = currentStatus === 'DELIVERED';
     const isShipping = currentStatus === 'SHIPPING';
     const nextStatus = isDelivered ? null : STATUS_STEPS[stepIndex + 1];
-
-    const nextStepTimeSec = (stepIndex + 1) * STEP_DURATION_SEC;
-    const secondsRemaining = isDelivered ? 0 : Math.max(0, nextStepTimeSec - elapsedSec);
 
     const minutes = Math.floor(secondsRemaining / 60).toString().padStart(2, '0');
     const seconds = (secondsRemaining % 60).toString().padStart(2, '0');

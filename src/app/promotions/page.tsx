@@ -8,6 +8,7 @@ import { Product, Category } from "@/types";
 import { productsStorage, categoriesStorage } from "@/lib/storage/helpers";
 import { mockProducts } from "@/data/products";
 import { mockCategories } from "@/data/categories";
+import { useTranslation, getCategoryName } from "@/lib/i18n";
 import Link from "next/link";
 import { FlameIcon, SparklesIcon, TagIcon, CategoryIcon, RefreshCwIcon } from "@/components/icons";
 
@@ -15,6 +16,7 @@ type SortOption = 'discount-desc' | 'price-asc' | 'price-desc' | 'name-asc';
 type DiscountFilter = 'all' | '20plus' | '10-19' | 'under10';
 
 function PromotionsContent() {
+    const { language, t } = useTranslation();
     const searchParams = useSearchParams();
     const router = useRouter();
 
@@ -136,11 +138,11 @@ function PromotionsContent() {
                         {/* Breadcrumbs */}
                         <nav className="flex items-center gap-2 text-xs sm:text-sm text-red-100 font-medium">
                             <Link href="/" className="hover:text-white transition-colors">
-                                หน้าแรก
+                                {t('header.home')}
                             </Link>
                             <span>&gt;</span>
                             <span className="text-white font-bold">
-                                โปรโมชั่นพิเศษ
+                                {language === 'en' ? 'Promotions' : 'โปรโมชั่น'}
                             </span>
                         </nav>
 
@@ -154,24 +156,26 @@ function PromotionsContent() {
                                     Special Discount Deals
                                 </span>
                                 <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white mt-1">
-                                    โปรโมชั่น & สินค้าราคาพิเศษ
+                                    {language === 'en' ? 'Promotions & Special Deals' : 'โปรโมชั่น & สินค้าราคาพิเศษ'}
                                 </h1>
                             </div>
                         </div>
 
                         {/* Description */}
                         <p className="text-xs sm:text-sm text-red-100 font-medium leading-relaxed">
-                            รวมดีลเด็ดลดแรงทุกหมวดหมู่ ประหยัดคุ้มค่าทุกการสั่งซื้อ ของแท้ 100% ส่งฟรีไม่มีขั้นต่ำตลอด 24 ชั่วโมง
+                            {language === 'en'
+                                ? 'Exclusive discounts across all categories. Save on every order, 100% authentic, free delivery 24/7.'
+                                : 'รวมดีลเด็ดลดแรงทุกหมวดหมู่ ประหยัดคุ้มค่าทุกการสั่งซื้อ ของแท้ 100% ส่งฟรีไม่มีขั้นต่ำตลอด 24 ชั่วโมง'}
                         </p>
 
                         {/* Total Count Pill Badge */}
                         <div className="pt-2 flex flex-wrap gap-2">
                             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-xs font-bold text-red-700 shadow-sm">
                                 <SparklesIcon className="w-3.5 h-3.5 text-red-600" />
-                                <span>มีสินค้าโปรโมชั่น {promoProducts.length} รายการ</span>
+                                <span>{language === 'en' ? `${promoProducts.length} Active Promotion Deals` : `มีสินค้าโปรโมชั่น ${promoProducts.length} รายการ`}</span>
                             </span>
                             <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-black/20 text-xs font-semibold text-white backdrop-blur-xs">
-                                <span>ส่งฟรี 🚚 ทุกออเดอร์</span>
+                                <span>{language === 'en' ? 'Free Delivery 🚚 24/7' : 'ส่งฟรี 🚚 ทุกออเดอร์'}</span>
                             </span>
                         </div>
                     </div>
@@ -199,10 +203,10 @@ function PromotionsContent() {
                     <div>
                         <div className="flex items-center justify-between mb-3">
                             <h2 className="text-sm font-bold text-zinc-900">
-                                หมวดหมู่สินค้า
+                                {language === 'en' ? 'Product Categories' : 'หมวดหมู่สินค้า'}
                             </h2>
                             <span className="text-[11px] text-zinc-400 font-medium">
-                                {promoProducts.length} ดีล
+                                {promoProducts.length} {language === 'en' ? 'deals' : 'ดีล'}
                             </span>
                         </div>
                         <div className="space-y-1 max-h-64 overflow-y-auto pr-1">
@@ -218,7 +222,7 @@ function PromotionsContent() {
                             >
                                 <span className="flex items-center gap-2">
                                     <FlameIcon className="w-3.5 h-3.5 text-red-500" />
-                                    <span>ทุกหมวดหมู่</span>
+                                    <span>{language === 'en' ? 'All Categories' : 'ทุกหมวดหมู่'}</span>
                                 </span>
                                 <span className="text-[10px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-bold">
                                     {promoProducts.length}
@@ -243,7 +247,7 @@ function PromotionsContent() {
                                     >
                                         <span className="flex items-center gap-2 truncate">
                                             <span className="shrink-0"><CategoryIcon icon={cat.icon} slug={cat.slug} name={cat.name} className="w-3.5 h-3.5 text-zinc-500" /></span>
-                                            <span className="truncate">{cat.name}</span>
+                                            <span className="truncate">{getCategoryName(cat, language)}</span>
                                         </span>
                                         <span className="text-[10px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-bold shrink-0">
                                             {count}
@@ -259,14 +263,14 @@ function PromotionsContent() {
                     {/* Section 3: ระดับส่วนลด */}
                     <div>
                         <h3 className="text-sm font-bold text-zinc-900 mb-3">
-                            ระดับส่วนลด
+                            {language === 'en' ? 'Discount Tier' : 'ระดับส่วนลด'}
                         </h3>
                         <div className="space-y-2 text-xs text-zinc-700">
                             {[
-                                { id: 'all', label: 'ส่วนลดทั้งหมด' },
-                                { id: '20plus', label: 'ลด 20% ขึ้นไป' },
-                                { id: '10-19', label: 'ลด 10% - 19%' },
-                                { id: 'under10', label: 'ลดต่ำกว่า 10%' },
+                                { id: 'all', label: language === 'en' ? 'All Discounts' : 'ส่วนลดทั้งหมด' },
+                                { id: '20plus', label: language === 'en' ? '20% OFF and above' : 'ลด 20% ขึ้นไป' },
+                                { id: '10-19', label: language === 'en' ? '10% - 19% OFF' : 'ลด 10% - 19%' },
+                                { id: 'under10', label: language === 'en' ? 'Under 10% OFF' : 'ลดต่ำกว่า 10%' },
                             ].map(item => (
                                 <label key={item.id} className="flex items-center gap-2.5 cursor-pointer select-none">
                                     <input
@@ -281,15 +285,12 @@ function PromotionsContent() {
                                     </span>
                                 </label>
                             ))}
-                        </div>
-                    </div>
-
                     <hr className="border-zinc-100" />
 
                     {/* Section 4: เรียงตาม */}
                     <div>
                         <label htmlFor="promo-sort" className="text-sm font-bold text-zinc-900 mb-2 block">
-                            เรียงตาม
+                            {t('common.sort')}
                         </label>
                         <select
                             id="promo-sort"
@@ -297,10 +298,10 @@ function PromotionsContent() {
                             onChange={e => setSortBy(e.target.value as SortOption)}
                             className="w-full bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs font-semibold text-zinc-700 shadow-2xs focus:outline-none focus:border-red-500 cursor-pointer"
                         >
-                            <option value="discount-desc">ส่วนลดสูงสุด (%)</option>
-                            <option value="price-asc">ราคา: ต่ำ → สูง</option>
-                            <option value="price-desc">ราคา: สูง → ต่ำ</option>
-                            <option value="name-asc">ชื่อสินค้า (ก-ฮ)</option>
+                            <option value="discount-desc">{language === 'en' ? 'Highest Discount (%)' : 'ส่วนลดสูงสุด (%)'}</option>
+                            <option value="price-asc">{t('common.sortByPriceAsc')}</option>
+                            <option value="price-desc">{t('common.sortByPriceDesc')}</option>
+                            <option value="name-asc">{t('common.sortByName')}</option>
                         </select>
                     </div>
                 </aside>
@@ -313,19 +314,21 @@ function PromotionsContent() {
                     <div className="flex flex-wrap items-center justify-between gap-4 pb-1">
                         <div>
                             <h2 className="text-base sm:text-lg font-bold text-zinc-900 flex items-center gap-2">
-                                <span>รายการสินค้าโปรโมชั่น</span>
+                                <span>{language === 'en' ? 'Active Promotions' : 'รายการสินค้าโปรโมชั่น'}</span>
                                 <span className="text-xs bg-red-100 text-red-700 font-bold px-2.5 py-0.5 rounded-full">
-                                    {filteredPromotions.length} รายการ
+                                    {filteredPromotions.length} {language === 'en' ? 'items' : 'รายการ'}
                                 </span>
                             </h2>
                             <p className="text-xs text-zinc-500 mt-0.5">
-                                สินค้าลดราคาพิเศษ ราคาส่วนลดถูกคำนวณและปรับเข้าสู่ตะกร้าโดยอัตโนมัติ
+                                {language === 'en'
+                                    ? 'Special discounted items automatically applied in your cart'
+                                    : 'สินค้าลดราคาพิเศษ ราคาส่วนลดถูกคำนวณและปรับเข้าสู่ตะกร้าโดยอัตโนมัติ'}
                             </p>
                         </div>
 
                         <div className="flex items-center gap-2">
                             <label htmlFor="promo-page-size" className="text-xs text-zinc-500 font-medium hidden sm:inline">
-                                แสดง:
+                                {language === 'en' ? 'Show:' : 'แสดง:'}
                             </label>
                             <select
                                 id="promo-page-size"
@@ -333,9 +336,9 @@ function PromotionsContent() {
                                 onChange={e => setPageSize(Number(e.target.value))}
                                 className="bg-white border border-zinc-200 rounded-xl px-2.5 py-1.5 text-xs font-semibold text-zinc-700 shadow-2xs focus:outline-none focus:border-red-500 cursor-pointer"
                             >
-                                <option value={12}>แสดง: 12 รายการ</option>
-                                <option value={24}>แสดง: 24 รายการ</option>
-                                <option value={48}>แสดง: 48 รายการ</option>
+                                <option value={12}>{language === 'en' ? 'Show: 12 items' : 'แสดง: 12 รายการ'}</option>
+                                <option value={24}>{language === 'en' ? 'Show: 24 items' : 'แสดง: 24 รายการ'}</option>
+                                <option value={48}>{language === 'en' ? 'Show: 48 items' : 'แสดง: 48 รายการ'}</option>
                             </select>
                         </div>
                     </div>
@@ -346,8 +349,14 @@ function PromotionsContent() {
                             <div className="flex justify-center mb-3 text-zinc-300">
                                 <TagIcon className="w-12 h-12" />
                             </div>
-                            <h3 className="font-bold text-zinc-800 text-base mb-1">ไม่พบสินค้าโปรโมชั่นที่ตรงกับเงื่อนไข</h3>
-                            <p className="text-xs text-zinc-400 mb-4">ลองปรับตัวกรองหมวดหมู่ ระดับส่วนลด หรือค้นหาด้วยคำอื่น</p>
+                            <h3 className="font-bold text-zinc-800 text-base mb-1">
+                                {language === 'en' ? 'No matching promotional products found' : 'ไม่พบสินค้าโปรโมชั่นที่ตรงกับเงื่อนไข'}
+                            </h3>
+                            <p className="text-xs text-zinc-400 mb-4">
+                                {language === 'en'
+                                    ? 'Try adjusting category filters, discount tiers, or search keywords'
+                                    : 'ลองปรับตัวกรองหมวดหมู่ ระดับส่วนลด หรือค้นหาด้วยคำอื่น'}
+                            </p>
                             <button
                                 onClick={() => {
                                     setSearch('');
@@ -358,7 +367,7 @@ function PromotionsContent() {
                                 className="inline-flex items-center gap-1.5 text-red-600 font-bold text-xs bg-red-50 px-4 py-2 rounded-xl hover:bg-red-100 transition-colors cursor-pointer"
                             >
                                 <RefreshCwIcon className="w-3.5 h-3.5 shrink-0" />
-                                <span>ล้างตัวกรองทั้งหมด</span>
+                                <span>{language === 'en' ? 'Clear all filters' : 'ล้างตัวกรองทั้งหมด'}</span>
                             </button>
                         </div>
                     ) : (
@@ -381,7 +390,7 @@ function PromotionsContent() {
                                         ? 'text-zinc-300 border-zinc-100 cursor-not-allowed'
                                         : 'text-zinc-600 hover:bg-zinc-50'
                                 }`}
-                                aria-label="หน้าก่อนหน้า"
+                                aria-label="Previous Page"
                             >
                                 &lt;
                             </button>
@@ -413,7 +422,7 @@ function PromotionsContent() {
                                         ? 'text-zinc-300 border-zinc-100 cursor-not-allowed'
                                         : 'text-zinc-600 hover:bg-zinc-50'
                                 }`}
-                                aria-label="หน้าถัดไป"
+                                aria-label="Next Page"
                             >
                                 &gt;
                             </button>
@@ -430,7 +439,7 @@ export default function PromotionsPage() {
         <div className="min-h-screen bg-[#f8f9fa] flex flex-col">
             <Header />
             <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1">
-                <Suspense fallback={<div className="text-center py-20 text-zinc-400">กำลังโหลดโปรโมชั่น...</div>}>
+                <Suspense fallback={<div className="text-center py-20 text-zinc-400">Loading...</div>}>
                     <PromotionsContent />
                 </Suspense>
             </main>
