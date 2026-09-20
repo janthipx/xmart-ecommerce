@@ -13,6 +13,7 @@ import { ordersStorage } from "@/lib/storage/helpers";
 import { useTranslation, getProductName, getProductDescription, getCategoryName } from "@/lib/i18n";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ClockIcon, AlertCircleIcon, CategoryIcon, CheckIcon, CartIcon, CheckCircleIcon, BanknoteIcon } from "@/components/icons";
 
 export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { language, t } = useTranslation();
@@ -51,7 +52,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
         <div className="min-h-screen bg-xmart-bg">
             <Header />
             <div className="flex items-center justify-center min-h-[60vh]">
-                <div className="text-zinc-400 text-center"><div className="text-4xl mb-2 animate-bounce">⏳</div><p>กำลังโหลด...</p></div>
+                <div className="text-zinc-400 text-center"><ClockIcon className="w-10 h-10 mx-auto mb-2 text-zinc-300 animate-spin" /><p>กำลังโหลด...</p></div>
             </div>
         </div>
     );
@@ -60,7 +61,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
         <div className="min-h-screen bg-xmart-bg">
             <Header />
             <div className="max-w-xl mx-auto px-4 py-20 text-center">
-                <div className="text-6xl mb-4">😕</div>
+                <div className="flex justify-center mb-4 text-zinc-300"><AlertCircleIcon className="w-16 h-16" /></div>
                 <h1 className="text-xl font-bold mb-2">ไม่พบสินค้านี้</h1>
                 <Link href="/products" className="text-xmart-primary font-bold hover:underline">กลับไปดูสินค้าทั้งหมด</Link>
             </div>
@@ -89,7 +90,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                     <Link href="/" className="hover:text-xmart-primary">{t('header.home')}</Link>
                     <span>/</span>
                     <Link href="/products" className="hover:text-xmart-primary">{t('header.products')}</Link>
-                    {category && <><span>/</span><Link href={`/products?category=${encodeURIComponent(category.name)}`} className="hover:text-xmart-primary font-semibold">{category.icon} {categoryName}</Link></>}
+                    {category && <><span>/</span><Link href={`/products?category=${encodeURIComponent(category.name)}`} className="hover:text-xmart-primary font-semibold flex items-center gap-1"><CategoryIcon icon={category.icon} slug={category.slug} name={category.name} className="w-3.5 h-3.5 inline" /> {categoryName}</Link></>}
                     <span>/</span>
                     <span className="text-zinc-800 font-bold line-clamp-1">{productName}</span>
                 </nav>
@@ -129,7 +130,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                                 <span className={`inline-flex items-center text-xs sm:text-sm font-black rounded-full px-3.5 py-1 shadow-xs text-white ${
                                     bestSellerRank === 1 ? 'bg-amber-500' : bestSellerRank === 2 ? 'bg-slate-500' : bestSellerRank === 3 ? 'bg-amber-700' : 'bg-amber-100 !text-amber-900 border border-amber-200'
                                 }`}>
-                                    {bestSellerRank <= 3 ? (language === 'en' ? `#${bestSellerRank} Best Seller` : `อันดับ #${bestSellerRank} ขายดี`) : (language === 'en' ? 'Best Seller 🔥' : 'สินค้าขายดี 🔥')}
+                                    {bestSellerRank <= 3 ? (language === 'en' ? `#${bestSellerRank} Best Seller` : `อันดับ #${bestSellerRank} ขายดี`) : (language === 'en' ? 'Best Seller' : 'สินค้าขายดี')}
                                 </span>
                             )}
                             {category && (
@@ -137,7 +138,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                                     href={`/products?category=${encodeURIComponent(category.name)}`}
                                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0060df] bg-blue-50 hover:bg-blue-100 rounded-full px-3.5 py-1 transition-colors"
                                 >
-                                    {category.icon} {categoryName}
+                                    <CategoryIcon icon={category.icon} slug={category.slug} name={category.name} className="w-3.5 h-3.5" />
+                                    <span>{categoryName}</span>
                                 </Link>
                             )}
                             <span className="text-xs font-mono text-zinc-500 bg-zinc-100 px-3 py-1 rounded-md">
@@ -164,7 +166,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                                 </span>
                             )}
                             <span className="text-emerald-700 font-bold text-xs sm:text-sm mb-1 bg-emerald-50 border border-emerald-200/80 px-2.5 py-1 rounded-lg">
-                                {language === 'en' ? 'Free Shipping on all orders 🎉' : 'ส่งฟรีทุกคำสั่งซื้อ 🎉'}
+                                {language === 'en' ? 'Free Shipping on all orders' : 'ส่งฟรีทุกคำสั่งซื้อ'}
                             </span>
                         </div>
 
@@ -208,13 +210,25 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
 
                         <button onClick={handleAddToCart} disabled={isOutOfStock}
                             className={`w-full min-h-[50px] py-4 px-6 rounded-2xl font-bold text-base sm:text-lg transition-all active-scale shadow-lg cursor-pointer flex items-center justify-center gap-2 ${added ? 'bg-green-600 text-white shadow-green-500/30' : isOutOfStock ? 'bg-zinc-200 text-zinc-400 cursor-not-allowed' : 'bg-[#0060df] text-white hover:bg-[#0051bc] shadow-blue-500/30'}`}>
-                            {added ? (language === 'en' ? '✅ Added to Cart!' : '✅ เพิ่มลงตะกร้าแล้ว!') : isOutOfStock ? (language === 'en' ? 'Out of Stock' : 'สินค้าหมด') : (language === 'en' ? `🛒 Add to Cart (${qty} ${qty > 1 ? 'items' : 'item'})` : `🛒 เพิ่มลงตะกร้า (${qty} ชิ้น)`)}
+                            {added ? (
+                                <>
+                                    <CheckIcon className="w-5 h-5 text-white" />
+                                    <span>{language === 'en' ? 'Added to Cart!' : 'เพิ่มลงตะกร้าแล้ว!'}</span>
+                                </>
+                            ) : isOutOfStock ? (
+                                <span>{language === 'en' ? 'Out of Stock' : 'สินค้าหมด'}</span>
+                            ) : (
+                                <>
+                                    <CartIcon className="w-5 h-5 text-white" />
+                                    <span>{language === 'en' ? `Add to Cart (${qty} ${qty > 1 ? 'items' : 'item'})` : `เพิ่มลงตะกร้า (${qty} ชิ้น)`}</span>
+                                </>
+                            )}
                         </button>
 
                         <div className="mt-6 bg-white rounded-2xl p-4 sm:p-5 border border-zinc-200/80 space-y-2 text-sm sm:text-base text-zinc-600 shadow-2xs">
-                            <div className="flex items-center gap-2"><span>✅</span> <span>{language === 'en' ? '24/7 Express Delivery Nationwide' : 'สินค้ามีพร้อมจัดส่ง 24 ชั่วโมง ทั่วไทย'}</span></div>
-                            <div className="flex items-center gap-2"><span>🚚</span> <span>{language === 'en' ? 'Free Shipping on all orders, no minimum' : 'ส่งฟรีทุกคำสั่งซื้อ ไม่มีขั้นต่ำ'}</span></div>
-                            <div className="flex items-center gap-2"><span>💵</span> <span>{language === 'en' ? 'Cash on Delivery & Instant PromptPay QR' : 'ชำระเงินสดปลายทาง / PromptPay QR ทันที'}</span></div>
+                            <div className="flex items-center gap-2"><CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0" /> <span>{language === 'en' ? '24/7 Express Delivery Nationwide' : 'สินค้ามีพร้อมจัดส่ง 24 ชั่วโมง ทั่วไทย'}</span></div>
+                            <div className="flex items-center gap-2"><span>{language === 'en' ? 'Free Shipping 🚚 on all orders, no minimum' : 'ส่งฟรี 🚚 ทุกคำสั่งซื้อ ไม่มีขั้นต่ำ'}</span></div>
+                            <div className="flex items-center gap-2"><BanknoteIcon className="w-4 h-4 text-emerald-600 shrink-0" /> <span>{language === 'en' ? 'Cash on Delivery & Instant PromptPay QR' : 'ชำระเงินสดปลายทาง / PromptPay QR ทันที'}</span></div>
                         </div>
                     </div>
                 </div>

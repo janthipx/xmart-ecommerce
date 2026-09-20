@@ -10,6 +10,7 @@ import { mockProducts } from "@/data/products";
 import { mockCategories } from "@/data/categories";
 import { getBestSellingProducts, BestSellingItem } from "@/lib/order-analytics";
 import Link from "next/link";
+import { TrophyIcon, StarIcon, BarChartIcon, CategoryIcon, RefreshCwIcon } from "@/components/icons";
 
 type SortOption = 'rank-asc' | 'sold-desc' | 'price-asc' | 'price-desc' | 'name-asc';
 type RankFilter = 'all' | 'top10' | 'top20' | 'top50';
@@ -154,8 +155,8 @@ function BestSellingContent() {
 
                         {/* Title with icon */}
                         <div className="flex items-center gap-3 pt-1">
-                            <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-3xl shadow-inner shrink-0">
-                                🏆
+                            <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-inner shrink-0">
+                                <TrophyIcon className="w-6 h-6" />
                             </div>
                             <div>
                                 <span className="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full text-amber-50">
@@ -175,17 +176,19 @@ function BestSellingContent() {
                         {/* Total Count Pill Badge */}
                         <div className="pt-2 flex flex-wrap gap-2">
                             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-xs font-bold text-amber-800 shadow-sm">
-                                <span>⭐</span> มีสินค้าติดอันดับขายดี {allBestSellers.length} รายการ
+                                <StarIcon className="w-3.5 h-3.5 text-amber-500" />
+                                <span>มีสินค้าติดอันดับขายดี {allBestSellers.length} รายการ</span>
                             </span>
                             <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-black/20 text-xs font-semibold text-white backdrop-blur-xs">
-                                <span>📊</span> อัปเดตจากคำสั่งซื้อจริง
+                                <BarChartIcon className="w-3.5 h-3.5 text-white" />
+                                <span>อัปเดตจากคำสั่งซื้อจริง</span>
                             </span>
                         </div>
                     </div>
 
                     {/* Right Banner Graphic */}
-                    <div className="hidden md:flex items-center justify-center shrink-0 text-8xl opacity-80 pr-6 select-none">
-                        🥇
+                    <div className="hidden md:flex items-center justify-center shrink-0 opacity-40 pr-6 select-none text-white">
+                        <TrophyIcon className="w-24 h-24" />
                     </div>
                 </div>
 
@@ -210,7 +213,7 @@ function BestSellingContent() {
                         <div className="space-y-2 text-xs text-zinc-700">
                             {[
                                 { id: 'all', label: 'สินค้าขายดีทั้งหมด' },
-                                { id: 'top10', label: 'Top 10 ยอดนิยม 🥇' },
+                                { id: 'top10', label: 'Top 10 ยอดนิยม' },
                                 { id: 'top20', label: 'Top 20 อันดับแรก' },
                                 { id: 'top50', label: 'Top 50 อันดับแรก' },
                             ].map(item => (
@@ -254,7 +257,7 @@ function BestSellingContent() {
                                 }`}
                             >
                                 <span className="flex items-center gap-2">
-                                    <span className="text-sm">⭐</span>
+                                    <StarIcon className="w-3.5 h-3.5 text-amber-500" />
                                     <span>ทุกหมวดหมู่</span>
                                 </span>
                                 <span className="text-[10px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-bold">
@@ -279,7 +282,7 @@ function BestSellingContent() {
                                         }`}
                                     >
                                         <span className="flex items-center gap-2 truncate">
-                                            <span className="text-sm">{cat.icon}</span>
+                                            <span className="shrink-0"><CategoryIcon icon={cat.icon} slug={cat.slug} name={cat.name} className="w-3.5 h-3.5 text-zinc-500" /></span>
                                             <span className="truncate">{cat.name}</span>
                                         </span>
                                         <span className="text-[10px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-bold shrink-0">
@@ -350,7 +353,9 @@ function BestSellingContent() {
                     {/* Products Grid with Ranks */}
                     {filteredBestSellers.length === 0 ? (
                         <div className="bg-white rounded-3xl p-12 text-center shadow-xs border border-zinc-200/80 my-4">
-                            <div className="text-5xl mb-3">⭐</div>
+                            <div className="flex justify-center mb-3 text-zinc-300">
+                                <StarIcon className="w-12 h-12" />
+                            </div>
                             <h3 className="font-bold text-zinc-800 text-base mb-1">ไม่พบสินค้าขายดีที่ตรงกับเงื่อนไข</h3>
                             <p className="text-xs text-zinc-400 mb-4">ลองปรับตัวกรองหมวดหมู่ ระดับอันดับ หรือค้นหาด้วยคำอื่น</p>
                             <button
@@ -362,7 +367,8 @@ function BestSellingContent() {
                                 }}
                                 className="inline-flex items-center gap-1.5 text-amber-700 font-bold text-xs bg-amber-50 px-4 py-2 rounded-xl hover:bg-amber-100 transition-colors cursor-pointer"
                             >
-                                🔄 ล้างตัวกรองทั้งหมด
+                                <RefreshCwIcon className="w-3.5 h-3.5 shrink-0" />
+                                <span>ล้างตัวกรองทั้งหมด</span>
                             </button>
                         </div>
                     ) : (
@@ -439,7 +445,7 @@ export default function BestSellingPage() {
         <div className="min-h-screen bg-[#f8f9fa] flex flex-col">
             <Header />
             <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1">
-                <Suspense fallback={<div className="text-center py-20 text-zinc-400">⏳ กำลังโหลดสินค้าขายดี...</div>}>
+                <Suspense fallback={<div className="text-center py-20 text-zinc-400">กำลังโหลดสินค้าขายดี...</div>}>
                     <BestSellingContent />
                 </Suspense>
             </main>

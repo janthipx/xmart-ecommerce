@@ -67,7 +67,7 @@ export function ProductCard({ product, rank, isBestSeller }: ProductCardProps) {
     }
 
     return (
-        <div className="flex flex-col bg-white rounded-2xl border border-zinc-200/85 shadow-xs hover:shadow-md transition-all duration-200 p-3 sm:p-4 relative group">
+        <div className="flex flex-col justify-between h-full bg-white rounded-2xl border border-zinc-200/85 shadow-xs hover:shadow-md transition-all duration-200 p-3 sm:p-4 relative group">
             {/* Top Badges (Promotion / Best-Selling Rank) */}
             <div className="absolute top-3 left-3 z-10 flex flex-col gap-1 items-start max-w-[72%] pointer-events-none">
                 {product.isPromotion && (
@@ -83,7 +83,7 @@ export function ProductCard({ product, rank, isBestSeller }: ProductCardProps) {
                     </span>
                 ) : (rank || isBestSeller) ? (
                     <span className="bg-amber-100 text-amber-900 border border-amber-200/80 text-[11px] sm:text-xs font-bold px-2 py-0.5 rounded-md">
-                        {rank ? `#${rank} ${language === 'en' ? 'Top' : 'ขายดี'}` : (language === 'en' ? 'Popular 🔥' : 'ขายดี 🔥')}
+                        {rank ? `#${rank} ${language === 'en' ? 'Top' : 'ขายดี'}` : (language === 'en' ? 'Popular' : 'ขายดี')}
                     </span>
                 ) : null}
             </div>
@@ -141,10 +141,20 @@ export function ProductCard({ product, rank, isBestSeller }: ProductCardProps) {
 
                 {/* Title */}
                 <Link href={`/products/${product.id}`}>
-                    <h3 className="text-[15px] sm:text-base md:text-[17px] font-bold text-zinc-900 group-hover:text-[#0060df] transition-colors line-clamp-2 mb-2 leading-snug min-h-[2.6rem]" title={productName}>
+                    <h3 className="text-sm sm:text-base font-bold text-zinc-900 group-hover:text-[#0060df] transition-colors line-clamp-2 mb-1.5 leading-snug min-h-[2.5rem]" title={productName}>
                         {productName}
                     </h3>
                 </Link>
+
+                {/* Rating Stars */}
+                <div className="flex items-center gap-0.5 mb-1.5">
+                    {[1, 2, 3, 4, 5].map((s) => (
+                        <svg key={s} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    ))}
+                    <span className="text-[11px] text-zinc-400 ml-1 font-medium">5.0</span>
+                </div>
 
                 {/* Price (with Struck-through Original Price if Promotion) */}
                 <div className="flex items-baseline gap-2 mb-1.5 flex-wrap">
@@ -166,12 +176,12 @@ export function ProductCard({ product, rank, isBestSeller }: ProductCardProps) {
                     </span>
                 </div>
 
-                {/* Add to Cart Button (min-height: 42px for mobile touch standard) */}
+                {/* Add to Cart Button (min-height: 44px for mobile touch standard) */}
                 <button
                     type="button"
                     disabled={isOutOfStock}
                     onClick={handleAddToCart}
-                    className={`w-full mt-auto min-h-[42px] py-2.5 px-3 rounded-xl font-bold text-[14px] sm:text-[15px] flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer shadow-xs ${
+                    className={`w-full mt-auto min-h-[44px] py-2.5 px-3 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer shadow-xs ${
                         isOutOfStock
                             ? 'bg-zinc-100 text-zinc-400 cursor-not-allowed border border-zinc-200'
                             : addedToast

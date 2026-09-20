@@ -17,6 +17,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'header.promotions': 'โปรโมชั่นพิเศษ',
     'header.bestSelling': 'สินค้าขายดี',
     'header.admin': 'จัดการระบบ',
+    'header.adminBtn': 'สำหรับผู้ดูแลระบบ',
+    'header.tagline': 'ของกิน ของใช้ ครบจบที่เดียว',
+    'header.register': 'สมัครสมาชิก',
+    'header.featured': 'สินค้าแนะนำ',
+    'header.contact': 'ติดต่อเรา',
     'header.supermarket': 'ซูเปอร์มาร์เก็ต & ช้อปปิ้งออนไลน์ 24 ชม.',
 
     // Common & Actions
@@ -135,7 +140,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Payment Statuses
     'payment.PENDING': 'รอการชำระเงิน',
-    'payment.PAID': 'ชำระเงินสำเร็จแล้ว',
+    'payment.PAID': 'ชำระเงินแล้ว',
     'payment.FAILED': 'การชำระเงินไม่สำเร็จ',
 
     // Auth
@@ -163,7 +168,77 @@ export const translations: Record<Language, Record<string, string>> = {
     'admin.analytics': 'รายงานการวิเคราะห์',
     'admin.reports': 'รายงานสรุปยอดขาย',
     'admin.salesRevenue': 'ยอดขายรวม',
-    'admin.totalOrders': 'จำนวนคำสั่งซื้อ'
+    'admin.totalOrders': 'จำนวนคำสั่งซื้อ',
+
+    // Footer Navigation & Info
+    'footer.about': 'เกี่ยวกับเรา',
+    'footer.contact': 'ติดต่อเรา',
+    'footer.privacy': 'นโยบายความเป็นส่วนตัว',
+    'footer.terms': 'เงื่อนไขการใช้งาน',
+    'footer.slogan': 'ร้านโชว์ห่วยออนไลน์ 24 ชั่วโมง',
+    'footer.customerService': 'ศูนย์บริการลูกค้า: 02-123-4567',
+    'footer.lineInfo': 'LINE: @xmart24hr | เปิดบริการ 24 ชั่วโมง',
+    'footer.subSlogan': 'ซูเปอร์มาร์เก็ตและร้านสะดวกซื้อออนไลน์ ส่งฟรีไม่มีขั้นต่ำ',
+    'footer.copyright': '© 2026 X MART. All rights reserved.',
+
+    // About Page
+    'about.badge': 'ร้านโชว์ห่วยยุคใหม่ 24 ชั่วโมง',
+    'about.title': 'เกี่ยวกับ X MART',
+    'about.subtitle': 'ซูเปอร์มาร์เก็ตและร้านสะดวกซื้อออนไลน์ใกล้บ้านคุณ สะดวก รวดเร็ว สั่งง่าย ตลอด 24 ชม.',
+    'about.introTitle': 'ร้านโชว์ห่วยออนไลน์ที่ใส่ใจทุกความต้องการ',
+    'about.introDesc': 'X MART คือระบบสั่งซื้อสินค้าออนไลน์สำหรับร้านโชว์ห่วยและซูเปอร์มาร์เก็ตขนาดย่อม ที่รวบรวมสินค้าอุปโภคบริโภคจำเป็นในชีวิตประจำวัน ไม่ว่าจะเป็น อาหารสำเร็จรูป ขนม เครื่องดื่ม ของใช้ส่วนตัว และของใช้ในบ้าน ให้คุณสั่งซื้อได้สะดวกจากทุกที่ทุกเวลา',
+    'about.feature1Title': 'เปิดให้บริการตลอด 24 ชั่วโมง',
+    'about.feature1Desc': 'ไม่ว่าจะเป็นช่วงเช้าตรู่ กลางวัน หรือยามดึก คุณก็สามารถสั่งซื้อสินค้าจำเป็นได้ตลอดเวลาแบบไม่มีสะดุด',
+    'about.feature2Title': 'จัดส่งฟรี ทุกคำสั่งซื้อ ไม่มีขั้นต่ำ',
+    'about.feature2Desc': 'หมดกังวลเรื่องค่าจัดส่ง สั่งกี่ชิ้นหรือยอดเท่าไรเราก็จัดส่งให้ฟรีถึงที่ โดยไม่มีเงื่อนไขขั้นต่ำ',
+    'about.feature3Title': 'สั่งซื้อได้ทันที ไม่ต้องสมัครสมาชิก',
+    'about.feature3Desc': 'ลูกค้าทั่วไป (Guest) สามารถกรอกที่อยู่และสั่งซื้อได้ทันที หรือสมัครสมาชิกเพื่อบันทึกประวัติคำสั่งซื้อ',
+    'about.feature4Title': 'ติดตามสถานะแบบ Real-time',
+    'about.feature4Desc': 'อุ่นใจทุกขั้นตอนด้วยระบบติดตามสถานะคำสั่งซื้อแบบนาทีต่อนาที พร้อมข้อมูลผู้จัดส่งและเบอร์ติดต่อ',
+    'about.feature5Title': 'รองรับทั้งมือถือและคอมพิวเตอร์',
+    'about.feature5Desc': 'หน้าเว็บออกแบบให้ใช้งานง่าย คมชัด และลื่นไหลบนทุกขนาดหน้าจอ ตั้งแต่มือถือจนถึงหน้าจอขนาดใหญ่',
+    'about.feature6Title': 'ระบบค้นหาและจัดการตะกร้าครบครัน',
+    'about.feature6Desc': 'ค้นหาสินค้าง่ายตามชื่อ แบรนด์ และหมวดหมู่ ปรับจำนวนในตะกร้าได้อิสระก่อนยืนยันสั่งซื้อ',
+    'about.demoNoticeTitle': 'โครงการจำลองเพื่อการสาธิต (Demo Mini Project)',
+    'about.demoNoticeDesc': 'X MART เป็นระบบจำลองสั่งซื้อสินค้าเพื่อการสาธิตเทคโนโลยี E-Commerce พัฒนาด้วย Next.js, React และ LocalStorage โดยไม่มีการเรียกเก็บเงินจริงหรือจัดส่งสินค้าจริง ข้อมูลทั้งหมดถูกจัดเก็บเฉพาะในเครื่องของผู้ใช้งาน',
+
+    // Contact Page
+    'contact.badge': 'ช่องทางการติดต่อ',
+    'contact.title': 'ติดต่อเรา',
+    'contact.subtitle': 'มีคำถามหรือข้อสงสัยเกี่ยวกับสินค้าและบริการ? ทีมงาน X MART พร้อมดูแลคุณตลอด 24 ชั่วโมง',
+    'contact.phoneTitle': 'โทรศัพท์',
+    'contact.phoneVal': '02-123-4567',
+    'contact.phoneDesc': 'ศูนย์บริการลูกค้า (Demo)',
+    'contact.emailTitle': 'อีเมล',
+    'contact.emailVal': 'support@xmart.com',
+    'contact.emailDesc': 'ตอบกลับภายใน 24 ชม. (Demo)',
+    'contact.lineTitle': 'LINE Official',
+    'contact.lineVal': '@xmart24hr',
+    'contact.lineDesc': 'แชทสอบถามข้อมูล (Demo)',
+    'contact.hoursTitle': 'เวลาทำการ',
+    'contact.hoursVal': 'เปิดบริการ 24 ชั่วโมง',
+    'contact.hoursDesc': 'พร้อมดูแลทุกวัน ไม่มีวันหยุด',
+    'contact.formTitle': 'ส่งข้อความถึงเรา (Demo Form)',
+    'contact.formSubtitle': 'กรอกข้อมูลด้านล่างเพื่อทดสอบส่งข้อความ (ระบบจำลองการทำงาน ไม่มีการส่งข้อมูลจริงไปยังเซิร์ฟเวอร์)',
+    'contact.nameLabel': 'ชื่อ-นามสกุล *',
+    'contact.emailLabel': 'อีเมล *',
+    'contact.phoneLabel': 'เบอร์โทรศัพท์',
+    'contact.subjectLabel': 'หัวข้อติดต่อ *',
+    'contact.messageLabel': 'ข้อความของคุณ *',
+    'contact.sendBtn': 'ส่งข้อความ (Demo)',
+    'contact.demoSuccess': 'ขอบคุณสำหรับข้อความ! ระบบจำลองได้รับข้อความเรียบร้อยแล้ว (หมายเหตุ: ระบบนี้เป็น Demo Project ไม่มีการส่งข้อมูลจริงไปยังเซิร์ฟเวอร์)',
+
+    // Privacy Page
+    'privacy.badge': 'นโยบายความเป็นส่วนตัว',
+    'privacy.title': 'นโยบายความเป็นส่วนตัว (Privacy Policy)',
+    'privacy.subtitle': 'ข้อชี้แจงเกี่ยวกับการจัดเก็บข้อมูลและการใช้งานในระบบจำลอง X MART',
+    'privacy.demoNotice': 'ข้อควรทราบ: เว็บไซต์ X MART นี้เป็นโครงการจำลองระบบ E-Commerce (Mini Project) โดยทำงานผ่าน Mock Data และ Web Storage (LocalStorage) ในเบราว์เซอร์ของคุณเท่านั้น ไม่มีการเชื่อมต่อฐานข้อมูล Production ภายนอก และไม่มีการส่งข้อมูลส่วนตัวออกนอกอุปกรณ์ของคุณ',
+
+    // Terms Page
+    'terms.badge': 'ข้อกำหนดและเงื่อนไข',
+    'terms.title': 'เงื่อนไขการใช้งาน (Terms of Service)',
+    'terms.subtitle': 'ข้อตกลงและเงื่อนไขการใช้บริการระบบสั่งซื้อสินค้าออนไลน์ X MART',
+    'terms.demoNotice': 'ข้อควรทราบ: ระบบนี้สร้างขึ้นเพื่อวัตถุประสงค์ในการสาธิตกระบวนการสั่งซื้อสินค้าออนไลน์ (Demo / Educational Project) ไม่มีการทำธุรกรรมทางการเงินจริง และไม่มีการจัดส่งสินค้าจริง'
   },
   en: {
     // Top utility & header
@@ -181,6 +256,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'header.promotions': 'Promotions',
     'header.bestSelling': 'Best Sellers',
     'header.admin': 'Admin Panel',
+    'header.adminBtn': 'Admin Panel',
+    'header.tagline': 'Food & essentials, all in one place',
+    'header.register': 'Register',
+    'header.featured': 'Featured',
+    'header.contact': 'Contact Us',
     'header.supermarket': 'Supermarket & Online Shopping 24/7',
 
     // Common & Actions
@@ -327,6 +407,76 @@ export const translations: Record<Language, Record<string, string>> = {
     'admin.analytics': 'Analytics Overview',
     'admin.reports': 'Sales Reports',
     'admin.salesRevenue': 'Total Revenue',
-    'admin.totalOrders': 'Total Orders'
+    'admin.totalOrders': 'Total Orders',
+
+    // Footer Navigation & Info
+    'footer.about': 'About Us',
+    'footer.contact': 'Contact Us',
+    'footer.privacy': 'Privacy Policy',
+    'footer.terms': 'Terms of Service',
+    'footer.slogan': 'Online Convenience Store 24 Hours',
+    'footer.customerService': 'Customer Service: 02-123-4567',
+    'footer.lineInfo': 'LINE: @xmart24hr | Open 24/7',
+    'footer.subSlogan': 'Online Supermarket & Convenience Store. Free shipping no minimum.',
+    'footer.copyright': '© 2026 X MART. All rights reserved.',
+
+    // About Page
+    'about.badge': 'Modern Grocery 24/7',
+    'about.title': 'About X MART',
+    'about.subtitle': 'Your friendly neighborhood online grocery & supermarket. Fast, convenient, and open 24 hours.',
+    'about.introTitle': 'Online Grocery Shopping Tailored for Everyday Needs',
+    'about.introDesc': 'X MART is an online retail platform providing essential everyday consumer goods—from instant foods, snacks, and beverages to personal care and home utilities—available at your fingertips anytime, anywhere.',
+    'about.feature1Title': 'Open 24 Hours Every Day',
+    'about.feature1Desc': 'Early morning, afternoon, or midnight cravings—order your daily essentials uninterrupted 24/7.',
+    'about.feature2Title': 'Free Shipping on All Orders, No Minimum',
+    'about.feature2Desc': 'Zero delivery fees on every order, no matter the size or basket total. What you see is what you pay.',
+    'about.feature3Title': 'Shop Instantly, No Signup Required',
+    'about.feature3Desc': 'Guests can checkout directly with just delivery details, or register as a Member to save order history.',
+    'about.feature4Title': 'Live Real-time Order Tracking',
+    'about.feature4Desc': 'Stay informed with minute-by-minute status updates, countdown timers, and assigned driver details.',
+    'about.feature5Title': 'Optimized for Mobile & Desktop',
+    'about.feature5Desc': 'Designed with a fluid, responsive interface that feels intuitive on any device, from phones to monitors.',
+    'about.feature6Title': 'Instant Search & Smart Basket',
+    'about.feature6Desc': 'Easily discover items by name, brand, or category with real-time stock and total calculations.',
+    'about.demoNoticeTitle': 'Demonstration Mini Project Disclosure',
+    'about.demoNoticeDesc': 'X MART is an educational e-commerce showcase built with Next.js, React, and browser LocalStorage. No real financial charges or physical shipments will occur. All data remains strictly inside your local browser.',
+
+    // Contact Page
+    'contact.badge': 'Contact Channels',
+    'contact.title': 'Contact Us',
+    'contact.subtitle': 'Have a question or need assistance? The X MART team is ready to help 24/7.',
+    'contact.phoneTitle': 'Phone Support',
+    'contact.phoneVal': '02-123-4567',
+    'contact.phoneDesc': 'Demo Customer Care Center',
+    'contact.emailTitle': 'Email',
+    'contact.emailVal': 'support@xmart.com',
+    'contact.emailDesc': 'Responds within 24 hours (Demo)',
+    'contact.lineTitle': 'LINE Official',
+    'contact.lineVal': '@xmart24hr',
+    'contact.lineDesc': 'Chat support (Demo)',
+    'contact.hoursTitle': 'Operating Hours',
+    'contact.hoursVal': 'Open 24 Hours / 7 Days',
+    'contact.hoursDesc': 'Always open, every single day',
+    'contact.formTitle': 'Send Us a Message (Demo Form)',
+    'contact.formSubtitle': 'Fill out the form below to test messaging (Simulated interface—no actual data transmitted to external servers).',
+    'contact.nameLabel': 'Full Name *',
+    'contact.emailLabel': 'Email Address *',
+    'contact.phoneLabel': 'Phone Number',
+    'contact.subjectLabel': 'Subject *',
+    'contact.messageLabel': 'Your Message *',
+    'contact.sendBtn': 'Send Message (Demo)',
+    'contact.demoSuccess': 'Thank you for your message! Demo received successfully. (Note: This is a demo project; no real data was transmitted to external servers).',
+
+    // Privacy Page
+    'privacy.badge': 'Privacy Policy',
+    'privacy.title': 'Privacy Policy',
+    'privacy.subtitle': 'Statement regarding data storage and handling within the X MART demo system',
+    'privacy.demoNotice': 'Important Notice: X MART is an e-commerce demonstration project (Mini Project) running purely on Mock Data and Web Storage (LocalStorage) inside your browser. There is no external production database and no personal data is transmitted outside your device.',
+
+    // Terms Page
+    'terms.badge': 'Terms & Conditions',
+    'terms.title': 'Terms of Service',
+    'terms.subtitle': 'Terms and conditions governing the use of the X MART online ordering demo system',
+    'terms.demoNotice': 'Important Notice: This system was built solely for demonstration purposes (Demo / Educational Project). No real financial transactions are executed and no physical items will be shipped.'
   }
 };

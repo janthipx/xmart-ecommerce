@@ -5,6 +5,7 @@ import { useCartStore } from "@/modules/cart/store/cart.store";
 import { getPlaceholderByCategory } from "@/data/productImages";
 import { useTranslation, getProductName } from "@/lib/i18n";
 import Link from "next/link";
+import { CartIcon, TrashIcon, MinusIcon } from "@/components/icons";
 
 export default function CartPage() {
     const { language, t } = useTranslation();
@@ -18,7 +19,9 @@ export default function CartPage() {
 
                 {items.length === 0 ? (
                     <div className="bg-white rounded-3xl p-12 text-center shadow-xs border border-zinc-200/80 max-w-xl mx-auto">
-                        <div className="text-6xl mb-4">🛒</div>
+                        <div className="flex justify-center mb-4 text-zinc-300">
+                            <CartIcon className="w-16 h-16" />
+                        </div>
                         <h2 className="text-xl font-bold text-zinc-900 mb-2">{t('cart.empty')}</h2>
                         <p className="text-zinc-500 text-sm sm:text-base mb-6">{t('cart.emptyDesc')}</p>
                         <Link href="/products" className="inline-flex items-center justify-center bg-[#0060df] text-white font-bold py-3.5 px-8 rounded-full hover:bg-[#0051bc] transition-all active-scale shadow-md min-h-[44px]">
@@ -42,45 +45,53 @@ export default function CartPage() {
                                     const isUnlimited = item.product.isUnlimitedStock;
                                     const prodName = getProductName(item.product, language);
                                     return (
-                                        <li key={item.product.id} className="p-4 sm:p-5 flex gap-3 sm:gap-4 items-center">
-                                            <Link href={`/products/${item.product.id}`} className="w-16 h-16 sm:w-20 sm:h-20 bg-zinc-50 rounded-2xl p-2 shrink-0 flex items-center justify-center border border-zinc-100">
-                                                <img
-                                                    src={item.product.image || getPlaceholderByCategory(item.product.categoryId)}
-                                                    alt={prodName}
-                                                    onError={(e) => {
-                                                        const target = e.target as HTMLImageElement;
-                                                        const fallback = getPlaceholderByCategory(item.product.categoryId);
-                                                        if (!target.src.endsWith(fallback)) {
-                                                            target.src = fallback;
-                                                        }
-                                                    }}
-                                                    className="w-full h-full object-contain mix-blend-multiply"
-                                                />
-                                            </Link>
-                                            <div className="flex-1 min-w-0">
-                                                <Link href={`/products/${item.product.id}`}>
-                                                    <h3 className="font-bold text-zinc-900 text-sm sm:text-base line-clamp-2 leading-snug hover:text-[#0060df] transition-colors" title={prodName}>
-                                                        {prodName}
-                                                    </h3>
+                                        <li key={item.product.id} className="p-4 sm:p-5 flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center justify-between">
+                                            <div className="flex gap-3 sm:gap-4 items-center flex-1 min-w-0">
+                                                <Link href={`/products/${item.product.id}`} className="w-16 h-16 sm:w-20 sm:h-20 bg-zinc-50 rounded-2xl p-2 shrink-0 flex items-center justify-center border border-zinc-100">
+                                                    <img
+                                                        src={item.product.image || getPlaceholderByCategory(item.product.categoryId)}
+                                                        alt={prodName}
+                                                        onError={(e) => {
+                                                            const target = e.target as HTMLImageElement;
+                                                            const fallback = getPlaceholderByCategory(item.product.categoryId);
+                                                            if (!target.src.endsWith(fallback)) {
+                                                                target.src = fallback;
+                                                            }
+                                                        }}
+                                                        className="w-full h-full object-contain mix-blend-multiply"
+                                                    />
                                                 </Link>
-                                                <div className="text-xs text-zinc-400 mt-0.5">฿{item.product.price.toLocaleString()} / ชิ้น</div>
-                                                <p className="text-[#0060df] font-black text-base sm:text-lg mt-1">
+                                                <div className="flex-1 min-w-0">
+                                                    <Link href={`/products/${item.product.id}`}>
+                                                        <h3 className="font-bold text-zinc-900 text-sm sm:text-base line-clamp-2 leading-snug hover:text-[#0060df] transition-colors" title={prodName}>
+                                                            {prodName}
+                                                        </h3>
+                                                    </Link>
+                                                    <div className="text-xs text-zinc-400 mt-0.5">฿{item.product.price.toLocaleString()} / ชิ้น</div>
+                                                    <p className="sm:hidden text-[#0060df] font-black text-base mt-1">
+                                                        ฿{(item.product.price * item.quantity).toLocaleString()}
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t border-zinc-100 sm:border-0">
+                                                <p className="hidden sm:block text-[#0060df] font-black text-base sm:text-lg mr-2 text-right">
                                                     ฿{(item.product.price * item.quantity).toLocaleString()}
                                                 </p>
-                                            </div>
-                                            <div className="flex items-center gap-2 shrink-0">
-                                                <div className="flex border border-zinc-300 rounded-full overflow-hidden bg-white shadow-2xs">
-                                                    <button onClick={() => item.quantity === 1 ? removeItem(item.product.id) : updateQuantity(item.product.id, item.quantity - 1)}
-                                                        className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-red-50 text-zinc-600 hover:text-red-500 transition-colors font-bold text-base cursor-pointer"
-                                                        aria-label="Decrease or remove">
-                                                        {item.quantity === 1 ? '🗑' : '−'}
-                                                    </button>
-                                                    <span className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-sm sm:text-base font-black bg-zinc-50">{item.quantity}</span>
-                                                    <button onClick={() => updateQuantity(item.product.id, isUnlimited ? item.quantity + 1 : Math.min(item.product.stock, item.quantity + 1))}
-                                                        className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-zinc-100 text-zinc-600 transition-colors font-bold text-base cursor-pointer"
-                                                        aria-label="Increase">
-                                                        +
-                                                    </button>
+                                                <div className="flex items-center gap-2">
+                                                    <div className="flex border border-zinc-300 rounded-full overflow-hidden bg-white shadow-2xs">
+                                                        <button onClick={() => item.quantity === 1 ? removeItem(item.product.id) : updateQuantity(item.product.id, item.quantity - 1)}
+                                                            className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-red-50 text-zinc-600 hover:text-red-500 transition-colors font-bold text-base cursor-pointer"
+                                                            aria-label="Decrease or remove">
+                                                            {item.quantity === 1 ? <TrashIcon className="w-4 h-4" /> : <MinusIcon className="w-4 h-4" />}
+                                                        </button>
+                                                        <span className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-sm sm:text-base font-black bg-zinc-50">{item.quantity}</span>
+                                                        <button onClick={() => updateQuantity(item.product.id, isUnlimited ? item.quantity + 1 : Math.min(item.product.stock, item.quantity + 1))}
+                                                            className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-zinc-100 text-zinc-600 transition-colors font-bold text-base cursor-pointer"
+                                                            aria-label="Increase">
+                                                            +
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </li>
@@ -99,7 +110,7 @@ export default function CartPage() {
                                 </div>
                                 <div className="flex justify-between text-emerald-600 font-bold">
                                     <span>{t('common.shippingFee')}</span>
-                                    <span>{language === 'en' ? 'Free! 🎉' : 'ฟรี! 🎉'}</span>
+                                    <span>{language === 'en' ? 'Free! 🚚' : 'ฟรี! (ส่งฟรี 🚚)'}</span>
                                 </div>
                             </div>
                             <div className="flex justify-between items-center py-4 mb-4">

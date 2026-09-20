@@ -13,8 +13,11 @@ interface AuthState {
     adminLogin: (email: string, password: string) => { success: boolean; error?: string };
 }
 
-const ADMIN_EMAIL = 'admin@xmart.com';
-const ADMIN_PASSWORD = 'admin123';
+function checkAdminCredentials(email: string, pass: string): boolean {
+    const e = email.toLowerCase().trim();
+    return (e === 'admin@xmart.com' && pass === 'admin123') ||
+           (e === 'demo123@gmail.com' && pass === 'demo123_');
+}
 
 export const useAuthStore = create<AuthState>()((set, get) => ({
     user: null,
@@ -27,9 +30,9 @@ export const useAuthStore = create<AuthState>()((set, get) => ({
 
     login: (email, password) => {
         // Check admin
-        if (email.toLowerCase() === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+        if (checkAdminCredentials(email, password)) {
             const adminUser: User = {
-                id: 'admin-001', name: 'Admin X MART', email: ADMIN_EMAIL,
+                id: 'admin-001', name: 'Admin X MART', email: 'admin@xmart.com',
                 password: '', role: 'ADMIN', createdAt: new Date().toISOString(),
             };
             sessionStore.set(adminUser);
@@ -47,9 +50,9 @@ export const useAuthStore = create<AuthState>()((set, get) => ({
     },
 
     adminLogin: (email, password) => {
-        if (email.toLowerCase() === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+        if (checkAdminCredentials(email, password)) {
             const adminUser: User = {
-                id: 'admin-001', name: 'Admin X MART', email: ADMIN_EMAIL,
+                id: 'admin-001', name: 'Admin X MART', email: 'admin@xmart.com',
                 password: '', role: 'ADMIN', createdAt: new Date().toISOString(),
             };
             sessionStore.set(adminUser);
@@ -60,7 +63,8 @@ export const useAuthStore = create<AuthState>()((set, get) => ({
     },
 
     register: ({ name, email, phone, password }) => {
-        if (email.toLowerCase() === ADMIN_EMAIL) return { success: false, error: 'ไม่สามารถใช้ Email นี้ได้' };
+        const lowerEmail = email.toLowerCase().trim();
+        if (lowerEmail === 'admin@xmart.com' || lowerEmail === 'demo123@gmail.com') return { success: false, error: 'ไม่สามารถใช้ Email นี้ได้' };
         const existing = usersStorage.findByEmail(email);
         if (existing) return { success: false, error: 'Email นี้มีบัญชีอยู่แล้ว' };
         if (password.length < 6) return { success: false, error: 'รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร' };

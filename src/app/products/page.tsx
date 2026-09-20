@@ -10,6 +10,7 @@ import { mockProducts } from "@/data/products";
 import { mockCategories } from "@/data/categories";
 import { useTranslation, getCategoryName, getProductName } from "@/lib/i18n";
 import Link from "next/link";
+import { CategoryIcon, TagIcon, SearchIcon, RefreshCwIcon } from "@/components/icons";
 
 type SortOption = 'default' | 'price-asc' | 'price-desc' | 'name-asc';
 type PriceRangeOption = 'all' | '0-50' | '51-200' | '201-1000' | '1001-5000' | '5001+';
@@ -18,87 +19,87 @@ const categoryMeta: Record<string, { desc: string; descEn?: string; icon: string
     'เครื่องดื่ม': {
         desc: 'น้ำดื่ม น้ำอัดลม ชา กาแฟ นม และเครื่องดื่มหลากหลายชนิด',
         descEn: 'Drinking water, soft drinks, tea, coffee, milk, and various beverages',
-        icon: '🥤',
+        icon: 'beverages',
     },
     'อาหาร': {
         desc: 'อาหารแห้ง บะหมี่กึ่งสำเร็จรูป ข้าวสาร เครื่องปรุงรส และอาหารสำเร็จรูป',
         descEn: 'Dried food, instant noodles, rice, seasonings, and prepared meals',
-        icon: '🍜',
+        icon: 'food',
     },
     'ขนม': {
         desc: 'ขนมขบเคี้ยว มันฝรั่งทอดกรอบ ช็อกโกแลต บิสกิต และลูกอมแสนอร่อย',
         descEn: 'Snacks, potato chips, chocolates, biscuits, and confectionery',
-        icon: '🍬',
+        icon: 'snacks',
     },
     'ของใช้ส่วนตัว': {
         desc: 'สบู่ แชมพู ครีมนวด ยาสีฟัน แปรงสีฟัน และผลิตภัณฑ์ดูแลผิวกาย',
         descEn: 'Soap, shampoo, conditioner, toothpaste, toothbrushes, and personal care items',
-        icon: '🧴',
+        icon: 'personal-care',
     },
     'ของใช้ในบ้าน': {
         desc: 'ผงซักฟอก น้ำยาล้างจาน ปรับผ้านุ่ม กระดาษทิชชู และผลิตภัณฑ์ทำความสะอาด',
         descEn: 'Detergent, dish soap, fabric softeners, paper towels, and cleaning supplies',
-        icon: '🏠',
+        icon: 'home-care',
     },
     'เครื่องใช้ไฟฟ้า': {
         desc: 'โทรศัพท์มือถือ แท็บเล็ต หูฟัง ลำโพง Power Bank สายชาร์จ อุปกรณ์ไอที',
         descEn: 'Smartphones, tablets, headphones, power banks, chargers, and electronics',
-        icon: '📱',
+        icon: 'electronics',
     },
     'แฟชั่น': {
         desc: 'เสื้อยืด กางเกงยีนส์ รองเท้า กระเป๋า หมวก และเครื่องแต่งกาย',
         descEn: 'T-shirts, jeans, shoes, bags, caps, and fashionable apparel',
-        icon: '👕',
+        icon: 'fashion',
     },
     'สุขภาพและความงาม': {
         desc: 'สกินแคร์ เครื่องสำอาง อุปกรณ์ดูแลสุขภาพ วิตามิน และยาสามัญ',
         descEn: 'Skincare, cosmetics, health supplements, vitamins, and medical essentials',
-        icon: '💄',
+        icon: 'health-beauty',
     },
     'แม่และเด็ก': {
         desc: 'ผ้าอ้อม นมผงเด็ก ขวดนม ของเล่นเด็ก และอุปกรณ์สำหรับเด็ก',
         descEn: 'Diapers, formula milk, bottles, baby toys, and maternal care',
-        icon: '🍼',
+        icon: 'mother-baby',
     },
     'เครื่องเขียนและสำนักงาน': {
         desc: 'ปากกา ดินสอ สมุด กระดาษ แฟ้ม และอุปกรณ์สำนักงานครบครัน',
         descEn: 'Pens, pencils, notebooks, copy paper, binders, and office essentials',
-        icon: '✏️',
+        icon: 'stationery',
     },
     'ยานยนต์': {
         desc: 'น้ำมันเครื่อง ยานพาหนะ อุปกรณ์ดูแลและอุปกรณ์เสริมในรถยนต์',
         descEn: 'Engine oil, motor vehicles, car care accessories, and parts',
-        icon: '🚗',
+        icon: 'automotive',
     },
     'สัตว์เลี้ยง': {
         desc: 'สัตว์เลี้ยงแท้ อาหารสุนัข อาหารแมว ทรายแมว และของดูแลสัตว์เลี้ยง',
         descEn: 'Live companion pets, pet food, cat litter, and pet accessories',
-        icon: '🐾',
+        icon: 'pets',
     },
     'กีฬาและกิจกรรมกลางแจ้ง': {
         desc: 'อุปกรณ์ออกกำลังกาย ลูกบอล เสื่อโยคะ กระบอกน้ำ อุปกรณ์ Camping',
         descEn: 'Fitness gear, balls, yoga mats, sports bottles, and camping equipment',
-        icon: '⛺',
+        icon: 'sports-outdoors',
     },
     'บ้านและสวน': {
         desc: 'เครื่องมือช่าง อุปกรณ์ทำสวน หลอดไฟ ปลั๊กพ่วง และอุปกรณ์จัดเก็บ',
         descEn: 'Hand tools, gardening tools, LED lights, extension cords, and home storage',
-        icon: '🌱',
+        icon: 'home-garden',
     },
     'อสังหาริมทรัพย์': {
         desc: 'บ้านเดี่ยว คอนโดมิเนียม ทาวน์โฮม ที่ดิน อาคารพาณิชย์ และโฮมออฟฟิศทำเลทอง',
         descEn: 'Single houses, condominiums, townhomes, land plots, and commercial properties',
-        icon: '🏢',
+        icon: 'real-estate',
     },
     'ของเล่น': {
         desc: 'LEGO ตัวต่อ บอร์ดเกม รถบังคับ ตุ๊กตา และของเล่นเสริมพัฒนาการ',
         descEn: 'LEGO bricks, board games, RC vehicles, plush toys, and educational games',
-        icon: '🧸',
+        icon: 'toys-games',
     },
     'ของสดและอาหารแช่แข็ง': {
         desc: 'เนื้อหมู เนื้อวัว ไก่สด อาหารทะเล ผัก ผลไม้ และอาหารแช่แข็งคุณภาพสูง',
         descEn: 'Pork, beef, fresh poultry, seafood, fresh produce, and premium frozen foods',
-        icon: '🥩',
+        icon: 'fresh-frozen',
     },
 };
 
@@ -225,14 +226,16 @@ function ProductsContent() {
     const activeMeta = categoryMeta[rawCatName] || {
         desc: 'สินค้าโชว์ห่วยคุณภาพครบครัน ส่งฟรีทุกออเดอร์ บริการตลอด 24 ชั่วโมง',
         descEn: 'Quality supermarket items, free shipping on all orders, open 24/7',
-        icon: '🛍️',
+        icon: 'package',
     };
     const activeDesc = language === 'en' && activeMeta.descEn ? activeMeta.descEn : activeMeta.desc;
 
     if (isInvalidCategory) {
         return (
             <div className="bg-white rounded-3xl p-10 text-center shadow-sm border border-zinc-100 max-w-lg mx-auto my-12">
-                <div className="text-6xl mb-4">🏷️</div>
+                <div className="flex justify-center mb-4 text-zinc-300">
+                    <TagIcon className="w-16 h-16" />
+                </div>
                 <h2 className="text-xl font-bold text-zinc-800 mb-2">ไม่พบหมวดหมู่สินค้า</h2>
                 <p className="text-sm text-zinc-400 mb-6">
                     หมวดหมู่ &quot;{categoryParam}&quot; ไม่มีในระบบ หรืออาจถูกปรับเปลี่ยนไปแล้ว
@@ -241,7 +244,8 @@ function ProductsContent() {
                     onClick={() => handleSelectCategory('เครื่องดื่ม')}
                     className="inline-flex items-center gap-2 bg-[#0060df] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#0051bc] transition-all shadow-md text-sm cursor-pointer"
                 >
-                    🥤 ดูหมวดหมู่เครื่องดื่ม
+                    <CategoryIcon icon="beverages" className="w-4 h-4 text-white" />
+                    <span>ดูหมวดหมู่เครื่องดื่ม</span>
                 </button>
             </div>
         );
@@ -268,8 +272,8 @@ function ProductsContent() {
 
                         {/* Title with outlined icon badge */}
                         <div className="flex items-center gap-3 pt-2">
-                            <div className="w-12 h-12 rounded-xl bg-white/70 border border-[#0060df]/40 flex items-center justify-center text-2xl text-[#0060df] shadow-2xs shrink-0">
-                                {activeMeta.icon}
+                            <div className="w-12 h-12 rounded-xl bg-white/70 border border-[#0060df]/40 flex items-center justify-center text-[#0060df] shadow-2xs shrink-0">
+                                <CategoryIcon icon={activeMeta.icon} name={rawCatName} className="w-6 h-6" />
                             </div>
                             <h1 className="text-3xl sm:text-4xl font-black text-[#0a3863] tracking-tight">
                                 {activeCatName}
@@ -342,7 +346,7 @@ function ProductsContent() {
                                                 : 'text-zinc-700 hover:bg-zinc-50'
                                         }`}
                                     >
-                                        <span className="text-base">{cat.icon}</span>
+                                        <span className="shrink-0"><CategoryIcon icon={cat.icon} slug={cat.slug} name={cat.name} className="w-4 h-4" /></span>
                                         <span>{getCategoryName(cat, language)}</span>
                                     </button>
                                 );
@@ -411,7 +415,7 @@ function ProductsContent() {
                     {search.trim() && (
                         <div className="flex items-center justify-between gap-3 p-3.5 bg-blue-50/80 border border-blue-200 rounded-2xl text-xs sm:text-sm text-blue-900 shadow-2xs">
                             <div className="flex items-center gap-2 flex-wrap">
-                                <span>🔍</span>
+                                <SearchIcon className="w-4 h-4 text-blue-700 shrink-0" />
                                 <span>{language === 'en' ? 'Showing results for:' : 'ผลการค้นหาสำหรับ:'}</span>
                                 <span className="font-black text-[#0060df] bg-white px-2 py-0.5 rounded-md border border-blue-200">
                                     "{search.trim()}"
@@ -459,7 +463,9 @@ function ProductsContent() {
                     {/* Products Grid (2 Mobile, 3 Tablet, 4-5 Desktop) */}
                     {filteredProducts.length === 0 ? (
                         <div className="bg-white rounded-2xl p-12 text-center shadow-xs border border-zinc-200/80 my-4">
-                            <div className="text-5xl mb-3">🔍</div>
+                            <div className="flex justify-center mb-3 text-zinc-300">
+                                <SearchIcon className="w-12 h-12" />
+                            </div>
                             <h3 className="font-bold text-zinc-800 text-base mb-1">{t('products.noResults')}</h3>
                             <p className="text-xs text-zinc-400 mb-4">
                                 {language === 'en' ? 'Try adjusting your filters or search terms.' : 'ลองปรับตัวกรองช่วงราคา หรือค้นหาด้วยคำอื่น'}
@@ -472,7 +478,8 @@ function ProductsContent() {
                                 }}
                                 className="inline-flex items-center gap-1.5 text-[#0060df] font-bold text-xs bg-blue-50 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer"
                             >
-                                🔄 {language === 'en' ? 'Clear all filters' : 'ล้างตัวกรองทั้งหมด'}
+                                <RefreshCwIcon className="w-3.5 h-3.5 shrink-0" />
+                                <span>{language === 'en' ? 'Clear all filters' : 'ล้างตัวกรองทั้งหมด'}</span>
                             </button>
                         </div>
                     ) : (
@@ -547,7 +554,7 @@ export default function ProductsPage() {
         <div className="min-h-screen bg-[#f8f9fa] flex flex-col">
             <Header />
             <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1">
-                <Suspense fallback={<div className="text-center py-20 text-zinc-400">⏳ กำลังโหลดสินค้า...</div>}>
+                <Suspense fallback={<div className="text-center py-20 text-zinc-400">กำลังโหลดสินค้า...</div>}>
                     <ProductsContent />
                 </Suspense>
             </main>

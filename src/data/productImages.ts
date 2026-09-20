@@ -721,6 +721,11 @@ export function resolveProductImage(
     sku?: string,
     customImage?: string
 ): string {
+    // 0. หากมีรูปที่ Admin อัปโหลดเข้ามาโดยตรง (Base64 data:image/... หรือ blob:...) ให้ใช้รูปที่อัปโหลดเสมอ
+    if (customImage && (customImage.startsWith('data:image/') || customImage.startsWith('blob:'))) {
+        return customImage;
+    }
+
     // 1. ตรวจสอบรูปจริงที่กำหนดใน realProductImages ตาม ID
     if (realProductImages[productId]) {
         return realProductImages[productId];

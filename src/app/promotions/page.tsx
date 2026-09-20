@@ -9,6 +9,7 @@ import { productsStorage, categoriesStorage } from "@/lib/storage/helpers";
 import { mockProducts } from "@/data/products";
 import { mockCategories } from "@/data/categories";
 import Link from "next/link";
+import { FlameIcon, SparklesIcon, TagIcon, CategoryIcon, RefreshCwIcon } from "@/components/icons";
 
 type SortOption = 'discount-desc' | 'price-asc' | 'price-desc' | 'name-asc';
 type DiscountFilter = 'all' | '20plus' | '10-19' | 'under10';
@@ -145,8 +146,8 @@ function PromotionsContent() {
 
                         {/* Title with badge */}
                         <div className="flex items-center gap-3 pt-1">
-                            <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-3xl shadow-inner shrink-0">
-                                🔥
+                            <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-inner shrink-0">
+                                <FlameIcon className="w-6 h-6" />
                             </div>
                             <div>
                                 <span className="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full text-red-50">
@@ -166,17 +167,18 @@ function PromotionsContent() {
                         {/* Total Count Pill Badge */}
                         <div className="pt-2 flex flex-wrap gap-2">
                             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-xs font-bold text-red-700 shadow-sm">
-                                <span>🎉</span> มีสินค้าโปรโมชั่น {promoProducts.length} รายการ
+                                <SparklesIcon className="w-3.5 h-3.5 text-red-600" />
+                                <span>มีสินค้าโปรโมชั่น {promoProducts.length} รายการ</span>
                             </span>
                             <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-black/20 text-xs font-semibold text-white backdrop-blur-xs">
-                                <span>🚚</span> ส่งฟรีทุกออเดอร์
+                                <span>ส่งฟรี 🚚 ทุกออเดอร์</span>
                             </span>
                         </div>
                     </div>
 
                     {/* Right Banner Graphic */}
-                    <div className="hidden md:flex items-center justify-center shrink-0 text-8xl opacity-80 pr-6 select-none">
-                        🏷️
+                    <div className="hidden md:flex items-center justify-center shrink-0 opacity-40 pr-6 select-none text-white">
+                        <TagIcon className="w-24 h-24" />
                     </div>
                 </div>
 
@@ -215,7 +217,7 @@ function PromotionsContent() {
                                 }`}
                             >
                                 <span className="flex items-center gap-2">
-                                    <span className="text-sm">🔥</span>
+                                    <FlameIcon className="w-3.5 h-3.5 text-red-500" />
                                     <span>ทุกหมวดหมู่</span>
                                 </span>
                                 <span className="text-[10px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-bold">
@@ -240,7 +242,7 @@ function PromotionsContent() {
                                         }`}
                                     >
                                         <span className="flex items-center gap-2 truncate">
-                                            <span className="text-sm">{cat.icon}</span>
+                                            <span className="shrink-0"><CategoryIcon icon={cat.icon} slug={cat.slug} name={cat.name} className="w-3.5 h-3.5 text-zinc-500" /></span>
                                             <span className="truncate">{cat.name}</span>
                                         </span>
                                         <span className="text-[10px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-bold shrink-0">
@@ -262,7 +264,7 @@ function PromotionsContent() {
                         <div className="space-y-2 text-xs text-zinc-700">
                             {[
                                 { id: 'all', label: 'ส่วนลดทั้งหมด' },
-                                { id: '20plus', label: 'ลด 20% ขึ้นไป 💥' },
+                                { id: '20plus', label: 'ลด 20% ขึ้นไป' },
                                 { id: '10-19', label: 'ลด 10% - 19%' },
                                 { id: 'under10', label: 'ลดต่ำกว่า 10%' },
                             ].map(item => (
@@ -341,7 +343,9 @@ function PromotionsContent() {
                     {/* Products Grid */}
                     {filteredPromotions.length === 0 ? (
                         <div className="bg-white rounded-3xl p-12 text-center shadow-xs border border-zinc-200/80 my-4">
-                            <div className="text-5xl mb-3">🏷️</div>
+                            <div className="flex justify-center mb-3 text-zinc-300">
+                                <TagIcon className="w-12 h-12" />
+                            </div>
                             <h3 className="font-bold text-zinc-800 text-base mb-1">ไม่พบสินค้าโปรโมชั่นที่ตรงกับเงื่อนไข</h3>
                             <p className="text-xs text-zinc-400 mb-4">ลองปรับตัวกรองหมวดหมู่ ระดับส่วนลด หรือค้นหาด้วยคำอื่น</p>
                             <button
@@ -353,7 +357,8 @@ function PromotionsContent() {
                                 }}
                                 className="inline-flex items-center gap-1.5 text-red-600 font-bold text-xs bg-red-50 px-4 py-2 rounded-xl hover:bg-red-100 transition-colors cursor-pointer"
                             >
-                                🔄 ล้างตัวกรองทั้งหมด
+                                <RefreshCwIcon className="w-3.5 h-3.5 shrink-0" />
+                                <span>ล้างตัวกรองทั้งหมด</span>
                             </button>
                         </div>
                     ) : (
@@ -425,7 +430,7 @@ export default function PromotionsPage() {
         <div className="min-h-screen bg-[#f8f9fa] flex flex-col">
             <Header />
             <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1">
-                <Suspense fallback={<div className="text-center py-20 text-zinc-400">⏳ กำลังโหลดโปรโมชั่น...</div>}>
+                <Suspense fallback={<div className="text-center py-20 text-zinc-400">กำลังโหลดโปรโมชั่น...</div>}>
                     <PromotionsContent />
                 </Suspense>
             </main>

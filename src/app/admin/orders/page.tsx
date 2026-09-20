@@ -7,10 +7,21 @@ import { Order, OrderStatus } from "@/types";
 import {
     STATUS_STEPS,
     STATUS_LABELS,
-    STATUS_ICONS,
     canCancelOrder,
     getAdjustedCreatedAtForStatus,
 } from "@/lib/order-status";
+import {
+    RefreshCwIcon,
+    OrderIcon,
+    OrderStatusIcon,
+    ExternalLinkIcon,
+    BanknoteIcon,
+    SmartphoneIcon,
+    ArrowRightIcon,
+    XCircleIcon,
+    CheckCircleIcon
+} from "@/components/icons";
+import { mockDrivers } from "@/data/drivers";
 
 const STATUSES: OrderStatus[] = ['PENDING', 'CONFIRMED', 'PREPARING', 'SHIPPING', 'DELIVERED', 'CANCELLED'];
 
@@ -58,6 +69,17 @@ export default function AdminOrdersPage() {
         const next = NEXT_STATUS[current];
         if (!next) return;
         const targetOrder = orders.find(o => o.orderNumber === orderNumber);
+        if (!targetOrder) return;
+
+        // Requirement 6 & 7: Payment Gate
+        // For PromptPay orders, if paymentStatus is PENDING, disallow advancing to PREPARING, SHIPPING, DELIVERED
+        if (targetOrder.paymentMethod === 'PROMPTPAY' && targetOrder.paymentStatus === 'PENDING') {
+            if (['PREPARING', 'SHIPPING', 'DELIVERED'].includes(next) || next === 'CONFIRMED') {
+                alert('ไม่สามารถดำเนินการต่อได้ เนื่องจากยังไม่ได้ชำระเงิน');
+                return;
+            }
+        }
+
         const now = new Date().toISOString();
         const patch: Partial<Order> = {
             orderStatus: next,
@@ -99,7 +121,7 @@ export default function AdminOrdersPage() {
             updatedAt: now,
         });
         notificationsStorage.add({
-            title: 'ยกเลิกออเดอร์แล้ว ❌',
+            title: 'ยกเลิกออเดอร์แล้ว',
             message: `ออเดอร์ #${orderNumber} ถูกยกเลิกเรียบร้อยแล้ว`,
             type: 'ORDER',
             orderNumber,
@@ -107,6 +129,32 @@ export default function AdminOrdersPage() {
         reload();
         if (selected?.orderNumber === orderNumber) {
             setSelected({ ...selected, orderStatus: 'CANCELLED', statusUpdatedAt: now, updatedAt: now });
+        }
+    };
+
+    const handleAssignDriverQuick = (orderNumber: string, driverId: string) => {
+        const driver = mockDrivers.find(d => d.id === driverId);
+        if (!driver) return;
+        const now = new Date().toISOString();
+        const patch: Partial<Order> = {
+            delivery: {
+                driverName: driver.name,
+                driverPhone: driver.phone,
+                status: selected?.orderStatus === 'SHIPPING' ? 'SHIPPING' : (selected?.delivery?.status || 'ASSIGNED'),
+            },
+            statusUpdatedAt: now,
+            updatedAt: now,
+        };
+        ordersStorage.update(orderNumber, patch);
+        notificationsStorage.add({
+            title: 'กำหนดคนขับสำเร็จ',
+            message: `ออเดอร์ #${orderNumber} มอบหมายให้ ${driver.name}`,
+            type: 'ORDER',
+            orderNumber,
+        });
+        reload();
+        if (selected?.orderNumber === orderNumber) {
+            setSelected({ ...selected, ...patch });
         }
     };
 
@@ -124,10 +172,11 @@ export default function AdminOrdersPage() {
                 <div className="flex flex-wrap gap-2 md:gap-4 items-center justify-between">
                     <input type="text" value={search} onChange={e => setSearch(e.target.value)}
                         placeholder="ค้นหา Order # / ชื่อ / เบอร์โทร"
-                        className="flex-1 min-w-48 bg-white border border-zinc-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-xmart-primary" />
+                        className="flex-1 min-w-48 bg-white border border-zinc-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-xmart-primary min-h-[44px]" />
                     <button onClick={handleResetDemo}
-                        className="text-xs text-zinc-500 hover:text-xmart-primary border border-zinc-200 rounded-xl px-3 py-2 bg-white transition-all shadow-xs flex items-center gap-1.5 font-bold">
-                        🔄 รีเซ็ต Demo Orders
+                        className="text-xs text-zinc-500 hover:text-xmart-primary border border-zinc-200 rounded-xl px-3.5 py-2.5 bg-white transition-all shadow-xs flex items-center gap-1.5 font-bold min-h-[44px]">
+                        <RefreshCwIcon className="w-3.5 h-3.5" />
+                        <span>รีเซ็ต Demo Orders</span>
                     </button>
                 </div>
 
@@ -135,7 +184,11 @@ export default function AdminOrdersPage() {
                     {(['ALL', ...STATUSES] as const).map(s => (
                         <button key={s} onClick={() => setFilter(s)}
                             className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${filter === s ? 'bg-xmart-primary text-white' : 'bg-white border border-zinc-200 text-zinc-600 hover:bg-zinc-50'}`}>
-                            {s === 'ALL' ? '📋 ทั้งหมด' : `${STATUS_ICONS[s]} ${STATUS_LABELS[s]}`} ({s === 'ALL' ? orders.length : orders.filter(o => o.orderStatus === s).length})
+                            {s === 'ALL' ? (
+                                <span className="inline-flex items-center gap-1"><OrderIcon className="w-3.5 h-3.5" /> ทั้งหมด</span>
+                            ) : (
+                                <span className="inline-flex items-center gap-1"><OrderStatusIcon status={s} className="w-3.5 h-3.5" /> {STATUS_LABELS[s]}</span>
+                            )} ({s === 'ALL' ? orders.length : orders.filter(o => o.orderStatus === s).length})
                         </button>
                     ))}
                 </div>
@@ -145,7 +198,9 @@ export default function AdminOrdersPage() {
                     <div className="bg-white rounded-2xl shadow-sm border border-zinc-100 overflow-hidden">
                         {filtered.length === 0 ? (
                             <div className="p-12 text-center text-zinc-400">
-                                <div className="text-5xl mb-3">📋</div>
+                                <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center text-zinc-300">
+                                    <OrderIcon className="w-10 h-10" />
+                                </div>
                                 <p className="font-bold">ไม่พบออเดอร์</p>
                             </div>
                         ) : (
@@ -158,8 +213,9 @@ export default function AdminOrdersPage() {
                                                 <p className="font-black text-xmart-primary text-sm">{o.orderNumber}</p>
                                                 <p className="text-xs text-zinc-500">{o.customerName} • {o.customerPhone}</p>
                                             </div>
-                                            <span className={`text-[10px] font-bold px-2 py-1 rounded-full shrink-0 ${STATUS_COLORS[o.orderStatus]}`}>
-                                                {STATUS_ICONS[o.orderStatus]} {STATUS_LABELS[o.orderStatus]}
+                                            <span className={`text-[10px] font-bold px-2 py-1 rounded-full shrink-0 inline-flex items-center gap-1 ${STATUS_COLORS[o.orderStatus]}`}>
+                                                <OrderStatusIcon status={o.orderStatus} className="w-3 h-3" />
+                                                <span>{STATUS_LABELS[o.orderStatus]}</span>
                                             </span>
                                         </div>
                                         <div className="flex justify-between items-center text-xs">
@@ -178,13 +234,15 @@ export default function AdminOrdersPage() {
                             <div className="flex justify-between items-start mb-4">
                                 <div>
                                     <p className="font-black text-xmart-primary">{selected.orderNumber}</p>
-                                    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${STATUS_COLORS[selected.orderStatus]}`}>
-                                        {STATUS_ICONS[selected.orderStatus]} {STATUS_LABELS[selected.orderStatus]}
+                                    <span className={`text-xs font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 ${STATUS_COLORS[selected.orderStatus]}`}>
+                                        <OrderStatusIcon status={selected.orderStatus} className="w-3.5 h-3.5" />
+                                        <span>{STATUS_LABELS[selected.orderStatus]}</span>
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Link href={`/admin/orders/${selected.orderNumber}`} className="text-[11px] font-bold text-xmart-primary hover:underline">
-                                        เปิดหน้าเต็ม ↗
+                                    <Link href={`/admin/orders/${selected.orderNumber}`} className="text-[11px] font-bold text-xmart-primary hover:underline inline-flex items-center gap-1">
+                                        <span>เปิดหน้าเต็ม</span>
+                                        <ExternalLinkIcon className="w-3 h-3" />
                                     </Link>
                                     <button onClick={() => setSelected(null)} className="text-zinc-400 hover:text-zinc-600 text-lg leading-none">×</button>
                                 </div>
@@ -194,16 +252,44 @@ export default function AdminOrdersPage() {
                                 <div><p className="text-xs text-zinc-400">ผู้รับ</p><p className="font-bold">{selected.customerName}</p><p className="text-zinc-500">{selected.customerPhone}</p></div>
                                 <div><p className="text-xs text-zinc-400">ที่อยู่</p><p className="font-medium text-xs leading-relaxed">{selected.address} {selected.subdistrict} {selected.district} {selected.province} {selected.postalCode}</p></div>
                                 <div><p className="text-xs text-zinc-400">ชำระ</p>
-                                    <p className="font-bold">{selected.paymentMethod === 'CASH' ? '💵 เงินสด' : '📱 QR'} —
+                                    <p className="font-bold flex items-center gap-1.5 flex-wrap">
+                                        {selected.paymentMethod === 'CASH' ? (
+                                            <span className="inline-flex items-center gap-1"><BanknoteIcon className="w-4 h-4 text-emerald-600" /> เงินสด</span>
+                                        ) : (
+                                            <span className="inline-flex items-center gap-1"><SmartphoneIcon className="w-4 h-4 text-blue-600" /> QR</span>
+                                        )} —
                                         <span className={selected.paymentStatus === 'PAID' ? ' text-green-600' : ' text-orange-500'}>
                                             {selected.paymentStatus === 'PAID' ? ' ชำระแล้ว' : ' รอชำระ'}
                                         </span>
                                     </p>
                                 </div>
-                                {selected.delivery?.driverName && (
-                                    <div className="bg-zinc-50 p-2.5 rounded-xl">
-                                        <p className="text-xs text-zinc-400">ข้อมูลผู้จัดส่ง</p>
-                                        <p className="font-bold text-xs text-zinc-800">{selected.delivery.driverName} ({selected.delivery.driverPhone})</p>
+                                {selected.paymentMethod === 'PROMPTPAY' && selected.paymentStatus === 'PENDING' && selected.orderStatus !== 'CANCELLED' && (
+                                    <div className="bg-amber-50 border border-amber-200 rounded-xl p-2.5 text-xs text-amber-800">
+                                        <p className="font-bold">รอการชำระเงิน (PromptPay QR)</p>
+                                        <p className="text-[11px] mt-0.5 text-amber-700">ไม่สามารถดำเนินการต่อได้ เนื่องจากยังไม่ได้ชำระเงิน</p>
+                                    </div>
+                                )}
+                                {!['CANCELLED', 'DELIVERED'].includes(selected.orderStatus) && (
+                                    <div className="bg-purple-50 p-2.5 rounded-xl border border-purple-200/80 space-y-1.5">
+                                        <div className="flex justify-between items-center text-xs">
+                                            <span className="font-bold text-purple-900">กำหนดพนักงานจัดส่ง</span>
+                                            {selected.delivery?.driverPhone && (
+                                                <a href={`tel:${selected.delivery.driverPhone}`} className="text-green-700 font-bold hover:underline text-[11px]">
+                                                    โทร {selected.delivery.driverPhone}
+                                                </a>
+                                            )}
+                                        </div>
+                                        <select
+                                            value={mockDrivers.find(d => d.name === selected.delivery?.driverName)?.id || mockDrivers[0].id}
+                                            onChange={e => handleAssignDriverQuick(selected.orderNumber, e.target.value)}
+                                            className="w-full bg-white border border-purple-200 rounded-lg px-2.5 py-1 text-xs text-zinc-800 focus:outline-none"
+                                        >
+                                            {mockDrivers.map(d => (
+                                                <option key={d.id} value={d.id}>
+                                                    {d.name} ({d.phone})
+                                                </option>
+                                            ))}
+                                        </select>
                                     </div>
                                 )}
                             </div>
@@ -224,25 +310,34 @@ export default function AdminOrdersPage() {
                             <div className="space-y-2">
                                 {NEXT_STATUS[selected.orderStatus] && (
                                     <button onClick={() => handleAdvance(selected.orderNumber, selected.orderStatus)}
-                                        className="w-full bg-xmart-primary text-white font-bold py-2.5 rounded-xl hover:bg-xmart-primary-light transition-all text-sm active-scale">
-                                        ➡️ ปรับสถานะเป็น: {STATUS_ICONS[NEXT_STATUS[selected.orderStatus]!]} {STATUS_LABELS[NEXT_STATUS[selected.orderStatus]!]}
+                                        className="w-full bg-xmart-primary text-white font-bold py-2.5 rounded-xl hover:bg-xmart-primary-light transition-all text-sm active-scale inline-flex items-center justify-center gap-2 min-h-[44px]">
+                                        <ArrowRightIcon className="w-4 h-4" />
+                                        <span>ปรับสถานะเป็น:</span>
+                                        <OrderStatusIcon status={NEXT_STATUS[selected.orderStatus]!} className="w-4 h-4" />
+                                        <span>{STATUS_LABELS[NEXT_STATUS[selected.orderStatus]!]}</span>
                                     </button>
                                 )}
                                 
                                 {canCancelOrder(selected.orderStatus) && (
                                     <button onClick={() => handleCancel(selected.orderNumber)}
-                                        className="w-full border border-red-200 text-red-500 font-bold py-2.5 rounded-xl hover:bg-red-50 transition-all text-sm active-scale">
-                                        ❌ ยกเลิกออเดอร์
+                                        className="w-full border border-red-200 text-red-500 font-bold py-2.5 rounded-xl hover:bg-red-50 transition-all text-sm active-scale inline-flex items-center justify-center gap-2 min-h-[44px]">
+                                        <XCircleIcon className="w-4 h-4" />
+                                        <span>ยกเลิกออเดอร์</span>
                                     </button>
                                 )}
 
-
                                 {selected.orderStatus === 'DELIVERED' && (
-                                    <p className="text-center text-green-600 font-bold text-sm py-2">🎉 จัดส่งสำเร็จแล้ว</p>
+                                    <p className="text-center text-green-600 font-bold text-sm py-2 inline-flex items-center justify-center gap-1.5 w-full">
+                                        <CheckCircleIcon className="w-4 h-4" />
+                                        <span>จัดส่งสำเร็จแล้ว</span>
+                                    </p>
                                 )}
 
                                 {selected.orderStatus === 'CANCELLED' && (
-                                    <p className="text-center text-red-500 font-bold text-sm py-2">❌ ออเดอร์ถูกยกเลิกแล้ว (ถาวร)</p>
+                                    <p className="text-center text-red-500 font-bold text-sm py-2 inline-flex items-center justify-center gap-1.5 w-full">
+                                        <XCircleIcon className="w-4 h-4" />
+                                        <span>ออเดอร์ถูกยกเลิกแล้ว (ถาวร)</span>
+                                    </p>
                                 )}
                             </div>
                         </div>

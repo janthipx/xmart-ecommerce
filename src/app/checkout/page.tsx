@@ -9,6 +9,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { mockDrivers } from "@/data/drivers";
 import { mockBranches } from "@/data/branches";
+import { CartIcon, BanknoteIcon, SmartphoneIcon } from "@/components/icons";
 
 function generateOrderNumber() {
     const now = new Date();
@@ -43,7 +44,7 @@ export default function CheckoutPage() {
             <div className="min-h-screen bg-xmart-bg">
                 <Header />
                 <div className="max-w-xl mx-auto px-4 py-20 text-center">
-                    <div className="text-6xl mb-4">🛒</div>
+                    <div className="flex justify-center mb-4 text-zinc-300"><CartIcon className="w-16 h-16" /></div>
                     <h1 className="text-xl font-bold mb-2">ตะกร้าว่างเปล่า</h1>
                     <p className="text-zinc-400 mb-5 text-sm">ไม่มีสินค้าในตะกร้า</p>
                     <Link href="/products" className="text-xmart-primary font-bold hover:underline">กลับเลือกสินค้า</Link>
@@ -114,7 +115,7 @@ export default function CheckoutPage() {
 
         ordersStorage.add(order);
         notificationsStorage.add({
-            title: 'สั่งซื้อสำเร็จ! 🎉',
+            title: 'สั่งซื้อสำเร็จ!',
             message: `ออเดอร์ #${orderNumber} ได้รับการบันทึกแล้ว`,
             type: 'ORDER',
             orderNumber,
@@ -174,7 +175,7 @@ export default function CheckoutPage() {
                                     <label key={method} className={`border-2 rounded-2xl p-4 flex flex-col items-center gap-2 cursor-pointer transition-all ${paymentMethod === method ? 'border-xmart-primary bg-blue-50/60 shadow-xs' : 'border-zinc-200 hover:bg-zinc-50'}`}>
                                         <input type="radio" name="payment" value={method} checked={paymentMethod === method}
                                             onChange={() => setPaymentMethod(method)} className="hidden" />
-                                        <span className="text-3xl sm:text-4xl">{method === 'CASH' ? '💵' : '📱'}</span>
+                                        <span className="text-3xl sm:text-4xl text-blue-600 flex items-center justify-center">{method === 'CASH' ? <BanknoteIcon className="w-8 h-8" /> : <SmartphoneIcon className="w-8 h-8" />}</span>
                                         <span className="text-xs sm:text-sm font-bold text-center text-zinc-800">{method === 'CASH' ? 'เงินสดปลายทาง' : 'QR / PromptPay'}</span>
                                         {method === 'PROMPTPAY' && <span className="text-[11px] text-xmart-primary font-bold bg-blue-100/70 px-2 py-0.5 rounded-full">จ่ายก่อนได้สิทธิ์ก่อน</span>}
                                     </label>
@@ -202,7 +203,7 @@ export default function CheckoutPage() {
 
                         <div className="py-3 border-t border-zinc-100 space-y-2 text-sm">
                             <div className="flex justify-between text-zinc-600"><span>ยอดรวมสินค้า (Subtotal)</span><span className="font-semibold text-zinc-800">฿{getTotalPrice().toLocaleString()}</span></div>
-                            <div className="flex justify-between text-emerald-600 font-bold"><span>ค่าจัดส่ง (Shipping)</span><span>฿0 (ส่งฟรีทุกออเดอร์)</span></div>
+                            <div className="flex justify-between text-emerald-600 font-bold"><span>ค่าจัดส่ง (Shipping)</span><span>฿0 (ส่งฟรี 🚚)</span></div>
                         </div>
 
                         <div className="flex justify-between items-center py-3 border-t border-zinc-200 mb-5">
@@ -212,7 +213,7 @@ export default function CheckoutPage() {
 
                         <button type="submit" form="checkout-form" disabled={loading}
                             className="w-full bg-xmart-primary text-white font-bold py-4 rounded-2xl hover:bg-xmart-primary-light transition-all active-scale shadow-lg shadow-blue-500/25 disabled:opacity-60 disabled:cursor-not-allowed text-base min-h-[48px] cursor-pointer">
-                            {loading ? '⏳ กำลังสร้างออเดอร์...' : paymentMethod === 'PROMPTPAY' ? '📱 ดำเนินการชำระเงิน →' : '✅ ยืนยันสั่งซื้อ (เงินสด)'}
+                            {loading ? 'กำลังสร้างออเดอร์...' : paymentMethod === 'PROMPTPAY' ? 'ดำเนินการชำระเงิน →' : 'ยืนยันสั่งซื้อ (เงินสด)'}
                         </button>
                         <p className="text-center text-xs text-zinc-400 mt-3">
                             {paymentMethod === 'CASH' ? 'ชำระเงินเมื่อได้รับสินค้า (COD)' : 'จ่ายผ่าน QR Code / PromptPay'}

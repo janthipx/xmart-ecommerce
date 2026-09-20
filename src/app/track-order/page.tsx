@@ -1,6 +1,7 @@
 "use client";
 
 import { Header } from "@/components/layout/Header";
+import Link from "next/link";
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { ordersStorage, notificationsStorage } from "@/lib/storage/helpers";
@@ -17,6 +18,7 @@ import {
     getPaymentStatusLabel,
     getOrderItemName,
 } from "@/lib/i18n";
+import { SearchIcon, HelpCircleIcon, XCircleIcon, OrderStatusIcon, CheckIcon, CheckCircleIcon, TruckIcon, PhoneIcon, BanknoteIcon, SmartphoneIcon, ClockIcon, LockIcon } from "@/components/icons";
 
 function TrackForm() {
     const { language, t } = useTranslation();
@@ -139,7 +141,7 @@ function TrackForm() {
         });
 
         notificationsStorage.add({
-            title: language === 'en' ? 'Order Cancelled ❌' : 'ยกเลิกออเดอร์แล้ว ❌',
+            title: language === 'en' ? 'Order Cancelled' : 'ยกเลิกออเดอร์แล้ว',
             message: language === 'en'
                 ? `Order #${order.orderNumber} has been cancelled`
                 : `ออเดอร์ #${order.orderNumber} ถูกยกเลิกเรียบร้อยแล้ว`,
@@ -195,14 +197,16 @@ function TrackForm() {
                     <div className="flex items-end">
                         <button
                             type="submit"
-                            className="w-full sm:w-auto bg-[#0060df] text-white font-bold py-3 px-6 rounded-xl hover:bg-[#0051bc] transition-all active-scale text-sm sm:text-base min-h-[44px] cursor-pointer"
+                            className="w-full sm:w-auto bg-[#0060df] text-white font-bold py-3 px-6 rounded-xl hover:bg-[#0051bc] transition-all active-scale text-sm sm:text-base min-h-[44px] cursor-pointer inline-flex items-center justify-center gap-1.5"
                         >
-                            🔍 {t('track.searchBtn')}
+                            <SearchIcon className="w-4 h-4" />
+                            <span>{t('track.searchBtn')}</span>
                         </button>
                     </div>
                 </div>
-                <p className="text-xs text-zinc-400 mt-3">
-                    💡 {language === 'en' ? 'Quick demo test:' : 'ตัวอย่างทดสอบ:'}{' '}
+                <p className="text-xs text-zinc-400 mt-3 flex items-center gap-1 flex-wrap">
+                    <HelpCircleIcon className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                    <span>{language === 'en' ? 'Quick demo test:' : 'ตัวอย่างทดสอบ:'}</span>{' '}
                     <button type="button" onClick={() => { setForm({ orderNumber: 'XM20260914003', phone: '0856667788' }); }} className="font-mono text-zinc-700 font-bold underline hover:text-xmart-primary">XM20260914003</button> (PENDING),{' '}
                     <button type="button" onClick={() => { setForm({ orderNumber: 'XM20260914002', phone: '0891112233' }); }} className="font-mono text-zinc-700 font-bold underline hover:text-xmart-primary">XM20260914002</button> (PREPARING),{' '}
                     <button type="button" onClick={() => { setForm({ orderNumber: 'XM20260914001', phone: '0812345678' }); }} className="font-mono text-zinc-700 font-bold underline hover:text-xmart-primary">XM20260914001</button> (SHIPPING)
@@ -223,7 +227,7 @@ function TrackForm() {
                             <p className="text-xs text-zinc-400 mb-0.5">{language === 'en' ? 'Order Number' : 'หมายเลขออเดอร์'}</p>
                             <h2 className="text-lg font-black text-xmart-primary">{order.orderNumber}</h2>
                         </div>
-                        <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${
+                        <span className={`px-3 py-1.5 rounded-full text-xs font-bold inline-flex items-center gap-1.5 ${
                             isCancelled
                                 ? 'bg-red-100 text-red-600'
                                 : isDelivered
@@ -232,9 +236,17 @@ function TrackForm() {
                                         ? 'bg-purple-100 text-purple-700'
                                         : 'bg-blue-100 text-blue-700'
                         }`}>
-                            {isCancelled
-                                ? (language === 'en' ? '❌ Order Cancelled' : '❌ ยกเลิกคำสั่งซื้อแล้ว')
-                                : `${STATUS_ICONS[currentStatus]} ${getOrderStatusLabel(currentStatus, language)}`}
+                            {isCancelled ? (
+                                <>
+                                    <XCircleIcon className="w-4 h-4 text-red-600" />
+                                    <span>{language === 'en' ? 'Order Cancelled' : 'ยกเลิกคำสั่งซื้อแล้ว'}</span>
+                                </>
+                            ) : (
+                                <>
+                                    <OrderStatusIcon status={currentStatus} className="w-4 h-4" />
+                                    <span>{getOrderStatusLabel(currentStatus, language)}</span>
+                                </>
+                            )}
                         </span>
                     </div>
 
@@ -255,7 +267,7 @@ function TrackForm() {
                                                         ? 'bg-green-500 text-white'
                                                         : 'bg-zinc-100 text-zinc-400'
                                             }`}>
-                                                {done && !current ? '✓' : STATUS_ICONS[step]}
+                                                {done && !current ? <CheckIcon className="w-4 h-4" /> : <OrderStatusIcon status={step} className="w-4 h-4" />}
                                             </div>
                                             <div className="flex-1">
                                                 <p className={`text-sm font-bold ${current ? 'text-xmart-primary font-black' : done ? 'text-green-700' : 'text-zinc-400'}`}>
@@ -278,8 +290,8 @@ function TrackForm() {
                     {isShipping && (
                         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/80 rounded-2xl p-4 mb-5 flex flex-wrap items-center justify-between gap-3 shadow-xs">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg shadow-sm">
-                                    🛵
+                                <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-sm">
+                                    <TruckIcon className="w-5 h-5" />
                                 </div>
                                 <div>
                                     <p className="text-[11px] text-blue-700 font-bold uppercase tracking-wider">
@@ -293,9 +305,10 @@ function TrackForm() {
                             </div>
                             <a
                                 href={`tel:${driverPhone}`}
-                                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2.5 rounded-xl transition-all active-scale text-xs shadow-md shadow-green-600/20"
+                                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2.5 rounded-xl transition-all active-scale text-xs sm:text-sm shadow-md shadow-green-600/20 min-h-[44px]"
                             >
-                                <span>📞</span> {language === 'en' ? 'Call Driver' : 'โทรหาคนขับ'}
+                                <PhoneIcon className="w-4 h-4" />
+                                <span>{language === 'en' ? 'Call Driver' : 'โทรหาคนขับ'}</span>
                             </a>
                         </div>
                     )}
@@ -315,38 +328,70 @@ function TrackForm() {
                         </div>
                     </div>
 
-                    {/* Payment Status Box (Enforces Requirement 9 & 12: CANCELLED order MUST show FAILED) */}
-                    <div className="bg-zinc-50 rounded-xl p-3 mb-5 text-sm flex justify-between items-center">
+                    {/* Payment Status Box (Requirement 2, 9, 12) */}
+                    <div className="bg-zinc-50 rounded-xl p-3.5 mb-3 text-sm flex flex-wrap justify-between items-center gap-2">
                         <div>
                             <p className="text-xs text-zinc-400 mb-0.5">{language === 'en' ? 'Payment Method' : 'การชำระเงิน'}</p>
                             <p className="font-bold">
-                                {order.paymentMethod === 'CASH'
-                                    ? (language === 'en' ? '💵 Cash on Delivery (COD)' : '💵 เงินสดปลายทาง')
-                                    : (language === 'en' ? '📱 PromptPay QR' : '📱 QR PromptPay')}
+                                {order.paymentMethod === 'CASH' ? (
+                                    <span className="inline-flex items-center gap-1.5"><BanknoteIcon className="w-4 h-4 text-zinc-600" /> <span>{language === 'en' ? 'Cash on Delivery (COD)' : 'เงินสดปลายทาง'}</span></span>
+                                ) : (
+                                    <span className="inline-flex items-center gap-1.5"><SmartphoneIcon className="w-4 h-4 text-blue-600" /> <span>{language === 'en' ? 'PromptPay QR' : 'QR PromptPay'}</span></span>
+                                )}
                             </p>
                         </div>
 
-                        {isCancelled || order.paymentStatus === 'FAILED' ? (
-                            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-red-100 text-red-600">
-                                {language === 'en' ? '❌ Payment Failed' : '❌ การชำระเงินไม่สำเร็จ'}
-                            </span>
-                        ) : order.paymentStatus === 'PAID' ? (
-                            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700">
-                                {language === 'en' ? '✅ Paid' : '✅ ชำระแล้ว'}
-                            </span>
-                        ) : (
-                            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-orange-100 text-orange-600">
-                                {language === 'en' ? '⏳ Payment Pending' : '⏳ รอชำระ'}
-                            </span>
-                        )}
+                        <div className="flex items-center gap-2">
+                            {isCancelled || order.paymentStatus === 'FAILED' ? (
+                                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-red-100 text-red-600 inline-flex items-center gap-1">
+                                    <XCircleIcon className="w-3.5 h-3.5" />
+                                    <span>{language === 'en' ? 'Payment Failed' : 'การชำระเงินไม่สำเร็จ'}</span>
+                                </span>
+                            ) : order.paymentStatus === 'PAID' ? (
+                                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 inline-flex items-center gap-1">
+                                    <CheckCircleIcon className="w-3.5 h-3.5" />
+                                    <span>{language === 'en' ? 'Paid' : 'ชำระเงินแล้ว'}</span>
+                                </span>
+                            ) : (
+                                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-orange-100 text-orange-600 inline-flex items-center gap-1">
+                                    <ClockIcon className="w-3.5 h-3.5" />
+                                    <span>{language === 'en' ? 'Waiting for Payment' : 'รอการชำระเงิน'}</span>
+                                </span>
+                            )}
+                        </div>
                     </div>
+
+                    {/* Unpaid PromptPay Callout with Pay Now Button (Requirement 2 & 12) */}
+                    {order.paymentMethod === 'PROMPTPAY' && order.paymentStatus === 'PENDING' && !isCancelled && (
+                        <div className="bg-amber-50 border border-amber-200/80 rounded-2xl p-3.5 mb-5 text-left flex flex-wrap items-center justify-between gap-3">
+                            <div className="space-y-0.5">
+                                <p className="font-bold text-amber-900 text-xs sm:text-sm flex items-center gap-1.5">
+                                    <ClockIcon className="w-4 h-4 text-amber-600" />
+                                    <span>{language === 'en' ? 'Waiting for Payment' : 'รอการชำระเงิน'}</span>
+                                </p>
+                                <p className="text-xs text-amber-800">
+                                    {language === 'en'
+                                        ? 'Please complete payment via QR Code to proceed with preparation and delivery.'
+                                        : 'กรุณากดชำระเงินเพื่อเปิด QR Code และเริ่มการจัดเตรียม/จัดส่งสินค้า'}
+                                </p>
+                            </div>
+                            <Link
+                                href={`/checkout/qr?orderNumber=${order.orderNumber}`}
+                                className="inline-flex items-center gap-1.5 bg-[#0060df] hover:bg-[#0051bc] text-white font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm shadow-sm transition-all active-scale cursor-pointer min-h-[44px]"
+                            >
+                                <SmartphoneIcon className="w-4 h-4" />
+                                <span>{language === 'en' ? 'Pay Now' : 'ชำระเงิน'}</span>
+                            </Link>
+                        </div>
+                    )}
 
                     {/* Items */}
                     <div className="mb-4">
                         <div className="flex justify-between items-center mb-2">
                             <h3 className="font-bold text-sm">{language === 'en' ? 'Order Items' : 'รายการสินค้า'}</h3>
-                            <span className="text-[11px] text-zinc-400 font-medium">
-                                🔒 {language === 'en' ? 'Order locked' : 'ไม่อนุญาตให้แก้ไข'}
+                            <span className="text-[11px] text-zinc-400 font-medium inline-flex items-center gap-1">
+                                <LockIcon className="w-3 h-3" />
+                                <span>{language === 'en' ? 'Order locked' : 'ไม่อนุญาตให้แก้ไข'}</span>
                             </span>
                         </div>
                         <ul className="divide-y divide-zinc-100">
@@ -374,7 +419,7 @@ function TrackForm() {
                         </div>
                         <div className="flex justify-between text-xs text-green-600 font-bold mb-2">
                             <span>{language === 'en' ? 'Shipping Fee' : 'ค่าจัดส่ง'}</span>
-                            <span>{language === 'en' ? '฿0 (Free)' : '฿0 (ส่งฟรีทุกออเดอร์)'}</span>
+                            <span>{language === 'en' ? '฿0 (Free 🚚)' : '฿0 (ส่งฟรี 🚚)'}</span>
                         </div>
                         <div className="flex justify-between items-center border-t border-zinc-200 pt-2">
                             <span className="font-bold text-zinc-800 text-sm">{language === 'en' ? 'Total Amount' : 'ยอดสุทธิ'}</span>
@@ -387,9 +432,10 @@ function TrackForm() {
                         <div className="pt-2">
                             <button
                                 onClick={() => setCancelConfirm(true)}
-                                className="w-full border border-red-200 text-red-500 font-bold py-3 rounded-2xl hover:bg-red-50 transition-all text-sm active-scale cursor-pointer"
+                                className="w-full border border-red-200 text-red-500 font-bold py-3 rounded-2xl hover:bg-red-50 transition-all text-sm active-scale cursor-pointer inline-flex items-center justify-center gap-1.5"
                             >
-                                ❌ {t('track.cancelBtn')}
+                                <XCircleIcon className="w-4 h-4" />
+                                <span>{t('track.cancelBtn')}</span>
                             </button>
                             <p className="text-[11px] text-zinc-400 text-center mt-2">
                                 {language === 'en'
@@ -402,8 +448,9 @@ function TrackForm() {
                     {/* Non-cancelable notice for DELIVERED */}
                     {isDelivered && (
                         <div className="bg-green-50 border border-green-200 rounded-2xl p-4 text-center">
-                            <p className="text-green-700 font-bold text-sm">
-                                {language === 'en' ? '🎉 Delivered Successfully' : '🎉 จัดส่งสำเร็จ'}
+                            <p className="text-green-700 font-bold text-sm inline-flex items-center justify-center gap-1.5">
+                                <CheckCircleIcon className="w-4 h-4" />
+                                <span>{language === 'en' ? 'Delivered Successfully' : 'จัดส่งสำเร็จ'}</span>
                             </p>
                             <p className="text-xs text-green-600 mt-1">
                                 {language === 'en' ? 'Thank you for shopping with X MART' : 'ขอบคุณที่ใช้บริการ X MART ซูเปอร์มาร์เก็ตออนไลน์ 24 ชม.'}
@@ -443,8 +490,9 @@ function TrackForm() {
                     {/* Permanently Cancelled Message */}
                     {isCancelled && (
                         <div className="bg-red-50 border border-red-100 rounded-2xl p-4 text-center mt-2">
-                            <p className="text-red-600 font-bold text-sm">
-                                {language === 'en' ? '❌ Order Cancelled — Payment Failed' : '❌ คำสั่งซื้อนี้ถูกยกเลิกแล้ว — การชำระเงินไม่สำเร็จ'}
+                            <p className="text-red-600 font-bold text-sm inline-flex items-center justify-center gap-1.5">
+                                <XCircleIcon className="w-4 h-4" />
+                                <span>{language === 'en' ? 'Order Cancelled — Payment Failed' : 'คำสั่งซื้อนี้ถูกยกเลิกแล้ว — การชำระเงินไม่สำเร็จ'}</span>
                             </p>
                             <p className="text-xs text-red-400 mt-1">
                                 {language === 'en' ? 'To purchase items, please place a new order.' : 'หากต้องการซื้อสินค้า กรุณาสร้างคำสั่งซื้อใหม่'}

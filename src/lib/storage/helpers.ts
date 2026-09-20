@@ -112,13 +112,37 @@ export const ordersStorage = {
         if (patch.orderStatus === 'CANCELLED') {
             patch.paymentStatus = 'FAILED';
         }
+        // Requirement 3 & 5: Order snapshot items, priceAtTimeOfOrder, and totalPrice are permanently locked
+        // Strip items, totalPrice, and createdAt from incoming patch to enforce immutability
+        const { items: _lockedItems, totalPrice: _lockedTotalPrice, createdAt: _lockedCreatedAt, ...safePatch } = patch;
+
         const orders = ordersStorage.getAll().map(o => {
             if (o.orderNumber === orderNumber) {
-                const isCancelled = patch.orderStatus === 'CANCELLED' || o.orderStatus === 'CANCELLED';
+                const isCancelled = safePatch.orderStatus === 'CANCELLED' || o.orderStatus === 'CANCELLED';
+
+                // Requirement 6 & 7: Payment Gate
+                // If PromptPay order has not been paid (paymentStatus is PENDING),
+                // prevent moving orderStatus to PREPARING, SHIPPING, or DELIVERED.
+                if (o.paymentMethod === 'PROMPTPAY' && o.paymentStatus === 'PENDING' && safePatch.paymentStatus !== 'PAID') {
+                    if (safePatch.orderStatus && ['PREPARING', 'SHIPPING', 'DELIVERED'].includes(safePatch.orderStatus)) {
+                        delete safePatch.orderStatus;
+                    }
+                }
+
+                // When PromptPay payment changes from PENDING -> PAID, advance order from PENDING -> CONFIRMED
+                if (o.paymentMethod === 'PROMPTPAY' && safePatch.paymentStatus === 'PAID') {
+                    if (!safePatch.orderStatus && o.orderStatus === 'PENDING') {
+                        safePatch.orderStatus = 'CONFIRMED';
+                    }
+                    if (!safePatch.statusUpdatedAt) {
+                        safePatch.statusUpdatedAt = new Date().toISOString();
+                    }
+                }
+
                 return {
                     ...o,
-                    ...patch,
-                    paymentStatus: isCancelled ? ('FAILED' as const) : (patch.paymentStatus || o.paymentStatus),
+                    ...safePatch,
+                    paymentStatus: isCancelled ? ('FAILED' as const) : (safePatch.paymentStatus || o.paymentStatus),
                     updatedAt: new Date().toISOString()
                 };
             }

@@ -6,6 +6,20 @@ import { mockCategories } from "@/data/categories";
 import { useEffect, useState, useMemo } from "react";
 import { Order, Category, Product } from "@/types";
 import { getBestSellingProducts, BestSellingItem } from "@/lib/order-analytics";
+import {
+    CalendarIcon,
+    CoinsIcon,
+    OrderIcon,
+    ClockIcon,
+    TrophyIcon,
+    BarChartIcon,
+    CategoryIcon,
+    SunriseIcon,
+    SunIcon,
+    CoffeeIcon,
+    SunsetIcon,
+    MoonIcon
+} from "@/components/icons";
 import Link from "next/link";
 
 type TimeRangeOption = 'today' | '7days' | '30days' | 'custom';
@@ -22,7 +36,7 @@ interface CategorySales {
 interface TimeSlotStat {
     label: string;
     range: string;
-    icon: string;
+    icon: React.ReactNode;
     count: number;
     revenue: number;
 }
@@ -162,11 +176,11 @@ export default function AdminAnalyticsPage() {
     // 5. Peak Order Time (Hours analysis)
     const timeSlots: TimeSlotStat[] = useMemo(() => {
         const slots: TimeSlotStat[] = [
-            { label: 'ช่วงเช้า', range: '06:00 - 10:59', icon: '🌅', count: 0, revenue: 0 },
-            { label: 'ช่วงเที่ยง (มื้อกลางวัน)', range: '11:00 - 13:59', icon: '☀️', count: 0, revenue: 0 },
-            { label: 'ช่วงบ่าย', range: '14:00 - 16:59', icon: '☕', count: 0, revenue: 0 },
-            { label: 'ช่วงเย็น (หลังเลิกงาน)', range: '17:00 - 20:59', icon: '🌆', count: 0, revenue: 0 },
-            { label: 'ช่วงดึก', range: '21:00 - 05:59', icon: '🌙', count: 0, revenue: 0 },
+            { label: 'ช่วงเช้า', range: '06:00 - 10:59', icon: <SunriseIcon className="w-5 h-5 text-amber-500" />, count: 0, revenue: 0 },
+            { label: 'ช่วงเที่ยง (มื้อกลางวัน)', range: '11:00 - 13:59', icon: <SunIcon className="w-5 h-5 text-amber-500" />, count: 0, revenue: 0 },
+            { label: 'ช่วงบ่าย', range: '14:00 - 16:59', icon: <CoffeeIcon className="w-5 h-5 text-amber-600" />, count: 0, revenue: 0 },
+            { label: 'ช่วงเย็น (หลังเลิกงาน)', range: '17:00 - 20:59', icon: <SunsetIcon className="w-5 h-5 text-orange-500" />, count: 0, revenue: 0 },
+            { label: 'ช่วงดึก', range: '21:00 - 05:59', icon: <MoonIcon className="w-5 h-5 text-indigo-500" />, count: 0, revenue: 0 },
         ];
 
         nonCancelledOrders.forEach(order => {
@@ -268,7 +282,10 @@ export default function AdminAnalyticsPage() {
                                     : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200/70'
                             }`}
                         >
-                            📅 กำหนดช่วงวัน
+                            <span className="inline-flex items-center gap-1">
+                                <CalendarIcon className="w-3.5 h-3.5" />
+                                <span>กำหนดช่วงวัน</span>
+                            </span>
                         </button>
                     </div>
 
@@ -296,7 +313,7 @@ export default function AdminAnalyticsPage() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="bg-white rounded-2xl p-5 shadow-sm border border-zinc-100 border-l-4 border-l-green-500">
                         <div className="flex items-center justify-between mb-2">
-                            <span className="text-2xl">💰</span>
+                            <CoinsIcon className="w-6 h-6 text-green-600" />
                             <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">ยอดสุทธิ</span>
                         </div>
                         <div className="text-2xl md:text-3xl font-black text-zinc-900 mb-0.5">฿{totalSales.toLocaleString()}</div>
@@ -305,7 +322,7 @@ export default function AdminAnalyticsPage() {
 
                     <div className="bg-white rounded-2xl p-5 shadow-sm border border-zinc-100 border-l-4 border-l-blue-500">
                         <div className="flex items-center justify-between mb-2">
-                            <span className="text-2xl">📋</span>
+                            <OrderIcon className="w-6 h-6 text-blue-600" />
                             <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">ทั้งหมด</span>
                         </div>
                         <div className="text-2xl md:text-3xl font-black text-zinc-900 mb-0.5">{totalOrders}</div>
@@ -314,7 +331,9 @@ export default function AdminAnalyticsPage() {
 
                     <div className="bg-white rounded-2xl p-5 shadow-sm border border-zinc-100 border-l-4 border-l-orange-500">
                         <div className="flex items-center justify-between mb-2">
-                            <span className="text-2xl">{peakTimeSlot?.icon || '⏰'}</span>
+                            <span className="w-7 h-7 flex items-center justify-center">
+                                {peakTimeSlot?.icon || <ClockIcon className="w-6 h-6 text-orange-500" />}
+                            </span>
                             <span className="text-[10px] font-bold text-orange-600 bg-orange-50 px-2 py-0.5 rounded-full">ชั่วโมงเร่งด่วน</span>
                         </div>
                         <div className="text-lg md:text-xl font-black text-zinc-900 mb-0.5 truncate">{peakTimeSlot?.label}</div>
@@ -323,7 +342,7 @@ export default function AdminAnalyticsPage() {
 
                     <div className="bg-white rounded-2xl p-5 shadow-sm border border-zinc-100 border-l-4 border-l-purple-500">
                         <div className="flex items-center justify-between mb-2">
-                            <span className="text-2xl">📅</span>
+                            <CalendarIcon className="w-6 h-6 text-purple-600" />
                             <span className="text-[10px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">วันยอดนิยม</span>
                         </div>
                         <div className="text-lg md:text-xl font-black text-zinc-900 mb-0.5 truncate">{peakDay?.dayName}</div>
@@ -390,7 +409,7 @@ export default function AdminAnalyticsPage() {
                                 <div key={cat.id} className="space-y-1.5">
                                     <div className="flex justify-between text-xs items-center">
                                         <div className="flex items-center gap-2">
-                                            <span className="text-base">{cat.icon}</span>
+                                            <CategoryIcon icon={cat.icon} slug={cat.id} name={cat.name} className="w-4 h-4 text-zinc-600" />
                                             <span className="font-bold text-zinc-800">{cat.name}</span>
                                             <span className="text-[10px] text-zinc-400">({cat.itemsSold} ชิ้น)</span>
                                         </div>
@@ -412,7 +431,10 @@ export default function AdminAnalyticsPage() {
                     <div className="bg-white rounded-2xl p-5 shadow-sm border border-zinc-100">
                         <div className="flex justify-between items-center mb-4">
                             <div>
-                                <h2 className="font-bold text-zinc-900 text-sm md:text-base">🏆 สินค้าขายดี (Best Sellers)</h2>
+                                <h2 className="font-bold text-zinc-900 text-sm md:text-base flex items-center gap-1.5">
+                                    <span>สินค้าขายดี (Best Sellers)</span>
+                                    <TrophyIcon className="w-4 h-4 text-amber-500" />
+                                </h2>
                                 <p className="text-xs text-zinc-400">คำนวณจากคำสั่งซื้อในช่วงเวลาที่เลือก</p>
                             </div>
                             <Link href="/admin/reports" className="text-xs font-bold text-xmart-primary hover:underline">
@@ -422,7 +444,9 @@ export default function AdminAnalyticsPage() {
 
                         {bestSellingItems.length === 0 ? (
                             <div className="p-8 text-center text-zinc-400">
-                                <div className="text-4xl mb-2">📊</div>
+                                <div className="w-10 h-10 mx-auto mb-2 flex items-center justify-center text-zinc-300">
+                                    <BarChartIcon className="w-8 h-8" />
+                                </div>
                                 <p className="text-xs font-bold">ยังไม่มีข้อมูลการขายในช่วงนี้</p>
                             </div>
                         ) : (
@@ -461,7 +485,7 @@ export default function AdminAnalyticsPage() {
                                 return (
                                     <div key={slot.label} className={`flex items-center justify-between p-2.5 rounded-xl border text-xs transition-colors ${isPeak ? 'bg-orange-50/70 border-orange-200' : 'bg-zinc-50/50 border-zinc-100'}`}>
                                         <div className="flex items-center gap-2.5">
-                                            <span className="text-lg">{slot.icon}</span>
+                                            <span className="w-6 h-6 flex items-center justify-center">{slot.icon}</span>
                                             <div>
                                                 <span className="font-bold text-zinc-800 block">{slot.label}</span>
                                                 <span className="text-[10px] text-zinc-400">{slot.range}</span>

@@ -2,15 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PhoneIcon } from "@/components/icons";
+import { useTranslation } from "@/lib/i18n";
 
 export function Footer() {
     const pathname = usePathname();
+    const { t, language } = useTranslation();
 
     // Hide footer on admin pages
     if (pathname?.startsWith('/admin')) return null;
 
     return (
-        <footer className="w-full bg-[#0a3863] text-white pt-10 pb-8 mt-auto border-t border-[#0d477d]">
+        <footer className="w-full bg-[#0a3863] text-white pt-10 pb-20 md:pb-8 mt-auto border-t border-[#0d477d]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Main Row */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
@@ -28,7 +31,7 @@ export function Footer() {
                                 X MART
                             </div>
                             <p className="text-xs text-blue-200/80 font-normal">
-                                ร้านโชว์ห่วยออนไลน์ 24 ชั่วโมง
+                                {t('footer.slogan')}
                             </p>
                         </div>
                     </div>
@@ -36,33 +39,43 @@ export function Footer() {
                     {/* Navigation Links */}
                     <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-blue-100/90 font-medium">
                         <Link href="/about" className="hover:text-white transition-colors">
-                            เกี่ยวกับเรา
+                            {t('footer.about')}
                         </Link>
                         <Link href="/contact" className="hover:text-white transition-colors">
-                            ติดต่อเรา
+                            {t('footer.contact')}
                         </Link>
                         <Link href="/privacy" className="hover:text-white transition-colors">
-                            นโยบายความเป็นส่วนตัว
+                            {t('footer.privacy')}
                         </Link>
                         <Link href="/terms" className="hover:text-white transition-colors">
-                            เงื่อนไขการใช้งาน
+                            {t('footer.terms')}
                         </Link>
                     </nav>
 
                     {/* Customer Service & Contact Info */}
-                    <div className="text-right text-xs text-blue-200/90 space-y-1">
-                        <div className="font-semibold text-white flex items-center gap-1.5 justify-end">
-                            <span>📞</span>
-                            <span>ศูนย์บริการลูกค้า: 02-123-4567</span>
+                    <div className="text-center md:text-right text-xs text-blue-200/90 space-y-1">
+                        <div className="font-semibold text-white flex items-center gap-1.5 justify-center md:justify-end">
+                            <PhoneIcon className="w-4 h-4 text-blue-200" />
+                            <span>{t('footer.customerService')}</span>
                         </div>
-                        <div>LINE: @xmart24hr | เปิดบริการ 24 ชั่วโมง</div>
+                        <div>{t('footer.lineInfo')}</div>
                     </div>
                 </div>
 
-                {/* Bottom Copyright & Language info */}
-                <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-blue-200/70 gap-2">
-                    <p>ซูเปอร์มาร์เก็ตและร้านสะดวกซื้อออนไลน์ ส่งฟรีไม่มีขั้นต่ำ</p>
-                    <p>© 2026 X MART. All rights reserved.</p>
+                {/* Bottom Copyright & Admin Access */}
+                <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-blue-200/70 gap-3 text-center sm:text-left">
+                    <p>{t('footer.subSlogan')}</p>
+                    <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4 text-[11px] sm:text-xs">
+                        <p>{t('footer.copyright')}</p>
+                        <span className="hidden sm:inline text-blue-200/30" aria-hidden="true">•</span>
+                        <Link
+                            href="/admin/login"
+                            className="text-blue-300/50 hover:text-blue-100 transition-colors text-[11px]"
+                            title={language === 'en' ? 'Admin Portal' : 'สำหรับผู้ดูแลระบบ'}
+                        >
+                            {language === 'en' ? 'Admin Portal' : 'สำหรับผู้ดูแลระบบ'}
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>

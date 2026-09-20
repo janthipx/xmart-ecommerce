@@ -4,14 +4,15 @@ import { categoriesStorage } from "@/lib/storage/helpers";
 import { mockCategories } from "@/data/categories";
 import { useEffect, useState } from "react";
 import { Category } from "@/types";
+import { CategoryIcon } from "@/components/icons";
 
-const ICONS = ['🍜', '🥤', '🍬', '🧴', '🏠', '🧹', '🛒', '💊', '🎁', '📦', '🌿', '🧃'];
+const ICONS = ['food', 'beverages', 'snacks', 'personal-care', 'home-care', 'clean', 'cart', 'health', 'gift', 'package', 'plant', 'drink'];
 
 export default function AdminCategoriesPage() {
     const [cats, setCats] = useState<Category[]>([]);
     const [showForm, setShowForm] = useState(false);
     const [editing, setEditing] = useState<Category | null>(null);
-    const [form, setForm] = useState({ name: '', icon: '📦' });
+    const [form, setForm] = useState({ name: '', icon: 'package' });
 
     const reload = () => setCats(categoriesStorage.getAll(mockCategories));
     useEffect(() => { reload(); }, []);
@@ -24,7 +25,7 @@ export default function AdminCategoriesPage() {
             const newCat: Category = { id: `cat-${Date.now()}`, name: form.name, icon: form.icon };
             categoriesStorage.save([...cats, newCat]);
         }
-        setShowForm(false); setEditing(null); setForm({ name: '', icon: '📦' }); reload();
+        setShowForm(false); setEditing(null); setForm({ name: '', icon: 'package' }); reload();
     };
 
     const handleDelete = (id: string) => {
@@ -37,7 +38,7 @@ export default function AdminCategoriesPage() {
         <AdminLayout>
             <div className="space-y-4">
                 <div className="flex justify-end">
-                    <button onClick={() => { setEditing(null); setForm({ name: '', icon: '📦' }); setShowForm(true); }}
+                    <button onClick={() => { setEditing(null); setForm({ name: '', icon: 'package' }); setShowForm(true); }}
                         className="bg-xmart-primary text-white font-bold px-5 py-2 rounded-xl hover:bg-xmart-primary-light transition-all text-sm active-scale">
                         + เพิ่มหมวดหมู่
                     </button>
@@ -57,8 +58,8 @@ export default function AdminCategoriesPage() {
                                 <div className="flex flex-wrap gap-2">
                                     {ICONS.map(icon => (
                                         <button type="button" key={icon} onClick={() => setForm({ ...form, icon })}
-                                            className={`w-10 h-10 text-xl rounded-xl flex items-center justify-center transition-all ${form.icon === icon ? 'bg-xmart-primary/20 ring-2 ring-xmart-primary' : 'bg-zinc-100 hover:bg-zinc-200'}`}>
-                                            {icon}
+                                            className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${form.icon === icon ? 'bg-xmart-primary/20 ring-2 ring-xmart-primary text-xmart-primary' : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-600'}`}>
+                                            <CategoryIcon icon={icon} className="w-5 h-5" />
                                         </button>
                                     ))}
                                 </div>
@@ -74,7 +75,9 @@ export default function AdminCategoriesPage() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                     {cats.map(cat => (
                         <div key={cat.id} className="bg-white rounded-2xl p-4 shadow-sm border border-zinc-100 text-center">
-                            <div className="text-4xl mb-2">{cat.icon}</div>
+                            <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center text-xmart-primary bg-zinc-50 rounded-xl">
+                                <CategoryIcon icon={cat.icon} slug={cat.id} name={cat.name} className="w-6 h-6" />
+                            </div>
                             <p className="font-bold text-sm text-zinc-800 mb-3 line-clamp-1">{cat.name}</p>
                             <div className="flex gap-2 justify-center">
                                 <button onClick={() => { setEditing(cat); setForm({ name: cat.name, icon: cat.icon }); setShowForm(true); }}

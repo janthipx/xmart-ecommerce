@@ -35,6 +35,7 @@
     scroll-behavior: smooth;
     background-color: var(--color-xmart-bg);
     color: var(--color-xmart-text);
+    overflow-x: hidden;
   }
 
   body {
@@ -43,6 +44,7 @@
     font-size: 1rem;
     line-height: 1.6;
     letter-spacing: -0.01em;
+    overflow-x: hidden;
   }
 
   /* Consistent Touch Target Minimum for Accessible Mobile UX */
@@ -79,17 +81,37 @@
     @apply bg-neutral-900/80 backdrop-blur-xl border border-white/10 shadow-xl;
   }
 
-  /* Micro Animations */
-  .hover-lift {
-    @apply transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md;
+  /* Design System Standard Utilities */
+  .xmart-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .active-scale {
-    @apply transition-transform duration-150 active:scale-95;
+  .xmart-content-container {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .fade-in {
-    animation: fadeIn 0.4s ease-out forwards;
+  .xmart-card {
+    @apply bg-white rounded-2xl border border-zinc-200/80 shadow-xs;
+  }
+
+  .xmart-table-wrap {
+    @apply w-full overflow-x-auto rounded-2xl border border-zinc-200/80 bg-white;
+  }
+
+  .xmart-page-title {
+    @apply text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight leading-tight;
+  }
+
+  .xmart-section-title {
+    @apply text-lg sm:text-xl font-black text-zinc-900 leading-snug;
+  }
+
+  .xmart-input-standard {
+    @apply w-full min-h-[44px] bg-zinc-50/80 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm sm:text-base text-zinc-800 placeholder-zinc-400 focus:bg-white focus:outline-none focus:border-[#0060df] focus:ring-1 focus:ring-blue-100 transition-colors;
+  }
+
+  .xmart-btn-touch {
+    @apply min-h-[44px] py-2.5 px-4 rounded-xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer;
   }
 }
 
