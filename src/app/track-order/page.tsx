@@ -265,7 +265,7 @@ function TrackForm() {
                                         <div key={step} className={`flex items-center gap-3 ${done ? 'opacity-100' : 'opacity-40'}`}>
                                             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm shrink-0 transition-all ${
                                                 current
-                                                    ? 'bg-xmart-primary text-white shadow-md shadow-blue-300 ring-4 ring-xmart-primary/20 scale-105'
+                                                    ? (step === 'DELIVERED' ? 'bg-green-600 text-white shadow-md shadow-green-300 ring-4 ring-green-600/20 scale-105' : 'bg-xmart-primary text-white shadow-md shadow-blue-300 ring-4 ring-xmart-primary/20 scale-105')
                                                     : done
                                                         ? 'bg-green-500 text-white'
                                                         : 'bg-zinc-100 text-zinc-400'
@@ -273,12 +273,12 @@ function TrackForm() {
                                                 {done && !current ? <CheckIcon className="w-4 h-4" /> : <OrderStatusIcon status={step} className="w-4 h-4" />}
                                             </div>
                                             <div className="flex-1">
-                                                <p className={`text-sm font-bold ${current ? 'text-xmart-primary font-black' : done ? 'text-green-700' : 'text-zinc-400'}`}>
+                                                <p className={`text-sm font-bold ${current ? (step === 'DELIVERED' ? 'text-green-600 font-black' : 'text-xmart-primary font-black') : done ? 'text-green-700' : 'text-zinc-400'}`}>
                                                     {getOrderStatusLabel(step, language)}
                                                 </p>
                                             </div>
                                             {current && (
-                                                <span className="text-[10px] bg-xmart-primary text-white font-bold px-2 py-0.5 rounded-full shadow-xs">
+                                                <span className={`text-[10px] text-white font-bold px-2 py-0.5 rounded-full shadow-xs ${step === 'DELIVERED' ? 'bg-green-600' : 'bg-xmart-primary'}`}>
                                                     {language === 'en' ? 'Current Status' : 'สถานะปัจจุบัน'}
                                                 </span>
                                             )}

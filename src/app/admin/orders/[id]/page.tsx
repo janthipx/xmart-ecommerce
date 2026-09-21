@@ -248,7 +248,7 @@ export default function AdminOrderDetailPage({ params }: { params: Promise<{ id:
                                     return (
                                         <div key={step} className={`p-3 rounded-2xl border transition-all text-center ${
                                             isCurrent
-                                                ? 'bg-blue-50 border-xmart-primary shadow-xs ring-2 ring-xmart-primary/10'
+                                                ? (step === 'DELIVERED' ? 'bg-green-50 border-green-500 shadow-xs ring-2 ring-green-500/10' : 'bg-blue-50 border-xmart-primary shadow-xs ring-2 ring-xmart-primary/10')
                                                 : done
                                                 ? 'bg-green-50/60 border-green-200'
                                                 : 'bg-zinc-50 border-zinc-100 opacity-50'
@@ -257,10 +257,10 @@ export default function AdminOrderDetailPage({ params }: { params: Promise<{ id:
                                                 {done && !isCurrent ? (
                                                     <CheckIcon className="w-5 h-5 text-green-600" />
                                                 ) : (
-                                                    <OrderStatusIcon status={step} className={`w-5 h-5 ${isCurrent ? 'text-xmart-primary' : 'text-zinc-400'}`} />
+                                                    <OrderStatusIcon status={step} className={`w-5 h-5 ${isCurrent ? (step === 'DELIVERED' ? 'text-green-600' : 'text-xmart-primary') : 'text-zinc-400'}`} />
                                                 )}
                                             </div>
-                                            <p className={`text-xs font-bold ${isCurrent ? 'text-xmart-primary font-black' : done ? 'text-green-700' : 'text-zinc-400'}`}>
+                                            <p className={`text-xs font-bold ${isCurrent ? (step === 'DELIVERED' ? 'text-green-600 font-black' : 'text-xmart-primary font-black') : done ? 'text-green-700' : 'text-zinc-400'}`}>
                                                 {STATUS_LABELS[step]}
                                             </p>
                                         </div>
